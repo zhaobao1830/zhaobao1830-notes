@@ -1,0 +1,22 @@
+{
+  "name": "zhaobao1830-notes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@better-scroll/core": "^2.1.1",
+    "@better-scroll/pull-down": "^2.1.1",
+    "@better-scroll/pull-up": "^2.1.1",
+    "@vuepress/plugin-back-to-top": "^1.8.0",
+    "@vuepress/plugin-medium-zoom": "^1.8.0",
+    "element-ui": "^2.14.1",
+    "node-sass": "^5.0.0",
+    "sass-loader": "^10.1.1",
+    "vant": "^2.12.1",
+    "vue": "^2.6.12",
+    "vuepress": "^1.8.0"
+  },
+  "dependencies": {
+    "async-validator": "1.11.5"
+  }
+}
