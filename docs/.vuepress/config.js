@@ -2,8 +2,8 @@ const pkg = require('../../package.json')
 
 module.exports = {
   title: pkg.name,
-  description: 'zhaobao1830的技术文档',
-  dest: 'dist',   // 设置输出目录1
+  description: 'vue插件文档',
+  dest: 'dist', // 设置输出目录
   base: '/zhaobao1830-notes/',
   themeConfig: {
     nav: [

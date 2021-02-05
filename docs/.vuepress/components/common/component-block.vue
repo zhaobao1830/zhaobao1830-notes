@@ -51,8 +51,8 @@
 
 <script>
   import Element from 'element-ui'
-  import { stripScript, stripStyle, stripTemplate } from '../js/component-block/util.js'
-  import getCodeMixin from '../js/component-block/getCode'
+  import { stripScript, stripStyle, stripTemplate } from '../../js/component-block/util.js'
+  import getCodeMixin from '../../js/component-block/getCode'
 
   const { version } = Element
 

@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
   "devDependencies": {
     "@better-scroll/core": "^2.1.1",
     "@better-scroll/pull-down": "^2.1.1",
