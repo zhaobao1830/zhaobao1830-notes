@@ -49,6 +49,10 @@ module.exports = {
       {
         title: 'Java',
         path: '/java/'
+      },
+      {
+        title: 'Git',
+        path: '/git/'
       }
     ]
   },
