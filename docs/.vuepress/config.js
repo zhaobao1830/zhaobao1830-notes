@@ -40,7 +40,15 @@ module.exports = {
     sidebar: [
       {
         title: 'Vue',
-        path: '/vue/'
+        path: '/vue/',
+        collapsable: false,
+        children: [
+          {
+            title: '介绍',
+            path: 'vue/introduction',
+            collapsable: false
+          }
+        ]
       },
       {
         title: 'React',
