@@ -45,12 +45,14 @@ module.exports = {
         children: [
           {
             title: '基础组件',
-            path: 'vue/introduction',
-            collapsable: false
-          },
-          'vue/loading',
-          'vue/footer',
-          'vue/scroll'
+            path: 'introduction',
+            collapsable: false,
+            children: [
+              'vue/loading',
+              'vue/footer',
+              'vue/scroll'
+            ]
+          }
         ]
       },
       {
