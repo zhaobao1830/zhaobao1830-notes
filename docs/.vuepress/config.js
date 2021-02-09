@@ -48,7 +48,8 @@ module.exports = {
             path: 'vue/introduction',
             collapsable: false
           },
-          'vue/loading'
+          'vue/loading',
+          'vue/footer'
         ]
       },
       {
