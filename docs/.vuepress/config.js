@@ -44,10 +44,11 @@ module.exports = {
         collapsable: false,
         children: [
           {
-            title: '介绍',
+            title: '基础组件',
             path: 'vue/introduction',
             collapsable: false
-          }
+          },
+          'vue/loading'
         ]
       },
       {

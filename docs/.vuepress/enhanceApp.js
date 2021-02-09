@@ -16,7 +16,7 @@ export default ({
   Vue.use(Vant) // 引入vant
   Vue.use(ElementUI) // 引入element-ui
   Vue.component('component-block', ComponentBlock)
-  // Register()
+  Register()
 }
 
 // Vue全局注册方法
