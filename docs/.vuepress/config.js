@@ -49,7 +49,8 @@ module.exports = {
             collapsable: false
           },
           'vue/loading',
-          'vue/footer'
+          'vue/footer',
+          'vue/scroll'
         ]
       },
       {
