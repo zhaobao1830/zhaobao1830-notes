@@ -14,7 +14,10 @@ module.exports = {
   },
   themeConfig: {
     nav: [
-      { text: '主页', link: '/' },
+      {
+        text: '主页',
+        link: '/'
+      },
       {
         text: 'Vue',
         link: '/vue/'
@@ -38,6 +41,12 @@ module.exports = {
       }
     ],
     sidebar: [
+      {
+        title: '工具方法',
+        children: [
+          'utils/regexp'
+        ]
+      },
       {
         title: 'Vue',
         path: '/vue/',
