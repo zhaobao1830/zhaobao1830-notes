@@ -73,6 +73,17 @@ module.exports = {
         path: '/java/'
       },
       {
+        title: 'Js核心原理',
+        children: [
+          {
+            title: '基石',
+            children: [
+              'js/cornerstone/typeOfData'
+            ]
+          }
+        ]
+      },
+      {
         title: 'Git',
         path: '/git/'
       }
