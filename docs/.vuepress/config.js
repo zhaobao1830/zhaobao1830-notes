@@ -54,7 +54,6 @@ module.exports = {
         children: [
           {
             title: '基础组件',
-            path: 'introduction',
             collapsable: false,
             children: [
               'vue/loading',
