@@ -47,3 +47,62 @@ typeof null 为'object'这是JS存在的一个bug，不代表null就是引用数
 ::: tip  温馨提示 
 引用数据类型 Object，用 typeof 来判断的话，除了 function 会判断为 OK 以外，其余都是 'object'，是无法判断出来的。
 ::: 
+
+### 第二种判断方法：instanceof
+
+我们 new 一个对象，那么这个新对象就是它原型链继承上面的对象了，通过 instanceof 我们能判断这个对象是否是之前那个构造函数生成的对象，这样就基本可以判断出这个新对象的数据类型。
+
+```js
+let Car = function() {}
+
+let benz = new Car()
+
+benz instanceof Car // true
+
+let car = new String('Mercedes Benz')
+
+car instanceof String // true
+
+let str = 'Covid-19'
+
+str instanceof String // false
+
+```
+
+上面就是用 instanceof 方法判断数据类型的大致流程，那么如果让你自己实现一个 instanceof 的底层实现，应该怎么写呢？请看下面的代码。
+
+```js
+function myInstanceof(left, right) {
+
+  // 这里先用typeof来判断基础数据类型，如果是，直接返回false
+
+  if(typeof left !== 'object' || left === null) return false;
+
+  // getProtypeOf是Object对象自带的API，能够拿到参数的原型对象
+
+  let proto = Object.getPrototypeOf(left);
+
+  while(true) {                  //循环往下寻找，直到找到相同的原型对象
+
+    if(proto === null) return false;
+
+    if(proto === right.prototype) return true;//找到相同原型对象，返回true
+
+    proto = Object.getPrototypeof(proto);
+
+    }
+
+}
+
+// 验证一下自己实现的myInstanceof是否OK
+
+console.log(myInstanceof(new Number(123), Number));    // true
+
+console.log(myInstanceof(123, Number));                // false
+```
+
+::: tip  typeOf和instanceof的区别
+instanceof 可以准确地判断复杂引用数据类型，但是不能正确判断基础数据类型；
+
+而 typeof 也存在弊端，它虽然可以判断基础数据类型（null 除外），但是引用数据类型中，除了 function 类型以外，其他的也无法判断。
+::: 
