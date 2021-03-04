@@ -85,6 +85,15 @@ module.exports = {
       {
         title: 'Git',
         path: '/git/'
+      },
+      {
+        title: '其他',
+        children: [
+          {
+            title: '上传组件',
+            path: '/other/upload'
+          }
+        ]
       }
     ]
   },
