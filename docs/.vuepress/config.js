@@ -77,7 +77,8 @@ module.exports = {
           {
             title: '基石',
             children: [
-              'js/cornerstone/typeOfData'
+              'js/cornerstone/typeOfData',
+              'js/cornerstone/deepCopy'
             ]
           }
         ]
