@@ -90,3 +90,76 @@ console.log('obj2',obj2);
 从上面的样例代码中可以看到，利用 object.assign 也可以拷贝 Symbol 类型的对象，但是如果到了对象的第二层属性 obj1.a.b 这里的时候，前者值的改变也会影响后者的第二层属性的值，说明其中依旧存在着访问共同堆内存的问题，也就是说这种方法还不能进一步复制，而只是完成了浅拷贝的功能。
 
 ## 方法二：扩展运算符方式
+
+::: tip 语法
+扩展运算符的语法为：let cloneObj = { ...obj };
+:::
+
+```js
+/* 对象的拷贝 */
+
+let obj = {a:1,b:{c:1}}
+
+let obj2 = {...obj}
+
+obj.a = 2
+
+console.log(obj)  //{a:2,b:{c:1}} console.log(obj2); //{a:1,b:{c:1}}
+
+obj.b.c = 2
+
+console.log(obj)  //{a:2,b:{c:2}} console.log(obj2); //{a:1,b:{c:2}}
+
+/* 数组的拷贝 */
+
+let arr = [1, 2, 3];
+
+let newArr = [...arr]; //跟arr.slice()是一样的效果
+
+```
+
+扩展运算符和object.assign实现浅拷贝一样，推荐使用扩展运算符
+
+## 方法三：concat 拷贝数组
+
+数组的 concat 方法其实也是浅拷贝，所以连接一个含有引用类型的数组时(基本没用过)
+
+```js
+let arr = [1, 2, 3];
+
+let newArr = arr.concat();
+
+newArr[1] = 100;
+
+console.log(arr);  // [ 1, 2, 3 ]
+
+console.log(newArr); // [ 1, 100, 3 ]
+
+```
+
+## 方法四：slice 拷贝数组
+
+slice 方法会返回一个新的数组，这一对象由该方法的前两个参数来决定原数组截取的开始和结束位置，不影响原始数组。
+
+::: tip 语法
+slice 的语法为：arr.slice(begin, end);
+:::
+
+```js
+let arr = [1, 2, {val: 4}];
+
+let newArr = arr.slice();
+
+newArr[2].val = 1000;
+
+console.log(arr);  //[ 1, 2, { val: 1000 } ]
+
+```
+
+## 手工实现一个浅拷贝
+
+大致的思路分为两点：
+
+1、对基础类型做一个最基本的一个拷贝；
+
+2、对引用类型开辟一个新的存储，并且拷贝一层对象属性。
