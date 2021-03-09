@@ -93,6 +93,10 @@ module.exports = {
           {
             title: '上传组件',
             path: '/other/upload'
+          },
+          {
+            title: '图片',
+            path: '/other/image'
           }
         ]
       }
