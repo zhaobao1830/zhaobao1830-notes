@@ -97,6 +97,10 @@ module.exports = {
           {
             title: '图片',
             path: '/other/image'
+          },
+          {
+            title: '登录验证',
+            path: '/other/verifyLogin'
           }
         ]
       }
