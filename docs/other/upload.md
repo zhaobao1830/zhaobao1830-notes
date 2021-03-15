@@ -54,4 +54,32 @@
 
 3、传递数据必须把数据放到FormData中 [文档](https://developer.mozilla.org/zh-CN/docs/Web/API/FormData)
 
+### 上传遇到的问题
 
+1、formdata里字段的值为file或者图片，而且值有多个，不能放在数组里，然后赋值。而应该给当前字段多次赋值
+
+错误示例：这种方式传递会报错
+```js
+const formData = new FormData()
+const fileList = []
+fileList.push(file2)
+fileList.push(file3)
+formData.append('file', JSON.stringify(fileList))
+```
+
+正确示例：
+```js
+const formData = new FormData()
+formData.append('file', file2)
+formData.append('file', file3)
+```
+
+后端Java接收代码：
+```js
+@RequestMapping(value = "upload.do")
+public void upload(@RequestParam MultipartFile[] file,String name) {
+    System.out.println(Arrays.toString(file));
+    System.out.println(name);
+}
+```
+使用MultipartFile类型，如果当前参数有多个值，就用MultipartFile[]
