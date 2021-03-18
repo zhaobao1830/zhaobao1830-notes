@@ -163,3 +163,136 @@ console.log(arr);  //[ 1, 2, { val: 1000 } ]
 1、对基础类型做一个最基本的一个拷贝；
 
 2、对引用类型开辟一个新的存储，并且拷贝一层对象属性。
+
+```js
+const shallowClone = (target) => {
+
+  if (typeof target === 'object' && target !== null) {
+
+    const cloneTarget = Array.isArray(target) ? []: {};
+
+    for (let prop in target) {
+
+      if (target.hasOwnProperty(prop)) {
+
+          cloneTarget[prop] = target[prop];
+
+      }
+
+    }
+
+    return cloneTarget;
+
+  } else {
+
+    return target;
+
+  }
+
+}
+
+```
+
+利用类型判断，针对引用类型的对象进行 for 循环遍历对象属性赋值给目标对象的属性
+
+#深拷贝的原理和实现
+
+浅拷贝只是创建了一个新的对象，复制了原有对象的基本类型的值，而引用数据类型只拷贝了一层属性，再深层的还是无法进行拷贝。深拷贝则不同，对于复杂引用数据类型，其在堆内存中完全开辟了一块内存地址，并将原有的对象完全复制过来存放。
+
+这两个对象是相互独立、不受影响的，彻底实现了内存上的分离。总的来说，深拷贝的原理可以总结如下：
+
+::: tip 解释
+将一个对象从内存中完整地拷贝出来一份给目标对象，并从堆内存中开辟一个全新的空间存放新对象，且新对象的修改并不会改变原对象，二者实现真正的分离。
+:::
+
+## 方法一：JSON.stringfy
+
+JSON.stringfy() 是目前开发过程中最简单的深拷贝方法，其实就是把一个对象序列化成为 JSON 的字符串，并将对象里面的内容转换成字符串，最后再用 JSON.parse() 的方法将JSON 字符串生成一个新的对象。示例代码如下所示:
+
+```js
+let obj1 = { a:1, b:[1,2,3] }
+
+let str = JSON.stringify(obj1)；
+
+let obj2 = JSON.parse(str)；
+
+console.log(obj2);   //{a:1,b:[1,2,3]} 
+
+obj1.a = 2；
+
+obj1.b.push(4);
+
+console.log(obj1);   //{a:2,b:[1,2,3,4]}
+
+console.log(obj2);   //{a:1,b:[1,2,3]}
+
+```
+
+注意：
+
+1、拷贝的对象的值中如果有函数、undefined、symbol 这几种类型，经过 JSON.stringify 序列化之后的字符串中这个键值对会消失；
+
+2、拷贝 Date 引用类型会变成字符串；
+
+3、无法拷贝不可枚举的属性；
+
+4、无法拷贝对象的原型链；
+
+5、拷贝 RegExp 引用类型会变成空对象；
+
+6、对象中含有 NaN、Infinity 以及 -Infinity，JSON 序列化的结果会变成 null；
+
+7、无法拷贝对象的循环应用，即对象成环 (obj[key] = obj)；
+
+针对这些存在的问题，你可以尝试着用下面的这段代码亲自执行一遍，来看看如此复杂的对象，如果用 JSON.stringfy 实现深拷贝会出现什么情况。
+
+```js
+function Obj() { 
+
+  this.func = function () { alert(1) }; 
+
+  this.obj = {a:1};
+
+  this.arr = [1,2,3];
+
+  this.und = undefined; 
+
+  this.reg = /123/; 
+
+  this.date = new Date(0); 
+
+  this.NaN = NaN;
+
+  this.infinity = Infinity;
+
+  this.sym = Symbol(1);
+
+} 
+
+let obj1 = new Obj();
+
+Object.defineProperty(obj1,'innumerable',{ 
+
+  enumerable:false,
+
+  value:'innumerable'
+
+});
+
+console.log('obj1',obj1);
+
+let str = JSON.stringify(obj1);
+
+let obj2 = JSON.parse(str);
+
+console.log('obj2',obj2);
+
+```
+
+通过上面这段代码可以看到执行结果如下图所示。
+
+![Image text](../../.vuepress/public/js/cornerstone/deepCopy/02.png)
+
+使用 JSON.stringify 方法实现深拷贝对象，虽然到目前为止还有很多无法实现的功能，但是这种方法足以满足日常的开发需求，并且是最简单和快捷的。
+
+## 方法二：手写递归实现
