@@ -36,6 +36,10 @@ module.exports = {
           {
             text: 'helloworld',
             link: 'https://www.helloworld.net/'
+          },
+          {
+            text: '木易杨',
+            link: 'https://muyiy.cn/'
           }
         ]
       }
