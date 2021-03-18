@@ -4,7 +4,7 @@ spring-boot开发项目遇到的Bug
 
 1、项目启动的时候，找不到mapper文件
 
-```html
+```Java
 Description:
 
 Field stuMapper in com.zb.service.impl.StuServiceImpl required a bean of type 'com.zb.mapper.StuMapper' that could not be found.
@@ -22,7 +22,7 @@ Consider defining a bean of type 'com.zb.mapper.StuMapper' in your configuration
 
 解决办法是：在启动文件里，添加@MapperScan(basePackages = "com.zb.mapper")，basePackages 是mapper所在的文件夹
 
-```js
+```java
 @SpringBootApplication
 @MapperScan(basePackages = "com.zb.mapper")
 public class Application {
@@ -52,7 +52,7 @@ setting -> Editor -> Inspections -> Spring -> Spring Core -> Code -> Autowiring 
 
 解决办法：在application.yml文件进行mybatis配置
 
-```html
+```yml
 ############################################################
 #
 # mybatis 配置

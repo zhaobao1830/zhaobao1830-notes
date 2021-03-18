@@ -75,7 +75,7 @@ formData.append('file', file3)
 ```
 
 后端Java接收代码：
-```js
+```java
 @RequestMapping(value = "upload.do")
 public void upload(@RequestParam MultipartFile[] file,String name) {
     System.out.println(Arrays.toString(file));
