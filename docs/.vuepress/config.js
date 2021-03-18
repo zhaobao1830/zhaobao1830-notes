@@ -74,7 +74,8 @@ module.exports = {
             title: 'spring-boot',
             children: [
               'java/springBoot/knowledge',
-              'java/springBoot/pagination'
+              'java/springBoot/pagination',
+              'java/springBoot/bugSummary'
             ]
           }
         ]
