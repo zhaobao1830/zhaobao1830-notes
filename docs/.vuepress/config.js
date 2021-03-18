@@ -69,7 +69,15 @@ module.exports = {
       },
       {
         title: 'Java',
-        path: '/java/'
+        children: [
+          {
+            title: 'spring-boot',
+            children: [
+              'java/springBoot/knowledge',
+              'java/springBoot/pagination'
+            ]
+          }
+        ]
       },
       {
         title: 'Js核心原理',
