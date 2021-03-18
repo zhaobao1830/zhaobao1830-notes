@@ -83,3 +83,28 @@ public void upload(@RequestParam MultipartFile[] file,String name) {
 }
 ```
 使用MultipartFile类型，如果当前参数有多个值，就用MultipartFile[]
+
+### Js相关方法
+
+将base64格式转换成Blob方法(可以把base64格式转换成Blob格式，保存到formdata里传给后端)
+
+```js
+/**
+ * 将以base64的图片url数据转换为Blob
+ */
+export function convertBase64UrlToBlob(urlData) {
+  const bytes = window.atob(urlData.split(',')[1]) // 去掉url的头，并转换为byte
+  // 处理异常,将ascii码小于0的转换为大于0
+  const ab = new ArrayBuffer(bytes.length)
+  const ia = new Uint8Array(ab)
+  for (let i = 0; i < bytes.length; i++) {
+    ia[i] = bytes.charCodeAt(i)
+  }
+
+  return new Blob([ab], {
+    type: 'image/png'
+  })
+}
+```
+
+
