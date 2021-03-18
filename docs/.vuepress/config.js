@@ -75,6 +75,7 @@ module.exports = {
             children: [
               'java/springBoot/knowledge',
               'java/springBoot/pagination',
+              'java/springBoot/swagger',
               'java/springBoot/bugSummary'
             ]
           }
