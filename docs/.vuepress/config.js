@@ -75,6 +75,12 @@ module.exports = {
         title: 'Java',
         children: [
           {
+            title: 'maven',
+            children: [
+              'java/maven/environmentalIsolation'
+            ]
+          },
+          {
             title: 'spring-boot',
             children: [
               'java/springBoot/knowledge',
