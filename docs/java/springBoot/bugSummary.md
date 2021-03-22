@@ -42,6 +42,7 @@ public class Application {
 解决办法：
 
 setting -> Editor -> Inspections -> Spring -> Spring Core -> Code -> Autowiring Bean Class 去掉选择
+
 ![Image text](../../.vuepress/public/Java/springBoot/bugSummary/01.png)
 
 3、找不到mapper里的方法
