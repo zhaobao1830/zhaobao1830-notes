@@ -77,7 +77,9 @@ module.exports = {
           {
             title: 'maven',
             children: [
-              'java/maven/environmentalIsolation'
+              'java/maven/knowledge',
+              'java/maven/environmentalIsolation',
+              'java/maven/bugSummary',
             ]
           },
           {
