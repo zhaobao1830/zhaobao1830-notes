@@ -63,3 +63,29 @@ mybatis:
   type-aliases-package: com.zb.mmallzb.pojo     # 所有POJO类所在包路径
   mapper-locations: classpath:mapper/*.xml      # mapper映射文件
 ```
+
+4、spring-boot-maven-plugin插件下载失败，是红色的
+
+解决办法：加上version，下载到本地仓库后，其他项目再使用这个插件，就不用添加version了
+
+```xml
+ <plugin>
+     <groupId>org.springframework.boot</groupId>
+     <artifactId>spring-boot-maven-plugin</artifactId>
+     <version>2.3.4.RELEASE</version>
+</plugin>
+```
+
+5、Spring Boot Configuration Annotation Processor not configured
+
+spring默认使用yml中的配置，但有时候要用传统的xml或properties配置，就需要使用spring-boot-configuration-processor了
+
+```xml
+      <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-configuration-processor</artifactId>
+          <optional>true</optional>
+      </dependency>
+```
+
+
