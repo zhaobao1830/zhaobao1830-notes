@@ -90,6 +90,12 @@ module.exports = {
               'java/springBoot/swagger',
               'java/springBoot/bugSummary'
             ]
+          },
+          {
+            title: '数据库',
+            children: [
+              'java/database/knowledge'
+            ]
           }
         ]
       },
