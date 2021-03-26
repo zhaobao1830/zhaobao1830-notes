@@ -90,12 +90,7 @@ module.exports = {
       },
       {
         title: 'Js',
-        children: [
-          {
-            title: '基石',
-            path: '/js/'
-          }
-        ]
+        path: '/js/'
       },
       {
         title: 'Git',
