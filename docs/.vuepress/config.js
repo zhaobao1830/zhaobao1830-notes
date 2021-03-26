@@ -13,22 +13,11 @@ module.exports = {
     }
   },
   themeConfig: {
+    repo: 'zhaobao1830/zhaobao1830-notes/',
     nav: [
       {
         text: '主页',
         link: '/'
-      },
-      {
-        text: 'Vue',
-        link: '/vue/'
-      },
-      {
-        text: 'React',
-        link: '/react/'
-      },
-      {
-        text: 'Java',
-        link: '/java/'
       },
       {
         text: '外网链接',
@@ -100,14 +89,11 @@ module.exports = {
         ]
       },
       {
-        title: 'Js核心原理',
+        title: 'Js',
         children: [
           {
             title: '基石',
-            children: [
-              'js/cornerstone/typeOfData',
-              'js/cornerstone/deepCopy'
-            ]
+            path: '/js/'
           }
         ]
       },
