@@ -94,6 +94,12 @@ module.exports = {
         path: '/js/'
       },
       {
+        title: 'Css',
+        children: [
+          'css/bugSummary'
+        ]
+      },
+      {
         title: 'Git',
         path: '/git/'
       },
