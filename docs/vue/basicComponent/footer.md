@@ -9,7 +9,7 @@ sidebarDepth: 2
 该组件是以vant框架的[tabbar](https://vant-contrib.gitee.io/vant/#/zh-CN/tabbar)为基础封装的
 :::
 
-![Image text](../.vuepress/public/vue/base/footer/demo.png)
+![Image text](../../.vuepress/public/vue/base/footer/demo.png)
 
 <component-block>
 

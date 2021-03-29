@@ -49,11 +49,12 @@ module.exports = {
             title: '基础组件',
             collapsable: false,
             children: [
-              'vue/loading',
-              'vue/footer',
-              'vue/scroll'
+              'vue/basicComponent/loading',
+              'vue/basicComponent/footer',
+              'vue/basicComponent/scroll',
             ]
-          }
+          },
+          'vue/bugSummary'
         ]
       },
       {
