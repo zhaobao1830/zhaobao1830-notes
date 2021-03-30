@@ -31,6 +31,15 @@ module.exports = {
             link: 'https://muyiy.cn/'
           }
         ]
+      },
+      {
+        text: '开源项目',
+        items: [
+          {
+            text: 'Java基础项目',
+            link: 'https://github.com/zhaobao1830/spbtzb'
+          }
+        ]
       }
     ],
     sidebar: [
