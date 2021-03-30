@@ -95,6 +95,12 @@ module.exports = {
             children: [
               'java/database/knowledge'
             ]
+          },
+          {
+            title: '笔记',
+            children: [
+              'java/notes/notes'
+            ]
           }
         ]
       },
