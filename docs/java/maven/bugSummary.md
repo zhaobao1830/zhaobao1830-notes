@@ -1,4 +1,4 @@
-# 项目bug总结
+# maven bug总结
 
 1、新建maven项目时报错Error:Maven Resources Compiler: Maven project configuration required for module 'XX'解决方法
 

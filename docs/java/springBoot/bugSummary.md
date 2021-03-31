@@ -1,4 +1,4 @@
-# 项目bug总结
+# spring-boot bug总结
 
 spring-boot开发项目遇到的Bug
 
@@ -88,4 +88,16 @@ spring默认使用yml中的配置，但有时候要用传统的xml或properties�
       </dependency>
 ```
 
+6、新建的yml文件不是绿色的叶子
 
+解决办法：
+
+（1）、确保IDEA是旗舰版
+
+（2）、确保IDEA安装了yaml插件
+
+（3）、选中项目 File --> Poject Structure --> Modules --> Spring --> 点击右上角的绿叶子 --> 点击+ --> 选择yml文件 --> OK
+
+![Image text](../../.vuepress/public/Java/springBoot/bugSummary/02.png)
+
+![Image text](../../.vuepress/public/Java/springBoot/bugSummary/03.png)

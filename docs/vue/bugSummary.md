@@ -1,4 +1,4 @@
-# 项目bug总结
+# vue bug总结
 
 vue开发项目遇到的bug
 
