@@ -1,0 +1,171 @@
+# tk.mybatis
+
+tk.mybatis是基于Mybatis框架开发的一个工具，通过调用它提供的方法实现对单表的数据操作，不需要写任何sql语句，这极大地提高了项目开发效率。
+
+## 使用步骤：
+
+1、pom.xml引入tk.mybatis
+
+```xml
+    <dependency>
+        <groupId>tk.mybatis</groupId>
+        <artifactId>mapper-spring-boot-starter</artifactId>
+        <version>2.1.5</version>
+    </dependency>
+```
+
+2、创建通用mapper
+
+```java
+public interface MyMapper<T> extends Mapper<T>, MySqlMapper<T> {
+}
+```
+
+3、在yml中引入通用mapper配置
+
+```yml
+############################################################
+#
+# mybatis mapper 配置
+#
+############################################################
+mapper:
+  mappers: com.zb.my.mapper.MyMapper
+  not-empty: false # 在进行数据库操作的的时候，判断表达式 username != null, 是否追加 username != ''
+  identity: MYSQL
+```
+
+## 常用方法
+
+分析MyMapper所继承的父类：
+
+```java
+interface MyMapper<T> extends Mapper<T>,MySqlMapper<T>
+```
+这里有俩个父类，```Mapper<T>和MySqlMapper<T>```
+
+先打开```MySqlMapper<T>```：
+
+```java
+interface MySqlMapper<T> extends InsertListMapper<T>, InsertUseGeneratedKeysMapper<T>
+```
+
+这里面继承了俩个mapper，从类名上可以看出来，是用于操作数据库的，这俩个类分别包含了如下方法:
+
+
+| 方法名          | 操作            | 备注            | 
+|-------------  |---------------- |---------------- |
+| insertList    | 数据批量插入 | 主键需自增    | 
+| insertUseGeneratedKeys    | 插入表数据 | 主键需自增    |
+
+::: tip 备注
+很明显，在传统JavaWeb开发中，这俩个方法使用是没有问题的，但是我们的数据库表主键设计肯定是全局唯一的，不可能 使用自增长id，所以这俩个方法在开发中是不使用的
+:::
+
+```Mapper<T>```继承的父类
+
+```java
+interface Mapper<T> extends BaseMapper<T>,ExampleMapper<T>,RowBoundsMapper<T>,
+```
+BaseMapper包含的方法
+
+<table>
+    <tr>
+        <th>类</th>
+        <th>方法</th>
+        <th>操作</th>
+    </tr>
+    <tr>
+	    <td rowspan="6">BaseSelectMapper</td>
+	    <td>T selectOne(T rend)</td>
+	    <td>根据实体类中的属性查询表数据，返回单个实体</td>
+	</tr>
+    <tr>
+        <td>List select(T record)</td>
+        <td>根据实体类中的属性查询表数据，返回list</td>
+    </tr>
+    <tr>
+        <td>List selectAll()</td>
+        <td>返回该表所有记录</td>
+    </tr>
+    <tr>
+        <td>int selectCount(T record)</td>
+        <td>根据条件查询记录数</td>
+    </tr>
+    <tr>
+        <td>T selectByPrimaryKey(Object key)</td>
+        <td>根据主键查询单条记录</td>
+    </tr>
+    <tr>
+        <td>boolean existsWithPrimaryKey(Object key)</td>
+        <td>查询主键是否存在，返回true或false</td>
+    </tr>
+    <tr>
+	    <td rowspan="2">BaseInsetMapper</td>
+	    <td>int insert(T record)</td>
+	    <td>插入一条记录，属性为空也会保存</td>
+	</tr>
+    <tr>
+	    <td>int insertSelecttive(T record)</td>
+	    <td>插入一条记录，属性为空不保存，会使用默认值</td>
+	</tr>
+    <tr>
+	    <td rowspan="2">BaseUpdateMapper</td>
+	    <td>int updateByPrimaryKey(T record)</td>
+	    <td>根据实体类更新数据库，属性有null会覆盖原记录</td>
+	</tr>
+    <tr>
+	    <td>int updateByPrimaryKeySelective(T record)</td>
+	    <td>根据实体类更新数据库，属性有null会忽略</td>
+	</tr>
+    <tr>
+	    <td rowspan="2">BaseDeleteMapper</td>
+	    <td>int delete(T record)</td>
+	    <td>根据实体类中属性多条件删除记录</td>
+	</tr>
+    <tr>
+	    <td>int deleteByPrimaryKey(T record)</td>
+	    <td>根据主键删除记录</td>
+	</tr>
+</table>
+
+```ExampleMapper<T>```,Example类是用于提供给用户实现自定义条件的，也就是where条件，主要方法见下表格：
+
+<table>
+    <tr>
+	    <td>SelectByExampleMapper</td>
+	    <td>List selectByExample(Object example)</td>
+	    <td>根据条件查询记录list</td>
+	</tr>
+    <tr>
+	    <td>SelectOneByExampleMapper</td>
+	    <td>T selectOneByExample(Object example)</td>
+	    <td>根据条件查询单条记录</td>
+	</tr>
+    <tr>
+	    <td>SelectCountByExampleMapper</td>
+	    <td>int selectCountByExample(Object example)</td>
+	    <td>根据条件查询记录数</td>
+	</tr>
+    <tr>
+	    <td>DeleteByExampleMapper</td>
+	    <td>int deleteByExample(Object example)</td>
+	    <td>根据条件删除记录</td>
+	</tr>
+    <tr>
+	    <td>UpdateByExampleMapper</td>
+	    <td>int updateByExample(T record, @Param("example") Object example)</td>
+	    <td>根据条件更新数据，null会覆盖原数据</td>
+	</tr>
+    <tr>
+	    <td>UpdateByExampleSelectiveMapper</td>
+	    <td>int updateByExampleSelective(T record, Object example)</td>
+	    <td>根据条件更新数据，null会忽略</td>
+	</tr>
+</table>
+
+```RowBoundsMapper<T>``` 分页的
+
+## 总结
+
+通用mapper所提供的的CRUD方法对单表操作，大大提高效率，当然复杂的多表操作还是需要在mapper.xml自己去编写sql代码实现

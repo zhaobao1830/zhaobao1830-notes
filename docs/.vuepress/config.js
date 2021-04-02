@@ -97,6 +97,12 @@ module.exports = {
             ]
           },
           {
+            title: 'mybatis',
+            children: [
+              'java/mybatis/tkmybatis'
+            ]
+          },
+          {
             title: '笔记',
             children: [
               'java/notes/notes'
