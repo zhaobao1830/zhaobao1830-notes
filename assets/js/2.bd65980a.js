@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{287:function(e,a){e.exports={javaSidebar:[{title:"介绍",collapsable:!1,children:["introduction/"]},{title:"maven",children:["maven/","maven/bugSummary"]},{title:"database",children:["database/knowledge"]}]}}}]);
