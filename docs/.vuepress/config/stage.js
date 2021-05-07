@@ -58,6 +58,13 @@ const vueSidebar = [
       'basicComponent/scroll'
     ]
   },
+  {
+    title: '基础方法',
+    collapsable: false,
+    children: [
+      'basicMethod/axios'
+    ]
+  },
 ]
 const javaSidebar = [
   {
@@ -111,7 +118,7 @@ const javaSidebar = [
     children: [
       'notes/notes'
     ]
-  },
+  }
 ]
 
 module.exports = {
