@@ -14,7 +14,7 @@
     "@vuepress/plugin-back-to-top": "^1.8.0",
     "@vuepress/plugin-medium-zoom": "^1.8.0",
     "element-ui": "^2.14.1",
-    "node-sass": "^5.0.0",
+    "node-sass": "^4.14.1",
     "sass-loader": "^10.1.1",
     "vant": "^2.12.1",
     "vue": "^2.6.12",
