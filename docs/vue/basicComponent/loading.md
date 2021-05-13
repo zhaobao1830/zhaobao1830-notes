@@ -95,6 +95,7 @@ const relativeCls = 'g-relative'
 const loadingDirective = {
     mounted(el, binding) {
         const app = createApp(loading)
+        // 将实例挂载到空白div上
         const instance = app.mount(document.createElement('div'))
         el.instance = instance
         const title = binding.arg
@@ -121,6 +122,8 @@ function append(el) {
     if (['absolute', 'fixed', 'relative'].indexOf(style.position) === -1) {
         addClass(el, relativeCls)
     }
+    // 将<div class='loading'></div>绑定到挂载的组件上
+    // $el 组件实例正在使用的根 DOM 元素，这里指<div class='loading'></div>
     el.appendChild(el.instance.$el)
 }
 
@@ -130,6 +133,7 @@ function remove(el) {
 }
 
 export default loadingDirective
+
 ```
 
 main.js
@@ -152,4 +156,7 @@ createApp(App).directive('loading', loadingDirective).mount('#app')
 loading：判断指令显示/隐藏
 
 loadingText：自定义title值
+
+指令中使用的API都可以在文档里找到 [文档地址](https://v3.cn.vuejs.org/api/application-api.html#directive)
+
 :::
