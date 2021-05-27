@@ -39,6 +39,10 @@ module.exports = {
           {
             text: '木易杨',
             link: 'https://muyiy.cn/'
+          },
+          {
+            text: '刀刀的知识积累',
+            link: 'https://ostask.github.io/daodao-knowledge/'
           }
         ]
       },
