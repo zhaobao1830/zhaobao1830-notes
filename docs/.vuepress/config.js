@@ -33,6 +33,10 @@ module.exports = {
         text: '外网链接',
         items: [
           {
+            text: '被删的前端游乐场',
+            link: 'http://godbasin.com/'
+          },
+          {
             text: 'helloworld',
             link: 'https://www.helloworld.net/'
           },
