@@ -55,3 +55,9 @@ fastclick.prototype.focus = function (targetElement) {
 base-scroll-list-wrapper和base-scroll-pulldown都是better-scroll封装的组件里的div，详情可以查看
 基础组件里的scroll组件
 :::
+
+3、混合开发中，安卓软键盘会遮挡输入框
+
+错误原因：（1）、组件最外层的div设置了position：fixed；（2）、输入框添加了autosize属性
+
+解决办法：组件最外层的div去掉position: fixed;输入框去掉autosize属性，这样获取焦点的时候，页面会自动被键盘顶上去
