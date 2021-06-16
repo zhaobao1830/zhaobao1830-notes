@@ -34,6 +34,13 @@ const fronKnowledgeSidebar = [
     children: [
       'css/bugSummary'
     ]
+  },
+  {
+    title: '性能优化',
+    collapsable: false,
+    children: [
+      'performance/'
+    ]
   }
 ]
 const vueSidebar = [
