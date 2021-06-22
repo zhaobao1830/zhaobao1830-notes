@@ -132,6 +132,13 @@ const takeNotesSidebar = [
       'css/02',
       'css/03'
     ]
+  },
+  {
+    title: 'vue',
+    collapsable: false,
+    children: [
+      'vue/01'
+    ]
   }
 ]
 
