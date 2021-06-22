@@ -1,5 +1,11 @@
 const stage = require('./config/stage.js')
-const { javaSidebar, jsSidebar, vueSidebar, fronKnowledgeSidebar } = stage
+const {
+  javaSidebar,
+  jsSidebar,
+  vueSidebar,
+  fronKnowledgeSidebar,
+  takeNotesSidebar
+} = stage
 module.exports = {
   title: '技术博客',
   description: '前后端常用知识、踩坑记录、封装的插件、随手笔记等',
@@ -19,19 +25,23 @@ module.exports = {
     nav: [
       {
         text: '前端知识点',
-        link: '/fronKnowledge/introduction/'
+        link: '/fronKnowledge/utils/regexp'
       },
       {
         text: 'js',
-        link: '/js/introduction/'
+        link: '/js/methods/shuffle'
       },
       {
         text: 'vue',
-        link: '/vue/introduction/'
+        link: '/vue/bugSummary'
       },
       {
         text: 'java',
-        link: '/java/introduction/'
+        link: '/java/springBoot/knowledge'
+      },
+      {
+        text: '随手笔记',
+        link: '/takeNotes/css/01'
       },
       {
         text: '外网链接',
@@ -68,7 +78,8 @@ module.exports = {
       '/java/': javaSidebar,
       '/js/': jsSidebar,
       '/vue/': vueSidebar,
-      '/fronKnowledge/': fronKnowledgeSidebar
+      '/fronKnowledge/': fronKnowledgeSidebar,
+      '/takeNotes/': takeNotesSidebar
     }
   },
   plugins: [

@@ -1,10 +1,5 @@
 const fronKnowledgeSidebar = [
   {
-    title: '介绍',
-    collapsable: false,
-    children: ['introduction/']
-  },
-  {
     title: '工具方法',
     collapsable: false,
     children: [
@@ -29,13 +24,6 @@ const fronKnowledgeSidebar = [
     ]
   },
   {
-    title: 'css',
-    collapsable: false,
-    children: [
-      'css/bugSummary'
-    ]
-  },
-  {
     title: '性能优化',
     collapsable: false,
     children: [
@@ -53,11 +41,6 @@ const jsSidebar = [
   }
 ]
 const vueSidebar = [
-  {
-    title: '介绍',
-    collapsable: false,
-    children: ['introduction/']
-  },
   {
     title: 'vue bug总结',
     collapsable: false,
@@ -91,11 +74,6 @@ const vueSidebar = [
   }
 ]
 const javaSidebar = [
-  {
-    title: '介绍',
-    collapsable: false,
-    children: ['introduction/']
-  },
   {
     title: 'springBoot',
     collapsable: false,
@@ -145,9 +123,22 @@ const javaSidebar = [
   }
 ]
 
+const takeNotesSidebar = [
+  {
+    title: 'css',
+    collapsable: false,
+    children: [
+      'css/01',
+      'css/02',
+      'css/03'
+    ]
+  }
+]
+
 module.exports = {
   fronKnowledgeSidebar,
   jsSidebar,
   vueSidebar,
-  javaSidebar
+  javaSidebar,
+  takeNotesSidebar
 }
