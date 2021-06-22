@@ -43,6 +43,15 @@ const fronKnowledgeSidebar = [
     ]
   }
 ]
+const jsSidebar = [
+  {
+    title: '通用方法',
+    collapsable: false,
+    children: [
+      'methods/shuffle'
+    ]
+  }
+]
 const vueSidebar = [
   {
     title: '介绍',
@@ -138,6 +147,7 @@ const javaSidebar = [
 
 module.exports = {
   fronKnowledgeSidebar,
+  jsSidebar,
   vueSidebar,
   javaSidebar
 }

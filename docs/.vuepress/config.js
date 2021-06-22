@@ -1,5 +1,5 @@
 const stage = require('./config/stage.js')
-const { javaSidebar, vueSidebar, fronKnowledgeSidebar } = stage
+const { javaSidebar, jsSidebar, vueSidebar, fronKnowledgeSidebar } = stage
 module.exports = {
   title: '技术博客',
   description: '前后端常用知识、踩坑记录、封装的插件、随手笔记等',
@@ -20,6 +20,10 @@ module.exports = {
       {
         text: '前端知识点',
         link: '/fronKnowledge/introduction/'
+      },
+      {
+        text: 'js',
+        link: '/js/introduction/'
       },
       {
         text: 'vue',
@@ -62,6 +66,7 @@ module.exports = {
     ],
     sidebar:{
       '/java/': javaSidebar,
+      '/js/': jsSidebar,
       '/vue/': vueSidebar,
       '/fronKnowledge/': fronKnowledgeSidebar
     }
