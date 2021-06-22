@@ -71,6 +71,13 @@ const vueSidebar = [
       'plugin/good-storage',
       'plugin/crypto-js'
     ]
+  },
+  {
+    title: '指令',
+    collapsable: false,
+    children: [
+      'directive/loading'
+    ]
   }
 ]
 const javaSidebar = [
