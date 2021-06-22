@@ -72,6 +72,14 @@ const vueSidebar = [
       'basicMethod/axios'
     ]
   },
+  {
+    title: '插件',
+    collapsable: false,
+    children: [
+      'plugin/good-storage',
+      'plugin/crypto-js'
+    ]
+  }
 ]
 const javaSidebar = [
   {
