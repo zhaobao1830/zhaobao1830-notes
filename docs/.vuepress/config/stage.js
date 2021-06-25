@@ -36,7 +36,8 @@ const jsSidebar = [
     title: '通用方法',
     collapsable: false,
     children: [
-      'methods/shuffle'
+      'methods/shuffle',
+      'methods/timeFormat'
     ]
   }
 ]
