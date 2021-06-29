@@ -147,6 +147,13 @@ const takeNotesSidebar = [
     children: [
       'vue/01'
     ]
+  },
+  {
+    title: 'http',
+    collapsable: false,
+    children: [
+      'http/01'
+    ]
   }
 ]
 
