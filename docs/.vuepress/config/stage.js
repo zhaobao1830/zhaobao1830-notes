@@ -77,7 +77,8 @@ const vueSidebar = [
     title: '指令',
     collapsable: false,
     children: [
-      'directive/loading'
+      'directive/loading',
+      'directive/permission'
     ]
   }
 ]
