@@ -7,7 +7,7 @@ sidebarDepth: 2
 
 ### vue3项目
 
-### scroll.vue
+#### scroll.vue
 
 ```vue
 <template>
@@ -51,7 +51,7 @@ sidebarDepth: 2
 
 ```
 
-### use-scroll.js
+#### use-scroll.js
 
 ```js
 import BScroll from '@better-scroll/core'
@@ -101,7 +101,7 @@ export default function useScroll(wrapperRef, options, emit) {
 
 </component-block>
 
-### Props
+#### Props
 
 | 参数          | 说明            | 类型            | 可选值                 | 默认值   |
 |-------------  |---------------- |---------------- |---------------------- |-------- |
@@ -116,7 +116,7 @@ export default function useScroll(wrapperRef, options, emit) {
 options中 better-scroll 的几个常用配置项，pullDownRefresh、pullUpLoad这三个配置即可设为 Boolean（false 关闭该功能，true 开启该功能，并使用默认子配置），也可设为Object，开启该功能并具体定制其子配置项。
 :::
 
-#### pullDownRefresh 子配置项
+##### pullDownRefresh 子配置项
 
 | 参数          | 说明            | 类型            | 可选值                 | 默认值   |
 |-------------  |---------------- |---------------- |---------------------- |-------- |
@@ -125,7 +125,7 @@ options中 better-scroll 的几个常用配置项，pullDownRefresh、pullUpLoad
 | stopTime    | 刷新成功的文案显示时间 | Number    | — | 600 |
 | txt    | 刷新成功的文案 | String    | — | 'Refresh success' |
 
-#### pullUpLoad 子配置项
+##### pullUpLoad 子配置项
 
 | 参数          | 说明            | 类型            | 可选值                 | 默认值   |
 |-------------  |---------------- |---------------- |---------------------- |-------- |
