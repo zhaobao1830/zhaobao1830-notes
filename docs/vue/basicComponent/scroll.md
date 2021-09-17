@@ -7,11 +7,49 @@ sidebarDepth: 2
 
 ### vue3项目
 
-<component-block>
+### scroll.vue
 
-<<< docs/.vuepress/components/vue/base/base-scroll3.vue
+```
+<template>
+  <div ref="rootRef">
+    <slot></slot>
+  </div>
+</template>
 
-</component-block>
+<script>
+  import useScroll from '@/components/base/scroll/use-scroll'
+  import { ref } from 'vue'
+
+  export default {
+    name: 'scroll',
+    props: {
+      click: {
+        type: Boolean,
+        default: true
+      },
+      probeType: {
+        type: Number,
+        default: 0
+      }
+    },
+    emits: ['scroll'],
+    setup(props, { emit }) {
+      const rootRef = ref(null)
+      const scroll = useScroll(rootRef, props, emit)
+
+      return {
+        rootRef,
+        scroll
+      }
+    }
+  }
+</script>
+
+<style scoped>
+
+</style>
+
+```
 
 ### use-scroll.js
 
