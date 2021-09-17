@@ -55,7 +55,8 @@ const vueSidebar = [
     children: [
       'basicComponent/loading',
       'basicComponent/footer',
-      'basicComponent/scroll'
+      'basicComponent/scroll',
+      'basicComponent/slide'
     ]
   },
   {
