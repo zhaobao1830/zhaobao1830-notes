@@ -139,7 +139,8 @@ const takeNotesSidebar = [
     children: [
       'css/01',
       'css/02',
-      'css/03'
+      'css/03',
+      'css/04'
     ]
   },
   {
