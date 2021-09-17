@@ -9,7 +9,7 @@ sidebarDepth: 2
 
 ### scroll.vue
 
-```
+```vue
 <template>
   <div ref="rootRef">
     <slot></slot>
