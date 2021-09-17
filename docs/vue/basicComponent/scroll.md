@@ -5,6 +5,53 @@ sidebarDepth: 2
 
 ## scroll滚动插件
 
+### vue3项目
+
+<component-block>
+
+<<< docs/.vuepress/components/vue/base/base-scroll3.vue
+
+</component-block>
+
+### use-scroll.js
+
+```js
+import BScroll from '@better-scroll/core'
+import ObserveDOM from '@better-scroll/observe-dom'
+import { ref, onMounted, onUnmounted } from 'vue'
+
+BScroll.use(ObserveDOM)
+
+export default function useScroll(wrapperRef, options, emit) {
+  const scroll = ref(null)
+
+  onMounted(() => {
+    const scrollVal = scroll.value = new BScroll(wrapperRef.value, {
+      observeDOM: true, // 开启 observe-dom 插件
+      ...options
+    })
+
+    // 如果probeType大于0，就会派发scroll事件，https://better-scroll.github.io/docs/zh-CN/guide/base-scroll-options.html#probetype
+    // 获取当前位置的坐标值 https://better-scroll.github.io/docs/zh-CN/guide/base-scroll-api.html#%E4%BA%8B%E4%BB%B6
+    if (options.probeType > 0) {
+      scrollVal.on('scroll', (pos) => {
+        emit('scroll', pos)
+      })
+    }
+  })
+
+  onUnmounted(() => {
+    scroll.value.destroy()
+  })
+
+  return scroll
+}
+
+```
+
+
+### vue2项目
+
 ::: tip  温馨提示
 该组件是以[better-scroll 2.0](https://better-scroll.github.io/docs/zh-CN/)为基础封装的
 包含基本的滚动、下拉加载、上拉刷新功能
@@ -47,4 +94,3 @@ options中 better-scroll 的几个常用配置项，pullDownRefresh、pullUpLoad
 | threshold    | 上拉刷新动作的上拉距离阈值 | Number    | — |0 |
 | txt    | 上拉加载的相关文案 | Object    | — | { more: '', noMore: '' } |
 | visible    | 内容不满一屏时，txt 文案是否可见 | Boolean    | — | false |
-
