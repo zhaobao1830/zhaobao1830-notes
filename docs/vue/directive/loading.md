@@ -122,6 +122,8 @@ export default function createLoadingLikeDirective(Comp) {
   }
   function append(el) {
     const name = Comp.name
+    // 如果被挂载的div的position不是absolute、fixed、relative  那就动态添加class
+    // window.getComputedStyle() 获取el的CSS属性值
     const style = getComputedStyle(el)
     if (['absolute', 'fixed', 'relative'].indexOf(style.position) === -1) {
       addClass(el, relativeCls)
