@@ -61,6 +61,10 @@ module.exports = {
           {
             text: '刀刀的知识积累',
             link: 'https://ostask.github.io/daodao-knowledge/'
+          },
+          {
+            text: '茂茂物语',
+            link: 'https://notes.fe-mm.com/'
           }
         ]
       },
