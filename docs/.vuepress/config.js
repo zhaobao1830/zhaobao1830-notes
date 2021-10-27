@@ -65,6 +65,10 @@ module.exports = {
           {
             text: '茂茂物语',
             link: 'https://notes.fe-mm.com/'
+          },
+          {
+            text: '汪图南',
+            link: 'https://wangtunan.github.io/blog/'
           }
         ]
       },
