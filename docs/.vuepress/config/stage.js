@@ -149,7 +149,8 @@ const takeNotesSidebar = [
     title: 'vue',
     collapsable: false,
     children: [
-      'vue/01'
+      'vue/01',
+      'vue/02'
     ]
   },
   {
