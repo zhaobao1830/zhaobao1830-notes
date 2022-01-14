@@ -29,6 +29,13 @@ const fronKnowledgeSidebar = [
     children: [
       'performance/'
     ]
+  },
+  {
+    title: 'eslint',
+    collapsable: false,
+    children: [
+      'eslint/'
+    ]
   }
 ]
 const jsSidebar = [
