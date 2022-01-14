@@ -61,3 +61,13 @@ base-scroll-list-wrapper和base-scroll-pulldown都是better-scroll封装的组�
 错误原因：（1）、组件最外层的div设置了position：fixed；（2）、输入框添加了autosize属性
 
 解决办法：组件最外层的div去掉position: fixed;输入框去掉autosize属性，这样获取焦点的时候，页面会自动被键盘顶上去
+
+4、babel-eslint 8版本以上会报token.type.endsWith is not a function vue eslint错误
+
+错误原因：babel-eslint包已经不维护了
+
+解决办法：（1）、换成@babel/eslint-parser包；（2）、在.eslintrc.js文件添加
+
+parserOptions: {
+  parser: '@babel/eslint-parser'
+}
