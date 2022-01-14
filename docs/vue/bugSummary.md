@@ -66,7 +66,9 @@ base-scroll-list-wrapper和base-scroll-pulldown都是better-scroll封装的组�
 
 错误原因：babel-eslint包已经不维护了
 
-解决办法：（1）、换成@babel/eslint-parser包；（2）、在.eslintrc.js文件添加
+解决办法：（1）、换成@babel/eslint-parser包；
+
+（2）、在.eslintrc.js文件添加
 
 parserOptions: {
   parser: '@babel/eslint-parser'
