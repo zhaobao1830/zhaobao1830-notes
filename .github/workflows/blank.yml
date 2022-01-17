@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy: (可选)
       matrix:
-        node-version: [ 14.17.5 ] # 配置所需node版本
+        node-version: [14.17.5] # 配置所需node版本
     steps:
       # 拉取代码
       - name: Checkout
