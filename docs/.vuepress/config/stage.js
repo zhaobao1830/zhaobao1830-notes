@@ -3,7 +3,8 @@ const fronKnowledgeSidebar = [
     title: '工具方法',
     collapsable: false,
     children: [
-      'utils/regexp'
+      'utils/regexp',
+      'utils/method'
     ]
   },
   {
