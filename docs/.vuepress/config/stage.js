@@ -89,7 +89,14 @@ const vueSidebar = [
       'directive/loading',
       'directive/permission'
     ]
-  }
+  },
+  {
+    title: 'eslint配置',
+    collapsable: false,
+    children: [
+      'eslint'
+    ]
+  },
 ]
 const javaSidebar = [
   {
