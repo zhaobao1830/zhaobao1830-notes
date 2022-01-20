@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /home.webp
+heroImage: /home.jpg
 actionText: 快速上手 →
 actionLink: /fronKnowledge/utils/regexp
 features:
