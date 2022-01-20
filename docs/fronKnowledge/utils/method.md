@@ -112,3 +112,56 @@ const isWeChat = /micromessenger/.test(UA)
 // 移动端
 const isMobile = 'ontouchstart' in window
 ```
+
+## 普通数组转换为tree数组
+
+```js
+// 将普通数组转换为tree数组
+export function transData (a, idStr, pidStr, chindrenStr) {
+  const r = []
+  const hash = {}
+  const id = idStr
+  const pid = pidStr
+  const children = chindrenStr
+  let i = 0
+  let j = 0
+  const len = a.length
+  for (; i < len; i++) {
+    hash[a[i][id]] = a[i]
+  }
+  for (; j < len; j++) {
+    const aVal = a[j]
+    const hashVP = hash[aVal[pid]]
+    if (hashVP) {
+      !hashVP[children] && (hashVP[children] = [])
+      hashVP[children].push(aVal)
+    } else {
+      r.push(aVal)
+    }
+  }
+  return r
+}
+```
+
+例子：
+
+this.navDataList：
+
+![Image text](../../.vuepress/public/fronKnowledge/utils/method/01.png)
+
+```js
+this.navList = transData(JSON.parse(JSON.stringify(this.navDataList)), 'id', 'parentId', 'children')
+```
+参数说明：
+
+第一个参数是要转换的数组，要转变为json字符串
+
+第二个参数是数组里的id，用来区别每个元素
+
+第三个参数是元素对应的父元素的id值
+
+第四个参数是父元素中子元素的名称
+
+返回结果：
+
+![Image text](../../.vuepress/public/fronKnowledge/utils/method/02.png)
