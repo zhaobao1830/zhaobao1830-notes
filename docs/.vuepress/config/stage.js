@@ -51,13 +51,6 @@ const jsSidebar = [
 ]
 const vueSidebar = [
   {
-    title: 'vue bug总结',
-    collapsable: false,
-    children: [
-      'bugSummary'
-    ]
-  },
-  {
     title: '基础组件',
     collapsable: false,
     children: [
@@ -163,7 +156,11 @@ const takeNotesSidebar = [
     title: 'vue',
     children: [
       'vue/01',
-      'vue/02'
+      'vue/02',
+      'vue/03',
+      'vue/04',
+      'vue/05',
+      'vue/06'
     ]
   },
   {
