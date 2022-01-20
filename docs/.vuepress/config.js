@@ -33,7 +33,7 @@ module.exports = {
       },
       {
         text: 'vue',
-        link: '/vue/bugSummary'
+        link: '/vue/basicComponent/loading'
       },
       {
         text: 'java',
