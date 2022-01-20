@@ -96,13 +96,6 @@ module.exports = {
   },
   plugins: [
     // 回到顶部
-    '@vuepress/back-to-top',
-
-    // 放大
-    ['@vuepress/medium-zoom',
-      {
-        selector: 'img'
-      }
-    ]
+    '@vuepress/back-to-top'
   ]
 }
