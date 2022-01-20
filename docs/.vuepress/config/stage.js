@@ -152,7 +152,6 @@ const javaSidebar = [
 const takeNotesSidebar = [
   {
     title: 'css',
-    collapsable: false,
     children: [
       'css/01',
       'css/02',
@@ -162,7 +161,6 @@ const takeNotesSidebar = [
   },
   {
     title: 'vue',
-    collapsable: false,
     children: [
       'vue/01',
       'vue/02'
@@ -170,9 +168,14 @@ const takeNotesSidebar = [
   },
   {
     title: 'http',
-    collapsable: false,
     children: [
       'http/01'
+    ]
+  },
+  {
+    title: 'webstorm',
+    children: [
+      'webstorm/01'
     ]
   }
 ]
