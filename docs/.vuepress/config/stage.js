@@ -174,6 +174,12 @@ const takeNotesSidebar = [
     children: [
       'webstorm/01'
     ]
+  },
+  {
+    title: 'android',
+    children: [
+      'android/01'
+    ]
   }
 ]
 
