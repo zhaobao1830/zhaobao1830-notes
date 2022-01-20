@@ -160,7 +160,8 @@ const takeNotesSidebar = [
       'vue/03',
       'vue/04',
       'vue/05',
-      'vue/06'
+      'vue/06',
+      'vue/07'
     ]
   },
   {
