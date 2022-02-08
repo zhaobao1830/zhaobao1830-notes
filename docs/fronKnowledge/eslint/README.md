@@ -40,3 +40,13 @@ module.exports = {
 };
 
 ```
+
+::: tip 温馨提示
+需安装插件 @babel/eslint-parser
+
+安装方式：
+
+$ npm install eslint @babel/core @babel/eslint-parser --save-dev
+# or
+$ yarn add eslint @babel/core @babel/eslint-parser -D
+:::
