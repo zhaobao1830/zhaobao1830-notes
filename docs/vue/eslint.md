@@ -22,7 +22,9 @@ module.exports = {
       }
     ],
     indent: ["error", 2],
-    semi: ["error", "never"] // 无分号
+    semi: ["error", "never"], // 无分号
+    'camelcase': 0, // 忽略强制驼峰命名
+    "no-trailing-spaces": 0 // 忽略语句后面出现的空格
   },
   overrides: [
     {

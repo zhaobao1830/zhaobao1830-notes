@@ -179,6 +179,12 @@ const takeNotesSidebar = [
     ]
   },
   {
+    title: 'eslint',
+    children: [
+      'eslint/01'
+    ]
+  },
+  {
     title: 'android',
     children: [
       'android/01'
