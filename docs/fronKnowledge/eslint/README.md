@@ -47,6 +47,6 @@ module.exports = {
 安装方式：
 
 $ npm install eslint @babel/core @babel/eslint-parser --save-dev
-# or
+
 $ yarn add eslint @babel/core @babel/eslint-parser -D
 :::
