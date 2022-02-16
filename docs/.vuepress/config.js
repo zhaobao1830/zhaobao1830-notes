@@ -73,6 +73,10 @@ module.exports = {
           {
             text: 'Vue.js 技术揭秘',
             link: 'https://ustbhuangyi.github.io/vue-analysis/'
+          },
+          {
+            text: '斌',
+            link: 'https://idenet.github.io/blog/'
           }
         ]
       },
