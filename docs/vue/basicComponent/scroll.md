@@ -5,9 +5,14 @@ sidebarDepth: 2
 
 ## scroll滚动插件
 
-### vue3项目
+### vue3 基本滚动
 
 #### scroll.vue
+
+::: tip  温馨提示
+该组件是以[better-scroll 2.0](https://better-scroll.github.io/docs/zh-CN/)为基础封装的
+包含基本的滚动功能
+:::
 
 ```vue
 <template>
@@ -87,6 +92,523 @@ export default function useScroll(wrapperRef, options, emit) {
 
 ```
 
+### vue3 下拉加载、上拉刷新
+
+::: tip  温馨提示
+该组件是以[better-scroll 2.0](https://better-scroll.github.io/docs/zh-CN/)为基础封装的
+包含下拉加载、上拉刷新功能
+:::
+
+#### scrollPullUpDown.vue
+
+```vue
+<template>
+  <div
+    ref="scrollWrapperRef"
+    class="scroll-pull-up-down"
+  >
+    <div class="scroll-pull-up-down-content">
+      <div ref="listWrapperRef" class="scroll-list-wrapper">
+        <slot>
+        </slot>
+      </div>
+      <slot name="pullup" :pullUpLoad="pullUpLoad" :isPullUpLoad="isPullUpLoad">
+        <div class="scroll-pullup-wrapper" v-if="pullUpLoad && data.length > 0">
+          <div class="before-trigger" v-if="!isPullUpLoad">
+            <span>{{pullUpTxt}}</span>
+          </div>
+          <div class="after-trigger" v-else>
+            <span class="pullup-txt">加载中...</span>
+          </div>
+        </div>
+      </slot>
+    </div>
+    <div
+      v-if="pullDownRefresh"
+      class="scroll-pulldown"
+      >
+      <slot
+        name="pulldown"
+        :pullDownRefresh="pullDownRefresh"
+        :pullDownStyle="pullDownStyle"
+        :beforePullDown="beforePullDown"
+        :isPullingDown="isPullingDown"
+      >
+        <div class="scroll-pulldown-wrapper" ref="pulldownWrapperRef" :style="pullDownStyle">
+          <div class="before-trigger" v-show="beforePullDown">
+            <van-icon name="down"/>
+          </div>
+          <div class="after-trigger" v-show="!beforePullDown">
+            <div v-show="isPullingDown" class="loading">
+              <span>刷新中...</span>
+            </div>
+            <div v-show="!isPullingDown" class="scroll-pulldown-loaded">
+              <span>{{refreshTxt}}</span>
+            </div>
+          </div>
+        </div>
+      </slot>
+    </div>
+  </div>
+</template>
+
+<script setup>
+  import { defineProps, defineEmits, nextTick, onMounted, ref, watch, onActivated, onDeactivated, defineExpose } from 'vue'
+  import usePullDown from './use-pullDown'
+  import usePullUp from './use-pullUp'
+  import BScroll from '@better-scroll/core'
+  import PullDown from '@better-scroll/pull-down'
+  import PullUp from '@better-scroll/pull-up'
+  import { getRect } from '@/core/utils/dom'
+  import { USE_TRANSITION } from '@/core/bscroll/constants'
+
+  BScroll.use(PullDown)
+  BScroll.use(PullUp)
+
+  const DEFAULT_STOP_TIME = 600
+
+  const props = defineProps({
+    data: {
+      type: Array,
+      default() {
+        return []
+      }
+    },
+    options: {
+      type: Object,
+      default() {
+        return {}
+      }
+    },
+    refreshDelay: {
+      type: Number,
+      default: 20
+    }
+  })
+
+  const isPullDownUpdating = ref(false)
+
+  const scroll = ref(null)
+
+  const scrollWrapperRef = ref(null)
+
+  const emit = defineEmits(['pulling-down', 'pulling-up'])
+
+  const {
+    pulldownWrapperRef,
+    pullDownRefresh,
+    refreshTxt,
+    isPullingDown,
+    pullDownStyle,
+    beforePullDown,
+
+    _onPullDownRefresh,
+    _pullDownRefreshChangeHandler,
+    _waitResetPullDown
+  } = usePullDown(scroll, props, emit, _calculateMinHeight)
+
+  const {
+    listWrapperRef,
+    isPullUpLoad,
+    pullUpLoad,
+    pullUpHeight,
+    pullUpTxt,
+    pullUpNoMore,
+
+    _onPullUpLoad,
+    _pullUpLoadChangeHandler
+  } = usePullUp(scroll, props, emit, _calculateMinHeight)
+
+  onMounted(async () => {
+    await nextTick()
+    initBscroll()
+  })
+
+  // setup内部的资源是私有的 使用defineExpose可以将资源显示暴露 供父组件调用
+  defineExpose({
+    forceUpdate
+  })
+
+  watch(() => props.data, () => {
+    setTimeout(() => {
+      forceUpdate(true)
+    }, props.refreshDelay)
+  })
+
+  onActivated(() => {
+    enable()
+  })
+
+  onDeactivated(() => {
+    disable()
+  })
+
+  function initBscroll() {
+    if (!scrollWrapperRef.value) {
+      return
+    }
+    _calculateMinHeight()
+    const dynamicOptions = {
+      scrollY: true,
+      click: true,
+      probeType: 1,
+      useTransition: USE_TRANSITION
+    }
+    const options = Object.assign({}, dynamicOptions, props.options)
+    scroll.value = new BScroll(scrollWrapperRef.value, options)
+
+    if (pullDownRefresh.value) {
+      _onPullDownRefresh()
+      _pullDownRefreshChangeHandler()
+    }
+
+    if (pullUpLoad.value) {
+      _onPullUpLoad()
+      _pullUpLoadChangeHandler()
+    }
+  }
+
+  function _calculateMinHeight() {
+    const pullUpLoadVal = pullUpLoad.value
+    const pullDownRefreshVal = pullDownRefresh.value
+    let minHeight = 0
+    if (pullDownRefreshVal || pullUpLoadVal) {
+      const wrapperHeight = getRect(scrollWrapperRef.value).height
+      minHeight = wrapperHeight + 1
+      if (pullUpLoadVal && pullUpLoadVal.visible) {
+        minHeight -= pullUpHeight.value
+      }
+    }
+    listWrapperRef.value.style.minHeight = `${minHeight}px`
+  }
+
+  async function forceUpdate(dirty = false, nomore = false) {
+    if (isPullDownUpdating.value) {
+      return
+    }
+    if (pullDownRefresh.value && isPullingDown.value) {
+      isPullingDown.value = false
+      isPullDownUpdating.value = true
+      await _waitFinishPullDown()
+      isPullDownUpdating.value = false
+      await _waitResetPullDown(dirty)
+    } else if (pullUpLoad.value && isPullUpLoad.value) {
+      isPullUpLoad.value = false
+      scroll.value.finishPullUp()
+      pullUpNoMore.value = !dirty || nomore
+    }
+
+    dirty && refresh()
+  }
+
+  function _waitFinishPullDown(next) {
+    const { stopTime = DEFAULT_STOP_TIME } = pullDownRefresh.value
+    return new Promise(resolve => {
+      setTimeout(() => {
+        scroll.value.finishPullDown()
+        resolve()
+      }, stopTime)
+    })
+  }
+
+  function disable() {
+    scroll.value && scroll.value.disable()
+  }
+
+  function enable() {
+    scroll.value && scroll.value.enable()
+  }
+
+  function refresh() {
+    _calculateMinHeight()
+    scroll.value && scroll.value.refresh()
+  }
+</script>
+
+<style scoped lang="scss">
+  .scroll-pull-up-down{
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    .scroll-pull-up-down-content{
+      position: relative;
+      z-index: 1;
+      .scroll-list-wrapper{
+        overflow: hidden;
+      }
+      .scroll-pullup-wrapper{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .before-trigger{
+          padding: 22px 0;
+          min-height: 1em;
+        }
+        .after-trigger{
+          padding: 19px 0;
+        }
+      }
+    }
+    .scroll-pulldown{
+      .scroll-pulldown-wrapper{
+        position: absolute;
+        width: 100%;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all;
+        overflow: hidden;
+        .before-trigger{
+          height: 54px;
+          line-height: 0;
+          padding-top: 6px
+        }
+        .after-trigger{
+          .loading {
+            padding: 8px 0;
+            font-size: 14px;
+          }
+          .scroll-pulldown-loaded{
+            padding: 8px 0;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+</style>
+
+```
+
+#### use-pullDown.js
+
+```js
+import { computed, nextTick, ref, watch } from 'vue'
+import { getRect } from '@/core/utils/dom'
+
+export default function usePullDown(scroll, props, emit, _calculateMinHeight) {
+  const DEFAULT_REFRESH_TXT = '刷新成功'
+
+  const pulldownWrapperRef = ref(null)
+
+  const beforePullDown = ref(true)
+  const pullDownStop = ref(40)
+  const isPullingDown = ref(false)
+  const pullDownStyle = ref('')
+  const pullDownHeight = ref(60)
+  const resetPullDownTimer = ref(null)
+
+  const pullDownRefresh = computed(() => {
+    let pullDownRefresh = props.options.pullDownRefresh
+    if (!pullDownRefresh) {
+      return pullDownRefresh
+    }
+    if (pullDownRefresh === true) {
+      pullDownRefresh = {}
+    }
+    return Object.assign({
+      stop: pullDownStop.value
+    }, pullDownRefresh)
+  })
+
+  const refreshTxt = computed(() => {
+    const pullDownRefreshVal = pullDownRefresh.value
+    return (pullDownRefreshVal && pullDownRefreshVal.txt) || DEFAULT_REFRESH_TXT
+  })
+
+  watch(pullDownRefresh, (newVal, oldVal) => {
+    if (newVal) {
+      scroll.value.openPullDown(newVal)
+      if (!oldVal) {
+        _onPullDownRefresh()
+        _pullDownRefreshChangeHandler()
+      }
+    }
+
+    if (!newVal && oldVal) {
+      scroll.value.closePullDown()
+      _offPullDownRefresh()
+      _pullDownRefreshChangeHandler()
+    }
+  }, {
+    deep: true
+  })
+
+  function _onPullDownRefresh() {
+    scroll.value.on('pullingDown', _pullDownHandle)
+    scroll.value.on('scroll', _pullDownScrollHandle)
+  }
+
+  function _pullDownHandle() {
+    if (resetPullDownTimer.value) {
+      clearTimeout(resetPullDownTimer.value)
+    }
+    beforePullDown.value = false
+    isPullingDown.value = true
+    emit('pulling-down')
+  }
+
+  async function _pullDownRefreshChangeHandler() {
+    await nextTick()
+    _getPullDownEleHeight()
+    _calculateMinHeight()
+  }
+
+  function _offPullDownRefresh() {
+    scroll.value.off('pullingDown', _pullDownHandle)
+    scroll.value.off('scroll', _pullDownScrollHandle)
+  }
+
+  function _pullDownScrollHandle(pos) {
+    if (beforePullDown.value) {
+      pullDownStyle.value = `top:${Math.min(pos.y - pullDownHeight.value, 0)}px`
+    } else {
+      pullDownStyle.value = `top:${Math.min(pos.y - pullDownStop.value, 0)}px`
+    }
+  }
+
+  async function _getPullDownEleHeight() {
+    const pulldownWrapper = pulldownWrapperRef.value
+    if (!pulldownWrapper) {
+      return
+    }
+    pullDownHeight.value = getRect(pulldownWrapper).height
+    beforePullDown.value = false
+    isPullingDown.value = true
+    await nextTick()
+    pullDownStop.value = getRect(pulldownWrapper).height
+    beforePullDown.value = true
+    isPullingDown.value = false
+  }
+
+  function _waitResetPullDown(dirty) {
+    return new Promise(resolve => {
+      resetPullDownTimer.value = setTimeout(() => {
+        pullDownStyle.value = `top: -${pullDownHeight.value}px`
+        beforePullDown.value = true
+        resolve()
+      }, scroll.value.options.bounceTime)
+    })
+  }
+
+  return {
+    pulldownWrapperRef,
+    pullDownRefresh,
+    refreshTxt,
+    isPullingDown,
+    pullDownStyle,
+    beforePullDown,
+
+    _onPullDownRefresh,
+    _pullDownRefreshChangeHandler,
+    _waitResetPullDown
+  }
+}
+
+```
+
+#### use-pullUp.js
+
+```js
+import { computed, nextTick, ref, watch } from 'vue'
+import { getRect } from '@/core/utils/dom'
+
+export default function usePullUp(scroll, props, emit, _calculateMinHeight) {
+  const listWrapperRef = ref(null)
+
+  const isPullUpLoad = ref(false)
+  const pullUpHeight = ref(0)
+  const pullUpNoMore = ref(false)
+
+  const pullUpLoad = computed(() => {
+    return props.options.pullUpLoad
+  })
+
+  const pullUpTxt = computed(() => {
+    const pullUpLoadVal = pullUpLoad.value
+    const txt = pullUpLoadVal && pullUpLoadVal.txt
+    const moreTxt = (txt && txt.more) || ''
+    const noMoreTxt = (txt && txt.noMore) || ''
+
+    return pullUpNoMore.value ? noMoreTxt : moreTxt
+  })
+
+  watch(pullUpLoad, (newVal, oldVal) => {
+    if (newVal) {
+      scroll.value.openPullUp(newVal)
+      if (!oldVal) {
+        _onPullUpLoad()
+        _pullUpLoadChangeHandler()
+      }
+    }
+
+    if (!newVal && oldVal) {
+      scroll.value.closePullUp()
+      _offPullUpLoad()
+      _pullUpLoadChangeHandler()
+    }
+  }, {
+    deep: true
+  })
+
+  function _onPullUpLoad() {
+    scroll.value.on('pullingUp', _pullUpHandle)
+  }
+  function _offPullUpLoad() {
+    scroll.value.off('pullingUp', _pullUpHandle)
+  }
+
+  function _pullUpHandle() {
+    isPullUpLoad.value = true
+    emit('pulling-up')
+  }
+
+  function _pullUpLoadChangeHandler() {
+    nextTick(() => {
+      _getPullUpEleHeight()
+      _calculateMinHeight()
+    })
+  }
+
+  function _getPullUpEleHeight() {
+    const listWrapper = listWrapperRef.value
+    const pullup = listWrapper.nextElementSibling
+    if (!pullup) {
+      pullUpHeight.value = 0
+      return
+    }
+    pullUpHeight.value = getRect(pullup).height
+  }
+
+  return {
+    listWrapperRef,
+    isPullUpLoad,
+    pullUpLoad,
+    pullUpHeight,
+    pullUpNoMore,
+    pullUpTxt,
+
+    _onPullUpLoad,
+    _pullUpLoadChangeHandler
+  }
+}
+
+```
+使用插件
+
+"@better-scroll/core": "^2.4.2"
+
+"@better-scroll/observe-dom": "^2.4.2"
+
+"@better-scroll/pull-down": "^2.1.1"
+
+"@better-scroll/pull-up": "^2.1.1"
+
+::: tip 温馨提示
+  父组件使用当前插件的时候，外层的高度样式需设定：position: absolute;width: 100%;top: 85px; bottom: 0; overflow: hidden;
+:::
 
 ### vue2项目
 
