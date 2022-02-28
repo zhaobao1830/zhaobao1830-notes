@@ -92,6 +92,20 @@ export default function useScroll(wrapperRef, options, emit) {
 
 ```
 
+使用
+
+```html
+<scroll class="home-container">
+  <div>
+    这里面就是展示的内容
+  </div>
+</scroll>
+```
+
+::: tip  特别提示
+  使用的时候，home-container要固定高度，且子元素只能有一个
+:::
+
 ### vue3 下拉加载、上拉刷新
 
 ::: tip  温馨提示
@@ -606,8 +620,25 @@ export default function usePullUp(scroll, props, emit, _calculateMinHeight) {
 
 "@better-scroll/pull-up": "^2.1.1"
 
-::: tip 温馨提示
-  父组件使用当前插件的时候，外层的高度样式需设定：position: absolute;width: 100%;top: 85px; bottom: 0; overflow: hidden;
+使用
+
+```html
+<div class="ha-list">
+  <scroll-pull-up-down
+          :data="patientList"
+          :options="options"
+          @pulling-down="onPullingDown"
+          @pulling-up="onPullingUp"
+          ref="scroll"
+  >
+    <ul class="ha-ul"
+    </ul>
+  </scroll-pull-up-down>
+</div>
+```
+
+::: tip  特别提示
+使用的时候，ha-list要固定高度，内部是scroll-pull-up-down组件，再内部是展示的数据，但只能有一个子元素
 :::
 
 ### vue2项目
