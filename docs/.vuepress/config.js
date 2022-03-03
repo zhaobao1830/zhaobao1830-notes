@@ -75,6 +75,10 @@ module.exports = {
             link: 'https://ustbhuangyi.github.io/vue-analysis/'
           },
           {
+            text: 'yqwoshuai',
+            link: 'https://yqwoshuai.github.io/note/'
+          },
+          {
             text: '斌',
             link: 'https://idenet.github.io/blog/'
           }
