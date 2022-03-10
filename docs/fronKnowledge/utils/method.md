@@ -165,3 +165,18 @@ this.navList = transData(JSON.parse(JSON.stringify(this.navDataList)), 'id', 'pa
 返回结果：
 
 ![Image text](../../.vuepress/public/fronKnowledge/utils/method/02.png)
+
+## 获取url中的参数
+
+```vue
+// 获取url参数 name 要获取的参数名
+    getQueryString(name) {
+      const reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)')
+      const r = decodeURI(window.location.search).substr(1).match(reg)
+      if (r !== null) {
+        return unescape(r[2])
+      } else {
+        return ''
+      }
+    }
+```
