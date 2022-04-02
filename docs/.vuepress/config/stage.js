@@ -149,7 +149,9 @@ const takeNotesSidebar = [
       'css/01',
       'css/02',
       'css/03',
-      'css/04'
+      'css/04',
+      'css/05',
+      'css/06'
     ]
   },
   {
