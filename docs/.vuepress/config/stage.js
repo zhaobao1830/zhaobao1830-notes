@@ -37,6 +37,13 @@ const fronKnowledgeSidebar = [
     children: [
       'eslint/'
     ]
+  },
+  {
+    title: 'nvm',
+    collapsable: false,
+    children: [
+      'nvm/'
+    ]
   }
 ]
 const jsSidebar = [
