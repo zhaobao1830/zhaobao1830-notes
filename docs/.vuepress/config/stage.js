@@ -44,6 +44,13 @@ const fronKnowledgeSidebar = [
     children: [
       'nvm/'
     ]
+  },
+  {
+    title: 'webstorm',
+    collapsable: false,
+    children: [
+      'webstorm/'
+    ]
   }
 ]
 const jsSidebar = [
