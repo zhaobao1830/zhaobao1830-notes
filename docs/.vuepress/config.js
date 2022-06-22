@@ -90,6 +90,10 @@ module.exports = {
           {
             text: 'Java基础项目',
             link: 'https://github.com/zhaobao1830/spbtzb'
+          },
+          {
+            text: 'Vite基础项目',
+            link: 'https://github.com/zhaobao1830/spbtzb'
           }
         ]
       }
