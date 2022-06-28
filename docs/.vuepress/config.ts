@@ -1,6 +1,4 @@
 const { searchPlugin } = require('@vuepress/plugin-search')
-const { backToTopPlugin } = require('@vuepress/plugin-back-to-top')
-const { mediumZoomPlugin } = require('@vuepress/plugin-medium-zoom')
 const { defaultTheme } = require('vuepress')
 
 const stage = require('./config/stage.ts')
@@ -119,11 +117,6 @@ module.exports = {
           placeholder: '搜索',
         }
       }
-    }),
-    // 回到顶部
-    backToTopPlugin(),
-    mediumZoomPlugin({
-      // 配置项
     })
   ]
 }
