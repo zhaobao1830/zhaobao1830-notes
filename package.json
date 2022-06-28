@@ -11,12 +11,13 @@
     "@better-scroll/core": "^2.1.1",
     "@better-scroll/pull-down": "^2.1.1",
     "@better-scroll/pull-up": "^2.1.1",
-    "@vuepress/plugin-back-to-top": "^1.8.0",
-    "@vuepress/plugin-medium-zoom": "^1.8.0",
-    "vue": "^2.6.12",
-    "vuepress": "^1.8.0"
+    "@vuepress/plugin-back-to-top": "^2.0.0-beta.48",
+    "@vuepress/plugin-medium-zoom": "^2.0.0-beta.48",
+    "@vuepress/plugin-search": "^2.0.0-beta.48",
+    "vuepress": "^2.0.0-beta.22"
   },
   "dependencies": {
+    "@vuepress/theme-default": "^1.9.7",
     "async-validator": "1.11.5",
     "vue-server-renderer": "^2.6.14"
   }

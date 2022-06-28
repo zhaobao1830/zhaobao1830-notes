@@ -1,4 +1,9 @@
-const stage = require('./config/stage.js')
+const { searchPlugin } = require('@vuepress/plugin-search')
+const { backToTopPlugin } = require('@vuepress/plugin-back-to-top')
+const { mediumZoomPlugin } = require('@vuepress/plugin-medium-zoom')
+const { defaultTheme } = require('vuepress')
+
+const stage = require('./config/stage.ts')
 const {
   javaSidebar,
   jsSidebar,
@@ -6,6 +11,7 @@ const {
   fronKnowledgeSidebar,
   takeNotesSidebar
 } = stage
+
 module.exports = {
   title: '技术博客',
   description: '前后端常用知识、踩坑记录、封装的插件、随手笔记等',
@@ -20,9 +26,9 @@ module.exports = {
       description: '前后端常用知识、踩坑记录、封装的插件、随手笔记等'
     }
   },
-  themeConfig: {
+  theme: defaultTheme({
     repo: 'zhaobao1830/zhaobao1830-notes/',
-    nav: [
+    navbar: [
       {
         text: '前端知识点',
         link: '/fronKnowledge/utils/regexp'
@@ -45,7 +51,7 @@ module.exports = {
       },
       {
         text: '外网链接',
-        items: [
+        children: [
           {
             text: '被删的前端游乐场',
             link: 'http://godbasin.com/'
@@ -86,7 +92,7 @@ module.exports = {
       },
       {
         text: '开源项目',
-        items: [
+        children: [
           {
             text: 'Java基础项目',
             link: 'https://github.com/zhaobao1830/spbtzb'
@@ -98,16 +104,26 @@ module.exports = {
         ]
       }
     ],
-    sidebar:{
+    sidebar: {
       '/java/': javaSidebar,
       '/js/': jsSidebar,
       '/vue/': vueSidebar,
       '/fronKnowledge/': fronKnowledgeSidebar,
       '/takeNotes/': takeNotesSidebar
     }
-  },
+  }),
   plugins: [
+    searchPlugin({
+      locales: {
+        '/': {
+          placeholder: '搜索',
+        }
+      }
+    }),
     // 回到顶部
-    '@vuepress/back-to-top'
+    backToTopPlugin(),
+    mediumZoomPlugin({
+      // 配置项
+    })
   ]
 }
