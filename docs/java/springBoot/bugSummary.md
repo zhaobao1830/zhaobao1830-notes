@@ -37,7 +37,7 @@ public class Application {
 
 出现红色的下划线
 
-<font color=red>private StuMapper stuMapper; </font> 
+<div color=red>private StuMapper stuMapper; </div> 
 
 解决办法：
 
@@ -47,7 +47,7 @@ setting -> Editor -> Inspections -> Spring -> Spring Core -> Code -> Autowiring 
 
 3、找不到mapper里的方法
 
-<font color=red>org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.zb.mmallzb.dao.UserMapper.checkUsername</font>
+<div color=red>org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.zb.mmallzb.dao.UserMapper.checkUsername</div>
 
 原因：缺少mybatis的相关配置
 
