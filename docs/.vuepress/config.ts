@@ -16,7 +16,7 @@ module.exports = {
   dest: './dist', // 设置输出目录
   // 这里与https://zhaobao1830.github.io/zhaobao1830-notes/中的zhaobao1830-notes一致，
   // 如果网站是https://zhaobao1830.github.io/，那base值就是/
-  base: '/zhaobao1830-notes/',
+  base: '/',
   locales: {
     '/': {
       lang: 'zh-CN',
