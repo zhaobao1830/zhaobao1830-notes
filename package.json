@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "vuepress dev docs",
-    "build": "vuepress build docs"
+    "build": "vuepress build docs",
+    "build:github": "cross-env BUILD_ENV=/zhaobao1830-notes/ npm run build"
   },
   "devDependencies": {
     "@better-scroll/core": "^2.1.1",
