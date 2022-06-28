@@ -450,7 +450,7 @@
     vue "^3.2.36"
     vue-router "^4.0.15"
 
-"@vuepress/plugin-back-to-top@2.0.0-beta.48", "@vuepress/plugin-back-to-top@^2.0.0-beta.48":
+"@vuepress/plugin-back-to-top@2.0.0-beta.48":
   version "2.0.0-beta.48"
   resolved "https://registry.npmmirror.com/@vuepress/plugin-back-to-top/-/plugin-back-to-top-2.0.0-beta.48.tgz#f5dc5387fbf731af6b17905c646c9388352d79cc"
   integrity sha512-TYmtNnE+WoKbI1DnUzKGEprp5CVfvisuZCOi0coEA4g1jrSoEX6hgO4i+k8621ZBmpIdmIhI2+saoVdqN2duUw==
@@ -495,7 +495,7 @@
     "@vuepress/utils" "2.0.0-beta.48"
     execa "^5.1.1"
 
-"@vuepress/plugin-medium-zoom@2.0.0-beta.48", "@vuepress/plugin-medium-zoom@^2.0.0-beta.48":
+"@vuepress/plugin-medium-zoom@2.0.0-beta.48":
   version "2.0.0-beta.48"
   resolved "https://registry.npmmirror.com/@vuepress/plugin-medium-zoom/-/plugin-medium-zoom-2.0.0-beta.48.tgz#8665d58c67116ecfdcbce22079bfde1c509a32d0"
   integrity sha512-CQIJo/ndHYjrOBwyzp4TP6AfwNGi1aae9BATlIyXl/xxFqX4hD7DN6JqYJ78tbgPMCU5I3H5UY1RNd6dfV4T+A==
@@ -548,6 +548,19 @@
   integrity sha512-MLpbUVGLxaaHEwflFxvy0pF9gypFVUT3Q9Zc6maWE+0HDWAvzMxo6GBaj6mQPwjOqNQMf4QcN3hDzAZktA+DQg==
   dependencies:
     "@vuepress/types" "1.9.7"
+
+"@vuepress/plugin-search@^2.0.0-beta.48":
+  version "2.0.0-beta.48"
+  resolved "https://registry.npmmirror.com/@vuepress/plugin-search/-/plugin-search-2.0.0-beta.48.tgz#0bd99542148b430d580d920a318e203541cbdf2c"
+  integrity sha512-1ADG3Zw6CBwERiW5l3spoONrHT6pcOGzlEiOhjAEYcOv7edzaoGQTahpgGvCXiXY5b11Z9bsr13NgCgr0YMGIQ==
+  dependencies:
+    "@vuepress/client" "2.0.0-beta.48"
+    "@vuepress/core" "2.0.0-beta.48"
+    "@vuepress/shared" "2.0.0-beta.48"
+    "@vuepress/utils" "2.0.0-beta.48"
+    chokidar "^3.5.3"
+    vue "^3.2.36"
+    vue-router "^4.0.15"
 
 "@vuepress/plugin-theme-data@2.0.0-beta.48":
   version "2.0.0-beta.48"
