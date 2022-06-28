@@ -13,7 +13,6 @@ const {
 module.exports = {
   title: '技术博客',
   description: '前后端常用知识、踩坑记录、封装的插件、随手笔记等',
-  dest: './dist', // 设置输出目录
   // 这里与https://zhaobao1830.github.io/zhaobao1830-notes/中的zhaobao1830-notes一致，
   // 如果网站是https://zhaobao1830.github.io/，那base值就是/
   base: '/zhaobao1830-notes/',
