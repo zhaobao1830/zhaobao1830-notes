@@ -25,6 +25,9 @@ module.exports = {
   },
   theme: defaultTheme({
     repo: 'zhaobao1830/zhaobao1830-notes/',
+    editLink: false,
+    contributors: false,
+    lastUpdatedText: '上次更新时间',
     navbar: [
       {
         text: '前端知识点',
