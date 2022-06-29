@@ -99,7 +99,7 @@ module.exports = {
           },
           {
             text: 'Vite基础项目',
-            link: 'https://github.com/zhaobao1830/spbtzb'
+            link: 'https://github.com/zhaobao1830/vitezb'
           }
         ]
       }
