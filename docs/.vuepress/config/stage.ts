@@ -187,6 +187,12 @@ const takeNotesSidebar = [
     children: [
       '/takeNotes/android/01'
     ]
+  },
+  {
+    text: 'vuepress',
+    children: [
+      '/takeNotes/vuepress/01'
+    ]
   }
 ]
 
