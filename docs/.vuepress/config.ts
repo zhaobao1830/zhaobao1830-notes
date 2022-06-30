@@ -100,6 +100,10 @@ module.exports = {
           {
             text: 'Vite基础项目',
             link: 'https://github.com/zhaobao1830/vitezb'
+          },
+          {
+            text: 'VueCli移动端项目',
+            link: 'https://github.com/zhaobao1830/vueclimobilezb'
           }
         ]
       }
