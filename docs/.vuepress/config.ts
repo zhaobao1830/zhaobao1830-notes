@@ -104,6 +104,10 @@ module.exports = {
           {
             text: 'VueCli移动端项目',
             link: 'https://github.com/zhaobao1830/vueclimobilezb'
+          },
+          {
+            text: 'VueCli PC端项目',
+            link: 'https://github.com/zhaobao1830/vueclipczb'
           }
         ]
       }
