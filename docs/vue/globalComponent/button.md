@@ -67,6 +67,10 @@ export function registerGlobComp(app) {
 }
 ```
 
+::: tip 温馨提示
+使用插件的方式来注册全局组件
+:::
+
 main.js
 
 在main.js里调用registerGlobComp方法
@@ -76,4 +80,14 @@ const app = createApp(App)
 
 // 注册全局组件
 registerGlobComp(app)
+```
+
+::: tip 温馨提示
+在index.js里调用withInstall方法注册组件后，可以在组件里引用后使用
+:::
+
+```vue
+  import { Button } from '@/components/base/Button'
+
+  <Button></Button>
 ```
