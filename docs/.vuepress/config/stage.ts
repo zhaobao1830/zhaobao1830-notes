@@ -67,6 +67,12 @@ const vueSidebar = [
     ]
   },
   {
+    text: '全局组件',
+    children: [
+      '/vue/globalComponent/button'
+    ]
+  },
+  {
     text: '基础方法',
     children: [
       '/vue/basicMethod/axios'
