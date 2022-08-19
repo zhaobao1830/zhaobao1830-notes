@@ -214,3 +214,262 @@ function padLeftZero (str) {
 ```js
 const date = formatDate(val, 'yyyy-MM-dd')
 ```
+
+## 校验数据类型
+
+```js
+export const typeOf = function(obj) {
+  return Object.prototype.toString.call(obj).slice(8, -1).toLowerCase()
+}
+```
+
+示例：
+
+```js
+typeOf('树哥')  // string
+typeOf([])  // array
+typeOf(new Date())  // date
+typeOf(null) // null
+typeOf(true) // boolean
+typeOf(() => { }) // function
+```
+
+## 防抖
+
+```js
+export const debounce = (() => {
+  let timer = null
+  return (callback, wait = 800) => {
+    timer&&clearTimeout(timer)
+    timer = setTimeout(callback, wait)
+  }
+})()
+```
+
+示例：
+
+```js
+methods: {
+  loadList() {
+    debounce(() => {
+      console.log('加载数据')
+    }, 500)
+  }
+}
+```
+
+## 节流
+
+```js
+export const throttle = (() => {
+  let last = 0
+  return (callback, wait = 800) => {
+    let now = +new Date()
+    if (now - last > wait) {
+      callback()
+      last = now
+    }
+  }
+})()
+```
+
+## 判断手机是Andoird还是IOS
+
+```js
+/** 
+ * 1: ios
+ * 2: android
+ * 3: 其它
+ */
+export const getOSType=() => {
+  let u = navigator.userAgent, app = navigator.appVersion;
+  let isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1;
+  let isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+  if (isIOS) {
+    return 1;
+  }
+  if (isAndroid) {
+    return 2;
+  }
+  return 3;
+}
+```
+
+## 数组对象根据字段去重
+
+```js
+export const uniqueArrayObject = (arr = [], key = 'id') => {
+  if (arr.length === 0) return
+  let list = []
+  const map = {}
+  arr.forEach((item) => {
+    if (!map[item[key]]) {
+      map[item[key]] = item
+    }
+  })
+  list = Object.values(map)
+
+  return list
+}
+```
+
+参数说明：
+
+arr 要去重的数组
+
+key 根据去重的字段名
+
+示例：
+
+```js
+const responseList = [
+    { id: 1, name: '树哥' },
+    { id: 2, name: '黄老爷' },
+    { id: 3, name: '张麻子' },
+    { id: 1, name: '黄老爷' },
+    { id: 2, name: '张麻子' },
+    { id: 3, name: '树哥' },
+    { id: 1, name: '树哥' },
+    { id: 2, name: '黄老爷' },
+    { id: 3, name: '张麻子' },
+]
+
+uniqueArrayObject(responseList, 'id')
+// [{ id: 1, name: '树哥' },{ id: 2, name: '黄老爷' },{ id: 3, name: '张麻子' }]
+```
+
+## 滚动到页面顶部
+
+```js
+export const scrollToTop = () => {
+  const height = document.documentElement.scrollTop || document.body.scrollTop;
+  if (height > 0) {
+    window.requestAnimationFrame(scrollToTop);
+    window.scrollTo(0, height - height / 8);
+  }
+}
+```
+
+## 滚动到元素位置
+
+```js
+export const smoothScroll = element =>{
+    document.querySelector(element).scrollIntoView({
+        behavior: 'smooth'
+    });
+};
+```
+
+示例：
+
+```js
+smoothScroll('#target'); // 平滑滚动到 ID 为 target 的元素
+```
+
+## 金额格式化
+
+```js
+export const moneyFormat = (number, decimals, dec_point, thousands_sep) => {
+  number = (number + '').replace(/[^0-9+-Ee.]/g, '')
+  const n = !isFinite(+number) ? 0 : +number
+  const prec = !isFinite(+decimals) ? 2 : Math.abs(decimals)
+  const sep = typeof thousands_sep === 'undefined' ? ',' : thousands_sep
+  const dec = typeof dec_point === 'undefined' ? '.' : dec_point
+  let s = ''
+  const toFixedFix = function(n, prec) {
+    const k = Math.pow(10, prec)
+    return '' + Math.ceil(n * k) / k
+  }
+  s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.')
+  const re = /(-?\d+)(\d{3})/
+  while (re.test(s[0])) {
+    s[0] = s[0].replace(re, '$1' + sep + '$2')
+  }
+
+  if ((s[1] || '').length < prec) {
+    s[1] = s[1] || ''
+    s[1] += new Array(prec - s[1].length + 1).join('0')
+  }
+  return s.join(dec)
+}
+```
+
+参数说明：
+
+{number} number：要格式化的数字
+
+{number} decimals：保留几位小数
+
+{string} dec_point：小数点符号
+
+{string} thousands_sep：千分位符号
+
+示例：
+
+moneyFormat(10000000) // 10,000,000.00
+
+moneyFormat(10000000, 3, '.', '-') // 10-000-000.000
+
+## 下载文件
+
+```js
+const downloadFile = (api, params, fileName, type = 'get') => {
+  axios({
+    method: type,
+    url: api,
+    responseType: 'blob', 
+    params: params
+  }).then((res) => {
+    let str = res.headers['content-disposition']
+    if (!res || !str) {
+      return
+    }
+    let suffix = ''
+    // 截取文件名和文件类型
+    if (str.lastIndexOf('.')) {
+      fileName ? '' : fileName = decodeURI(str.substring(str.indexOf('=') + 1, str.lastIndexOf('.')))
+      suffix = str.substring(str.lastIndexOf('.'), str.length)
+    }
+    //  如果支持微软的文件下载方式(ie10+浏览器)
+    if (window.navigator.msSaveBlob) {
+      try {
+        const blobObject = new Blob([res.data]);
+        window.navigator.msSaveBlob(blobObject, fileName + suffix);
+      } catch (e) {
+        console.log(e);
+      }
+    } else {
+      //  其他浏览器
+      let url = window.URL.createObjectURL(res.data)
+      let link = document.createElement('a')
+      link.style.display = 'none'
+      link.href = url
+      link.setAttribute('download', fileName + suffix)
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+      window.URL.revokeObjectURL(link.href);
+    }
+  }).catch((err) => {
+    console.log(err.message);
+  })
+}
+```
+
+参数说明：
+
+api 接口
+
+params 请求参数
+
+fileName 文件名
+
+示例：
+
+```js
+downloadFile('/api/download', {id}, '文件名')
+```
+
+## 时间操作
+
+日期时间处理库：[Day.js](https://dayjs.fenxianglu.cn/)
