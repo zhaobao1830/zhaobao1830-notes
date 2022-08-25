@@ -180,7 +180,8 @@ const takeNotesSidebar = [
   {
     text: 'vite',
     children: [
-      '/takeNotes/vite/01'
+      '/takeNotes/vite/01',
+      '/takeNotes/vite/02'
     ]
   },
   {
