@@ -63,7 +63,8 @@ const vueSidebar = [
       '/vue/basicComponent/footer',
       '/vue/basicComponent/imageLazy',
       '/vue/basicComponent/scroll',
-      '/vue/basicComponent/slide'
+      '/vue/basicComponent/slide',
+      '/vue/basicComponent/ruler'
     ]
   },
   {
