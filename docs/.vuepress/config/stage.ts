@@ -175,7 +175,8 @@ const takeNotesSidebar = [
       '/takeNotes/vue/14',
       '/takeNotes/vue/15',
       '/takeNotes/vue/16',
-      '/takeNotes/vue/17'
+      '/takeNotes/vue/17',
+      '/takeNotes/vue/18'
     ]
   },
   {
