@@ -100,6 +100,14 @@ const vueSidebar = [
     ]
   }
 ]
+const uniappSidebar = [
+  {
+    text: '开发工具',
+    children: [
+      '/uniapp/developmentTools/vscode'
+    ]
+  }
+]
 const javaSidebar = [
   {
     text: 'springBoot',
@@ -230,6 +238,7 @@ module.exports = {
   fronKnowledgeSidebar,
   jsSidebar,
   vueSidebar,
+  uniappSidebar,
   javaSidebar,
   takeNotesSidebar
 }

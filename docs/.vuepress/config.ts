@@ -6,6 +6,7 @@ const {
   javaSidebar,
   jsSidebar,
   vueSidebar,
+  uniappSidebar,
   fronKnowledgeSidebar,
   takeNotesSidebar
 } = stage
@@ -40,6 +41,10 @@ module.exports = {
       {
         text: 'vue',
         link: '/vue/basicComponent/loading'
+      },
+      {
+        text: 'uniapp',
+        link: '/uniapp/developmentTools/vscode'
       },
       {
         text: 'java',
@@ -116,6 +121,7 @@ module.exports = {
       '/java/': javaSidebar,
       '/js/': jsSidebar,
       '/vue/': vueSidebar,
+      '/uniapp/': uniappSidebar,
       '/fronKnowledge/': fronKnowledgeSidebar,
       '/takeNotes/': takeNotesSidebar
     }
