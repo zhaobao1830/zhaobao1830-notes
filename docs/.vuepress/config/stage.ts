@@ -192,8 +192,14 @@ const takeNotesSidebar = [
   {
     text: 'js',
     children: [
-      '/takeNotes/js/01',
-      '/takeNotes/js/02'
+      '/takeNotes/vite/01',
+      '/takeNotes/vite/02'
+    ]
+  },
+  {
+    text: '小程序',
+    children: [
+      '/takeNotes/miniProgram/01'
     ]
   },
   {
