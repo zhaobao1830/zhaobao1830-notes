@@ -192,7 +192,8 @@ const takeNotesSidebar = [
   {
     text: 'js',
     children: [
-      '/takeNotes/js/01'
+      '/takeNotes/js/01',
+      '/takeNotes/js/02'
     ]
   },
   {
