@@ -241,11 +241,33 @@ const takeNotesSidebar = [
   }
 ]
 
+const interviewSidebar = [
+  {
+    text: 'js',
+    children: [
+      '/interview/js/01'
+    ]
+  },
+  {
+    text: 'css',
+    children: [
+      '/interview/css/01'
+    ]
+  },
+  {
+    text: 'vue',
+    children: [
+      '/interview/vue/01'
+    ]
+  }
+]
+
 module.exports = {
   fronKnowledgeSidebar,
   jsSidebar,
   vueSidebar,
   uniappSidebar,
   javaSidebar,
-  takeNotesSidebar
+  takeNotesSidebar,
+  interviewSidebar
 }

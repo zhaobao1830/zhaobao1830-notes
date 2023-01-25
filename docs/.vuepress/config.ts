@@ -8,7 +8,8 @@ const {
   vueSidebar,
   uniappSidebar,
   fronKnowledgeSidebar,
-  takeNotesSidebar
+  takeNotesSidebar,
+  interviewSidebar
 } = stage
 
 module.exports = {
@@ -53,6 +54,10 @@ module.exports = {
       {
         text: '随手笔记',
         link: '/takeNotes/css/01'
+      },
+      {
+        text: '面试',
+        link: '/interview/js/01'
       },
       {
         text: '外网链接',
@@ -123,7 +128,8 @@ module.exports = {
       '/vue/': vueSidebar,
       '/uniapp/': uniappSidebar,
       '/fronKnowledge/': fronKnowledgeSidebar,
-      '/takeNotes/': takeNotesSidebar
+      '/takeNotes/': takeNotesSidebar,
+      '/interview': interviewSidebar
     }
   }),
   plugins: [
