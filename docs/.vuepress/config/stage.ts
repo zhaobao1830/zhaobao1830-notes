@@ -245,7 +245,9 @@ const interviewSidebar = [
   {
     text: 'js',
     children: [
-      '/interview/js/01'
+      '/interview/js/01',
+      '/interview/js/02',
+      '/interview/js/03'
     ]
   },
   {
