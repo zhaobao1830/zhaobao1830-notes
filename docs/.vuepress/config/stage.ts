@@ -249,7 +249,8 @@ const interviewSidebar = [
       '/interview/js/02',
       '/interview/js/03',
       '/interview/js/04',
-      '/interview/js/05'
+      '/interview/js/05',
+      '/interview/js/06'
     ]
   },
   {
