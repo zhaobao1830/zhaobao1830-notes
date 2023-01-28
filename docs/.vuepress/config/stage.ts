@@ -38,12 +38,6 @@ const fronKnowledgeSidebar = [
     children: [
       '/fronKnowledge/nvm/'
     ]
-  },
-  {
-    text: 'webstorm',
-    children: [
-      '/fronKnowledge/webstorm/'
-    ]
   }
 ]
 const jsSidebar = [
@@ -218,7 +212,8 @@ const takeNotesSidebar = [
   {
     text: 'webstorm',
     children: [
-      '/takeNotes/webstorm/01'
+      '/takeNotes/webstorm/01',
+      '/takeNotes/webstorm/02'
     ]
   },
   {
