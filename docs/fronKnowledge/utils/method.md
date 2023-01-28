@@ -473,3 +473,31 @@ downloadFile('/api/download', {id}, '文件名')
 ## 时间操作
 
 日期时间处理库：[Day.js](https://dayjs.fenxianglu.cn/)
+
+## 类数组对象转换成数组
+
+es6: 
+
+```js
+Array.form()
+```
+
+或
+
+```js
+function toArray(nodes){
+    try {
+        // works in every browser except IE
+        return Array.prototype.slice.call(nodes);
+    } catch(err) {
+        // Fails in IE < 9
+        var arr = [],
+            length = nodes.length;
+        for(var i = 0; i < length; i++){
+            // arr.push(nodes[i]); // 两种都可以
+            arr[i] = nodes[i];
+        }
+        return arr;
+    }
+}
+```
