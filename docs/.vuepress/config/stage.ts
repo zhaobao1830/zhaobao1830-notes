@@ -261,6 +261,12 @@ const interviewSidebar = [
     children: [
       '/interview/vue/01'
     ]
+  },
+  {
+    text: '其他',
+    children: [
+      '/interview/other/01'
+    ]
   }
 ]
 
