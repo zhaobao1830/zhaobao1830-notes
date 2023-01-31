@@ -97,6 +97,10 @@ module.exports = {
           {
             text: '斌',
             link: 'https://idenet.github.io/blog/'
+          },
+          {
+            text: '山月',
+            link: 'https://q.shanyue.tech/'
           }
         ]
       },

@@ -193,7 +193,8 @@ const takeNotesSidebar = [
   {
     text: '小程序',
     children: [
-      '/takeNotes/miniProgram/01'
+      '/takeNotes/miniProgram/01',
+      '/takeNotes/miniProgram/02'
     ]
   },
   {
@@ -260,6 +261,12 @@ const interviewSidebar = [
     text: 'vue',
     children: [
       '/interview/vue/01'
+    ]
+  },
+  {
+    text: '其他',
+    children: [
+      '/interview/other/01'
     ]
   }
 ]
