@@ -184,6 +184,12 @@ const takeNotesSidebar = [
     ]
   },
   {
+    text: 'uniapp',
+    children: [
+      '/takeNotes/uniapp/01'
+    ]
+  },
+  {
     text: 'js',
     children: [
       '/takeNotes/vite/01',
