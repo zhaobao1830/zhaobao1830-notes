@@ -187,7 +187,8 @@ const takeNotesSidebar = [
     text: 'uniapp',
     children: [
       '/takeNotes/uniapp/01',
-      '/takeNotes/uniapp/02'
+      '/takeNotes/uniapp/02',
+      '/takeNotes/uniapp/03'
     ]
   },
   {
@@ -200,8 +201,7 @@ const takeNotesSidebar = [
   {
     text: '小程序',
     children: [
-      '/takeNotes/miniProgram/01',
-      '/takeNotes/miniProgram/02'
+      '/takeNotes/miniProgram/01'
     ]
   },
   {
