@@ -194,7 +194,8 @@ const takeNotesSidebar = [
     children: [
       '/takeNotes/uniapp/01',
       '/takeNotes/uniapp/02',
-      '/takeNotes/uniapp/03'
+      '/takeNotes/uniapp/03',
+      '/takeNotes/uniapp/04'
     ]
   },
   {
