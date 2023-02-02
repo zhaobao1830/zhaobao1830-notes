@@ -227,7 +227,8 @@ const takeNotesSidebar = [
     text: 'webstorm',
     children: [
       '/takeNotes/webstorm/01',
-      '/takeNotes/webstorm/02'
+      '/takeNotes/webstorm/02',
+      '/takeNotes/webstorm/03'
     ]
   },
   {
