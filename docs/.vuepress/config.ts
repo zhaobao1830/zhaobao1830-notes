@@ -36,16 +36,8 @@ module.exports = {
         link: '/fronKnowledge/utils/regexp'
       },
       {
-        text: 'js',
-        link: '/js/methods/shuffle'
-      },
-      {
         text: 'vue',
         link: '/vue/basicComponent/loading'
-      },
-      {
-        text: 'uniapp',
-        link: '/uniapp/developmentTools/vscode'
       },
       {
         text: 'java',
@@ -56,7 +48,7 @@ module.exports = {
         link: '/takeNotes/css/01'
       },
       {
-        text: '面试',
+        text: '基础',
         link: '/interview/js/01'
       },
       {
