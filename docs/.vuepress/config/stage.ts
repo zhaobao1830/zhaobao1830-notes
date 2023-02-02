@@ -38,6 +38,12 @@ const fronKnowledgeSidebar = [
     children: [
       '/fronKnowledge/nvm/'
     ]
+  },
+  {
+    text: '开源项目',
+    children: [
+      '/fronKnowledge/openSourceProjects/'
+    ]
   }
 ]
 const jsSidebar = [
