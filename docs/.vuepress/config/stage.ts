@@ -278,7 +278,8 @@ const interviewSidebar = [
   {
     text: 'css',
     children: [
-      '/interview/css/01'
+      '/interview/css/01',
+      '/interview/css/02'
     ]
   },
   {
