@@ -59,10 +59,6 @@ module.exports = {
             link: 'http://godbasin.com/'
           },
           {
-            text: 'helloworld',
-            link: 'https://www.helloworld.net/'
-          },
-          {
             text: '木易杨',
             link: 'https://muyiy.cn/'
           },
