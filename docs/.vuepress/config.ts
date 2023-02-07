@@ -112,6 +112,75 @@ module.exports = {
             link: 'https://github.com/zhaobao1830/vueclipczb'
           }
         ]
+      },
+      {
+        text: '官网',
+        children: [
+          {
+            text: 'MDN-前端开发手册',
+            link: 'https://developer.mozilla.org/zh-CN/'
+          },
+          {
+            text: 'Node中文官网',
+            link: 'https://nodejs.org/zh-cn/'
+          },
+          {
+            text: 'Vue2文档',
+            link: 'https://v2.cn.vuejs.org/'
+          },
+          {
+            text: 'Vue3文档',
+            link: 'https://cn.vuejs.org/'
+          },
+          {
+            text: 'React文档',
+            link: 'https://react.docschina.org/'
+          },
+          {
+            text: 'Vue-cli(vue2脚手架)',
+            link: 'https://cli.vuejs.org/zh/'
+          },
+          {
+            text: 'Vite(脚手架)',
+            link: 'https://vitejs.cn/'
+          },
+          {
+            text: 'Pinia(状态管理工具)',
+            link: 'https://pinia.vuejs.org/zh/'
+          },
+          {
+            text: 'Element(vue2桌面端组件库)',
+            link: 'https://element.eleme.cn/#/zh-CN/component/installation'
+          },
+          {
+            text: 'Element-plus(Vue3桌面端组件库)',
+            link: 'https://element-plus.gitee.io/zh-CN/guide/design.html'
+          },
+          {
+            text: 'Vant4(Vue3移动端组件库)',
+            link: 'https://vant-contrib.gitee.io/vant/#/zh-CN'
+          },
+          {
+            text: '查询兼容性网站',
+            link: 'https://caniuse.com/'
+          },
+          {
+            text: '慕课网',
+            link: 'https://www.imooc.com/'
+          },
+          {
+            text: '极客时间',
+            link: 'https://time.geekbang.org/'
+          },
+          {
+            text: '拉勾教育',
+            link: 'https://kaiwu.lagou.com/'
+          },
+          {
+            text: '掘金',
+            link: 'https://juejin.cn/'
+          }
+        ]
       }
     ],
     sidebar: {
