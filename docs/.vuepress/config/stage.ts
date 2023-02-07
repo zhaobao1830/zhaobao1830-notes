@@ -196,8 +196,7 @@ const takeNotesSidebar = [
       '/takeNotes/uniapp/02',
       '/takeNotes/uniapp/03',
       '/takeNotes/uniapp/04',
-      '/takeNotes/uniapp/05',
-      '/takeNotes/uniapp/06'
+      '/takeNotes/uniapp/05'
     ]
   },
   {
