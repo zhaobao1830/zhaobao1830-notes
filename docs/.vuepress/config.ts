@@ -149,6 +149,10 @@ module.exports = {
             link: 'https://pinia.vuejs.org/zh/'
           },
           {
+            text: 'Vuepress(静态网站生成器)',
+            link: 'https://v2.vuepress.vuejs.org/zh/'
+          },
+          {
             text: 'Element(vue2桌面端组件库)',
             link: 'https://element.eleme.cn/#/zh-CN/component/installation'
           },
