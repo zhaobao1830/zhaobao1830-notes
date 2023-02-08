@@ -290,9 +290,10 @@ const interviewSidebar = [
     ]
   },
   {
-    text: '其他',
+    text: '浏览器',
     children: [
-      '/interview/other/01'
+      '/interview/browser/01',
+      '/interview/browser/02'
     ]
   }
 ]
