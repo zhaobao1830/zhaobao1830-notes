@@ -34,9 +34,9 @@ const fronKnowledgeSidebar = [
     ]
   },
   {
-    text: 'nvm',
+    text: 'node',
     children: [
-      '/fronKnowledge/nvm/'
+      '/fronKnowledge/node/'
     ]
   },
   {
