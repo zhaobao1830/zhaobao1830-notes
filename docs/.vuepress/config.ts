@@ -89,6 +89,10 @@ module.exports = {
           {
             text: '山月',
             link: 'https://q.shanyue.tech/'
+          },
+          {
+            text: '山月',
+            link: 'https://q.shanyue.tech/'
           }
         ]
       },

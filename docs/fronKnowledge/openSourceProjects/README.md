@@ -11,3 +11,5 @@ vue3版本：
 [v3-admin-vite](https://github.com/un-pany/v3-admin-vite/blob/main/README.zh-CN.md)一个免费开源的中后台管理系统基础解决方案，基于 Vue3、TypeScript、Element Plus、Pinia 和 Vite 等主流技术.
 
 [Vben Admin](https://www.reawing.com/doc-next/)一个开箱即用的前端框架
+
+[smartadmin](http://smartadmin.1024lab.net/)使用SpringBoot2 和 Vue3 Setup 语法糖、 组合式Composition Api (同时支持JavaScript和TypeScript双版本) ，开发出的一套简洁、易用的中后台解决方案
