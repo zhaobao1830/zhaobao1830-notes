@@ -1,4 +1,4 @@
-const fronKnowledgeSidebar = [
+export const fronKnowledgeSidebar = [
   {
     text: '工具方法',
     children: [
@@ -46,7 +46,7 @@ const fronKnowledgeSidebar = [
     ]
   }
 ]
-const jsSidebar = [
+export const jsSidebar = [
   {
     text: '通用方法',
     children: [
@@ -55,7 +55,7 @@ const jsSidebar = [
     ]
   }
 ]
-const vueSidebar = [
+export const vueSidebar = [
   {
     text: '基础组件',
     children: [
@@ -100,7 +100,7 @@ const vueSidebar = [
     ]
   }
 ]
-const uniappSidebar = [
+export const uniappSidebar = [
   {
     text: '开发工具',
     children: [
@@ -108,7 +108,7 @@ const uniappSidebar = [
     ]
   }
 ]
-const javaSidebar = [
+export const javaSidebar = [
   {
     text: 'springBoot',
     children: [
@@ -152,7 +152,7 @@ const javaSidebar = [
   }
 ]
 
-const takeNotesSidebar = [
+export const takeNotesSidebar = [
   {
     text: 'css',
     children: [
@@ -253,7 +253,7 @@ const takeNotesSidebar = [
   }
 ]
 
-const interviewSidebar = [
+export const interviewSidebar = [
   {
     text: 'js',
     children: [
@@ -297,12 +297,3 @@ const interviewSidebar = [
   }
 ]
 
-module.exports = {
-  fronKnowledgeSidebar,
-  jsSidebar,
-  vueSidebar,
-  uniappSidebar,
-  javaSidebar,
-  takeNotesSidebar,
-  interviewSidebar
-}

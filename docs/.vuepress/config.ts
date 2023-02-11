@@ -1,8 +1,7 @@
-const { searchPlugin } = require('@vuepress/plugin-search')
-const { defaultTheme } = require('vuepress')
+import { defaultTheme } from '@vuepress/theme-default'
+import { docsearchPlugin } from '@vuepress/plugin-docsearch'
 
-const stage = require('./config/stage.ts')
-const {
+import {
   javaSidebar,
   jsSidebar,
   vueSidebar,
@@ -10,9 +9,9 @@ const {
   fronKnowledgeSidebar,
   takeNotesSidebar,
   interviewSidebar
-} = stage
+} from './config/stage'
 
-module.exports = {
+export default {
   title: '技术博客',
   description: '前后端常用知识、踩坑记录、封装的插件、随手笔记等',
   // 这里与https://zhaobao1830.github.io/zhaobao1830-notes/中的zhaobao1830-notes一致，
@@ -202,12 +201,10 @@ module.exports = {
     }
   }),
   plugins: [
-    searchPlugin({
-      locales: {
-        '/': {
-          placeholder: '搜索'
-        }
-      }
+    docsearchPlugin({
+      appId: "G0W1RASOD3",
+      apiKey: "c4b8fb7cfc92e31087d32ec6ac30d083",
+      indexName: "zhaobao1830"
     })
   ]
 }
