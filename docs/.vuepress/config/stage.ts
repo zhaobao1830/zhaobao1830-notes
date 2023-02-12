@@ -248,7 +248,8 @@ export const takeNotesSidebar = [
   {
     text: 'vuepress',
     children: [
-      '/takeNotes/vuepress/01'
+      '/takeNotes/vuepress/01',
+      '/takeNotes/vuepress/02'
     ]
   }
 ]
