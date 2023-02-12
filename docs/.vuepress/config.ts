@@ -204,7 +204,7 @@ export default {
     docsearchPlugin({
       appId: 'G0W1RASOD3',
       apiKey: '473cca412f78e6a7233a3400d0ef2c54',
-      indexName: 'crawler_zhaobao1830',
+      indexName: 'zhaobao1830',
       locales: {
         '/': {
           placeholder: '搜索',
