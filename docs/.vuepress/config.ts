@@ -1,8 +1,7 @@
 import { defaultTheme } from '@vuepress/theme-default'
 import { docsearchPlugin } from '@vuepress/plugin-docsearch'
 
-
-import { navbar, sidebar } from './config/index'
+import { navbar, sidebar } from './configs'
 
 export default {
   title: '技术博客',
