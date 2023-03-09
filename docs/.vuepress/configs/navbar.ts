@@ -74,16 +74,20 @@ export const navbar: NavbarConfig = [
         link: 'https://github.com/zhaobao1830/spbtzb'
       },
       {
-        text: 'Vite基础项目',
-        link: 'https://github.com/zhaobao1830/vitezb'
+        text: 'Vite移动端项目',
+        link: 'https://github.com/zhaobao1830/vite-mobile-zb'
+      },
+      {
+        text: 'Vite PC端项目',
+        link: 'https://github.com/zhaobao1830/vite-pc-zb'
       },
       {
         text: 'VueCli移动端项目',
-        link: 'https://github.com/zhaobao1830/vueclimobilezb'
+        link: 'https://github.com/zhaobao1830/vue-cli-mobile-zb'
       },
       {
         text: 'VueCli PC端项目',
-        link: 'https://github.com/zhaobao1830/vueclipczb'
+        link: 'https://github.com/zhaobao1830/vue-cli-pc-zb'
       }
     ]
   },
