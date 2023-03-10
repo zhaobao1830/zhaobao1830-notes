@@ -22,6 +22,10 @@ export const navbar: NavbarConfig = [
     link: '/interview/js/01'
   },
   {
+    text: '脚手架',
+    link: '/scaffold/01'
+  },
+  {
     text: '外网链接',
     children: [
       {

@@ -6,6 +6,7 @@ import { jsSidebar } from './sidebars/jsSidebar'
 import { takeNotesSidebar } from './sidebars/takeNotesSidebar'
 import { uniappSidebar } from './sidebars/uniappSidebar'
 import { vueSidebar } from './sidebars/vueSidebar'
+import { scaffoldSidebar } from './sidebars/scaffoldSidebar'
 
 export const sidebar: SidebarConfig = {
   '/java/': javaSidebar,
@@ -14,5 +15,6 @@ export const sidebar: SidebarConfig = {
   '/uniapp/': uniappSidebar,
   '/fronKnowledge/': fronKnowledgeSidebar,
   '/takeNotes/': takeNotesSidebar,
-  '/interview': interviewSidebar
+  '/interview': interviewSidebar,
+  '/scaffold/': scaffoldSidebar
 }
