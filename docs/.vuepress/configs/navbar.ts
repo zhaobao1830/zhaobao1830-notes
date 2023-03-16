@@ -147,6 +147,10 @@ export const navbar: NavbarConfig = [
         link: 'https://caniuse.com/'
       },
       {
+        text: 'axios',
+        link: 'http://axios-js.com/zh-cn/docs/'
+      },
+      {
         text: '慕课网',
         link: 'https://www.imooc.com/'
       },
