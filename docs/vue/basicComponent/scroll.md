@@ -641,6 +641,85 @@ export default function usePullUp(scroll, props, emit, _calculateMinHeight) {
 使用的时候，ha-list要固定高度，内部是scroll-pull-up-down组件，再内部是展示的数据，但只能有一个子元素
 :::
 
+### vue2基本滚动
+
+::: tip  温馨提示
+该组件是以[better-scroll 2.0](https://better-scroll.github.io/docs/zh-CN/)为基础封装的包含基本的滚动功能
+
+项目地址：[https://github.com/zhaobao1830/vue-cli-mobile-zb/blob/master/src/components/base/scroll/base-scroll.vue](https://github.com/zhaobao1830/vue-cli-mobile-zb/blob/master/src/components/base/scroll/base-scroll.vue)
+:::
+
+base-scroll.vue
+
+```vue
+<template>
+  <div ref="wrapper">
+    <slot></slot>
+  </div>
+</template>
+
+<script>
+  import BScroll from '@better-scroll/core'
+  import ObserveDOM from '@better-scroll/observe-dom'
+
+  export default {
+    props: {
+      click: {
+        type: Boolean,
+        default: true
+      },
+      probeType: {
+        type: Number,
+        default: 0
+      },
+      scrollX: {
+        type: Boolean,
+        default: false
+      }
+    },
+    mounted () {
+      setTimeout(() => {
+        this._initScroll()
+      }, 20)
+    },
+    methods: {
+      _initScroll () {
+        if (!this.$refs.wrapper) {
+          return
+        }
+        this.scroll = new BScroll(this.$refs.wrapper, {
+          ObserveDOM,
+          probeType: this.probeType,
+          click: this.click,
+          scrollX: this.scrollX
+        })
+      }
+    },
+    destroyed() {
+      this.scroll.destroy()
+    }
+  }
+</script>
+
+<style scoped lang="scss">
+
+</style>
+
+```
+
+使用
+
+```vue
+<base-scroll class="home-container">
+  <div class="home-content">
+    内容
+  </div>
+</base-scroll>
+```
+
+::: tip 备注
+使用的时候，home-container要固定高度，且子元素只能有一个
+:::
 ### vue2项目
 
 ::: tip  温馨提示
