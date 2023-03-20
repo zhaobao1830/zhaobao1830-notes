@@ -25,11 +25,11 @@ _axios.defaults.headers.post['Content-Type'] = 'application/json; charset=UTF-8'
 // 对axios的request配置
 _axios.interceptors.request.use(async (config) => {
     // 配置token
-  if (config.url === 'nethisDocController/loginForApp') {
-    config.headers.token = 'ysd#token'
+  if (config.url === 'login') {
+    config.headers.token = 'login#token'
   } else {
     if (localStorage.getItem('userInfo')) {
-      config.headers.token = 'ysd#token'
+      config.headers.token = 'other#token'
     }
   }
   // 对参数进行加密处理
@@ -135,11 +135,11 @@ let cancel
 // 对axios的request配置
 _axios.interceptors.request.use(async (config) => {
     // 配置token
-  if (config.url === 'nethisDocController/loginForApp') {
-    config.headers.token = 'ysd#token'
+  if (config.url === 'login') {
+    config.headers.token = 'login#token'
   } else {
     if (localStorage.getItem('userInfo')) {
-      config.headers.token = 'ysd#token'
+      config.headers.token = 'other#token'
     }
   }
     // 对参数进行加密处理
