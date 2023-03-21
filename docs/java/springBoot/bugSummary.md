@@ -101,3 +101,11 @@ spring默认使用yml中的配置，但有时候要用传统的xml或properties�
 ![Image text](../../.vuepress/public/Java/springBoot/bugSummary/02.png)
 
 ![Image text](../../.vuepress/public/Java/springBoot/bugSummary/03.png)
+
+7、SpringBoot启动报错java.nio.charset.MalformedInputException: Input length = 1解决方案
+
+原因：文件编码不对
+
+解决办法：修改文件编码为UTF-8
+
+![Image text](../../.vuepress/public/Java/springBoot/bugSummary/04.png)
