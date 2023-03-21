@@ -59,6 +59,10 @@ export const navbar: NavbarConfig = [
       {
         text: 'vuepress笔记',
         link: '/vuepressNotes/01'
+      },
+      {
+        text: 'springBoot笔记',
+        link: '/springBootNotes/01'
       }
     ]
   },
