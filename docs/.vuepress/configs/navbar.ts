@@ -63,6 +63,10 @@ export const navbar: NavbarConfig = [
       {
         text: '山月',
         link: 'https://q.shanyue.tech/'
+      },
+      {
+        text: '若川',
+        link: 'https://lxchuan12.gitee.io/'
       }
     ]
   },
