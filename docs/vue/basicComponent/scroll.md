@@ -10,8 +10,9 @@ sidebarDepth: 2
 #### scroll.vue
 
 ::: tip  温馨提示
-该组件是以[better-scroll 2.0](https://better-scroll.github.io/docs/zh-CN/)为基础封装的
-包含基本的滚动功能
+该组件是以[better-scroll 2.0](https://better-scroll.github.io/docs/zh-CN/)为基础封装的，包含基本的滚动功能
+
+项目地址：[https://github.com/zhaobao1830/vite-mobile-zb/blob/master/src/components/base/scroll/base-scroll.vue](https://github.com/zhaobao1830/vite-mobile-zb/blob/master/src/components/base/scroll/base-scroll.vue)
 :::
 
 ```vue
@@ -109,8 +110,9 @@ export default function useScroll(wrapperRef, options, emit) {
 ### vue3下拉刷新、上拉加载
 
 ::: tip  温馨提示
-该组件是以[better-scroll 2.0](https://better-scroll.github.io/docs/zh-CN/)为基础封装的
-包含下拉加载、上拉刷新功能
+该组件是以[better-scroll 2.0](https://better-scroll.github.io/docs/zh-CN/)为基础封装的，包含下拉加载、上拉刷新功能
+
+项目地址：[https://github.com/zhaobao1830/vite-mobile-zb/blob/master/src/components/base/scroll/scroll-pull-up-down.vue](https://github.com/zhaobao1830/vite-mobile-zb/blob/master/src/components/base/scroll/scroll-pull-up-down.vue)
 :::
 
 #### scrollPullUpDown.vue
@@ -644,7 +646,7 @@ export default function usePullUp(scroll, props, emit, _calculateMinHeight) {
 ### vue2基本滚动
 
 ::: tip  温馨提示
-该组件是以[better-scroll 2.0](https://better-scroll.github.io/docs/zh-CN/)为基础封装的包含基本的滚动功能
+该组件是以[better-scroll 2.0](https://better-scroll.github.io/docs/zh-CN/)为基础封装的，包含基本的滚动功能
 
 项目地址：[https://github.com/zhaobao1830/vue-cli-mobile-zb/blob/master/src/components/base/scroll/base-scroll.vue](https://github.com/zhaobao1830/vue-cli-mobile-zb/blob/master/src/components/base/scroll/base-scroll.vue)
 :::
@@ -726,8 +728,7 @@ export default {
 ### vue2下拉刷新、上拉加载
 
 ::: tip  温馨提示
-该组件是以[better-scroll 2.0](https://better-scroll.github.io/docs/zh-CN/)为基础封装的
-包含基本的滚动、下拉加载、上拉刷新功能
+该组件是以[better-scroll 2.0](https://better-scroll.github.io/docs/zh-CN/)为基础封装的，包含基本的滚动、下拉加载、上拉刷新功能
 
 项目地址：[https://github.com/zhaobao1830/vue-cli-mobile-zb/blob/master/src/components/base/scroll/scroll-pull-up-down.vue](https://github.com/zhaobao1830/vue-cli-mobile-zb/blob/master/src/components/base/scroll/scroll-pull-up-down.vue)
 :::
