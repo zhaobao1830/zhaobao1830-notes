@@ -27,6 +27,38 @@ export const navbar: NavbarConfig = [
       {
         text: 'uniapp笔记',
         link: '/uniappNotes/01'
+      },
+      {
+        text: 'js笔记',
+        link: '/jsNotes/01'
+      },
+      {
+        text: '小程序笔记',
+        link: '/miniProgramNotes/01'
+      },
+      {
+        text: 'vite笔记',
+        link: '/viteNotes/01'
+      },
+      {
+        text: 'http笔记',
+        link: '/httpNotes/01'
+      },
+      {
+        text: 'webstorm笔记',
+        link: '/webstormNotes/01'
+      },
+      {
+        text: 'eslint笔记',
+        link: '/eslintNotes/01'
+      },
+      {
+        text: 'android笔记',
+        link: '/androidNotes/01'
+      },
+      {
+        text: 'vuepress笔记',
+        link: '/vuepressNotes/01'
       }
     ]
   },
