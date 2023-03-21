@@ -23,12 +23,6 @@ export const javaSidebar = [
     ]
   },
   {
-    text: 'maven',
-    children: [
-      '/java/maven/knowledge'
-    ]
-  },
-  {
     text: 'database',
     children: [
       '/java/database/knowledge'
