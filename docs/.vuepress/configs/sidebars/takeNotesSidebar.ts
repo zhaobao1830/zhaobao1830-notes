@@ -62,7 +62,8 @@ export const takeNotesSidebar = [
     text: 'vite',
     children: [
       '/takeNotes/vite/01',
-      '/takeNotes/vite/02'
+      '/takeNotes/vite/02',
+      '/takeNotes/vite/03'
     ]
   },
   {
