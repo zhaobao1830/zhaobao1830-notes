@@ -1,51 +1,5 @@
 export const takeNotesSidebar = [
   {
-    text: 'css',
-    children: [
-      '/takeNotes/css/01',
-      '/takeNotes/css/02',
-      '/takeNotes/css/03',
-      '/takeNotes/css/04',
-      '/takeNotes/css/05',
-      '/takeNotes/css/06'
-    ]
-  },
-  {
-    text: 'vue',
-    children: [
-      '/takeNotes/vue/01',
-      '/takeNotes/vue/02',
-      '/takeNotes/vue/03',
-      '/takeNotes/vue/04',
-      '/takeNotes/vue/05',
-      '/takeNotes/vue/06',
-      '/takeNotes/vue/07',
-      '/takeNotes/vue/08',
-      '/takeNotes/vue/09',
-      '/takeNotes/vue/10',
-      '/takeNotes/vue/11',
-      '/takeNotes/vue/12',
-      '/takeNotes/vue/13',
-      '/takeNotes/vue/14',
-      '/takeNotes/vue/15',
-      '/takeNotes/vue/16',
-      '/takeNotes/vue/17',
-      '/takeNotes/vue/18',
-      '/takeNotes/vue/19',
-      '/takeNotes/vue/20'
-    ]
-  },
-  {
-    text: 'uniapp',
-    children: [
-      '/takeNotes/uniapp/01',
-      '/takeNotes/uniapp/02',
-      '/takeNotes/uniapp/03',
-      '/takeNotes/uniapp/04',
-      '/takeNotes/uniapp/05'
-    ]
-  },
-  {
     text: 'js',
     children: [
       '/takeNotes/vite/01',

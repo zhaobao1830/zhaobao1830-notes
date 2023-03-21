@@ -15,7 +15,20 @@ export const navbar: NavbarConfig = [
   },
   {
     text: '随手笔记',
-    link: '/takeNotes/css/01'
+    children: [
+      {
+        text: 'css笔记',
+        link: '/cssNotes/01'
+      },
+      {
+        text: 'vue笔记',
+        link: '/vueNotes/01'
+      },
+      {
+        text: 'uniapp笔记',
+        link: '/uniappNotes/01'
+      }
+    ]
   },
   {
     text: '基础',
