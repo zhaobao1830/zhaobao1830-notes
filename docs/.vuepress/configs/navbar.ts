@@ -3,7 +3,7 @@ import type { NavbarConfig } from '@vuepress/theme-default'
 export const navbar: NavbarConfig = [
   {
     text: '前端知识点',
-    link: '/fronKnowledge/utils/regexp'
+    link: '/frontKnowledge/utils/regexp'
   },
   {
     text: 'vue',

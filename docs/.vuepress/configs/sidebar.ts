@@ -1,5 +1,5 @@
 import type { SidebarConfig } from '@vuepress/theme-default'
-import { fronKnowledgeSidebar } from './sidebars/fronKnowledgeSidebar'
+import { frontKnowledgeSidebar } from './sidebars/frontKnowledgeSidebar'
 import { interviewSidebar } from './sidebars/interviewSidebar'
 import { javaSidebar } from './sidebars/javaSidebar'
 import { vueSidebar } from './sidebars/vueSidebar'
@@ -20,7 +20,7 @@ import { springBootNotesSidebar } from './sidebars/springBootNotesSidebar'
 export const sidebar: SidebarConfig = {
   '/java/': javaSidebar,
   '/vue/': vueSidebar,
-  '/fronKnowledge/': fronKnowledgeSidebar,
+  '/frontKnowledge/': frontKnowledgeSidebar,
   '/interview': interviewSidebar,
   '/scaffold/': scaffoldSidebar,
   '/cssNotes/': cssNotesSidebar,
