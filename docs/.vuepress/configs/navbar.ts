@@ -63,6 +63,10 @@ export const navbar: NavbarConfig = [
       {
         text: 'springBoot笔记',
         link: '/springBootNotes/01'
+      },
+      {
+        text: 'maven笔记',
+        link: '/mavenNotes/01'
       }
     ]
   },

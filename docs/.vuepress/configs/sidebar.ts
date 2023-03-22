@@ -16,6 +16,7 @@ import { eslintNotesSidebar } from './sidebars/eslintNotesSidebar'
 import { androidNotesSidebar } from './sidebars/androidNotesSidebar'
 import { vuepressNotesSidebar } from './sidebars/vuepressNotesSidebar'
 import { springBootNotesSidebar } from './sidebars/springBootNotesSidebar'
+import { mavenNotesSidebar } from './sidebars/mavenNotesSidebar'
 
 export const sidebar: SidebarConfig = {
   '/java/': javaSidebar,
@@ -34,5 +35,6 @@ export const sidebar: SidebarConfig = {
   '/eslintNotes/': eslintNotesSidebar,
   '/androidNotes/': androidNotesSidebar,
   '/vuepressNotes/': vuepressNotesSidebar,
-  '/springBootNotes/': springBootNotesSidebar
+  '/springBootNotes/': springBootNotesSidebar,
+  '/mavenNotes/': mavenNotesSidebar
 }
