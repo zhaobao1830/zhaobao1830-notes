@@ -1,8 +1,13 @@
 export const javaSidebar = [
   {
+    text: '工具方法',
+    children: [
+      '/java/utils/method'
+    ]
+  },
+  {
     text: 'springBoot',
     children: [
-      '/java/springBoot/knowledge',
       '/java/springBoot/pagination',
       '/java/springBoot/swagger'
     ]
@@ -10,7 +15,6 @@ export const javaSidebar = [
   {
     text: 'maven',
     children: [
-      '/java/maven/knowledge',
       '/java/maven/environmentalIsolation'
     ]
   },
@@ -18,18 +22,6 @@ export const javaSidebar = [
     text: 'mybatis',
     children: [
       '/java/mybatis/tkmybatis'
-    ]
-  },
-  {
-    text: 'database',
-    children: [
-      '/java/database/knowledge'
-    ]
-  },
-  {
-    text: 'notes',
-    children: [
-      '/java/notes/notes'
     ]
   }
 ]

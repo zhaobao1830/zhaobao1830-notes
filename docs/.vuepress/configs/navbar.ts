@@ -11,7 +11,7 @@ export const navbar: NavbarConfig = [
   },
   {
     text: 'java',
-    link: '/java/springBoot/knowledge'
+    link: '/java/utils/method'
   },
   {
     text: '随手笔记',
@@ -71,8 +71,33 @@ export const navbar: NavbarConfig = [
     ]
   },
   {
-    text: '基础',
-    link: '/interview/js/01'
+    text: '基础知识点',
+    children: [
+      {
+        text: 'js知识点',
+        link: '/jsKnowledge/01'
+      },
+      {
+        text: 'css知识点',
+        link: '/cssKnowledge/01'
+      },
+      {
+        text: 'vue知识点',
+        link: '/vueKnowledge/01'
+      },
+      {
+        text: '浏览器知识点',
+        link: '/browserKnowledge/01'
+      },
+      {
+        text: 'java知识点',
+        link: '/javaKnowledge/01'
+      },
+      {
+        text: '数据库知识点',
+        link: '/dataBaseKnowledge/01'
+      }
+    ]
   },
   {
     text: '脚手架',
