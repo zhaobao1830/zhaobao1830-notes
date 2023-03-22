@@ -3,7 +3,7 @@ home: true
 heroImage: /home.jpg
 actions:
   - text: 快速上手 →
-    link: /fronKnowledge/utils/regexp
+    link: /frontKnowledge/utils/regexp
     type: primary
 features:
   - title: Vue/React
