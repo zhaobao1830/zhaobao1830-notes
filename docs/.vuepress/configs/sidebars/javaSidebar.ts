@@ -3,7 +3,6 @@ export const javaSidebar = [
     text: 'springBoot',
     children: [
       '/java/springBoot/knowledge',
-      '/java/springBoot/bugSummary',
       '/java/springBoot/pagination',
       '/java/springBoot/swagger'
     ]
