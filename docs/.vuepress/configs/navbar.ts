@@ -229,6 +229,10 @@ export const navbar: NavbarConfig = [
         link: 'https://caniuse.com/'
       },
       {
+        text: 'maven仓库',
+        link: 'https://mvnrepository.com/'
+      },
+      {
         text: 'axios',
         link: 'http://axios-js.com/zh-cn/docs/'
       },
