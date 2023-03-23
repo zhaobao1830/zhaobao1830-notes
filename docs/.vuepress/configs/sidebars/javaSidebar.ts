@@ -27,7 +27,8 @@ export const javaSidebar = [
   {
     text: 'nginx',
     children: [
-      '/java/nginx/01'
+      '/java/nginx/01',
+      '/java/nginx/02'
     ]
   }
 ]
