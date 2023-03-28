@@ -7,6 +7,7 @@ import { cssNotesSidebar } from './sidebars/cssNotesSidebar'
 import { vueNotesSidebar } from './sidebars/vueNotesSidebar'
 import { uniappNotesSidebar } from './sidebars/uniappNotesSidebar'
 import { jsNotesSidebar } from './sidebars/jsNotesSidebar'
+import { typeScriptNotesSidebar } from './sidebars/typeScriptNotesSidebar'
 import { miniProgramNotesSidebar } from './sidebars/miniProgramNotesSidebar'
 import { viteNotesSidebar} from './sidebars/viteNotesSidebar'
 import { httpNotesSidebar } from './sidebars/httpNotesSidebar'
@@ -32,6 +33,7 @@ export const sidebar: SidebarConfig = {
   '/vueNotes/': vueNotesSidebar,
   '/uniappNotes/': uniappNotesSidebar,
   '/jsNotes/': jsNotesSidebar,
+  '/typeScriptNotes/': typeScriptNotesSidebar,
   '/miniProgramNotes/': miniProgramNotesSidebar,
   '/viteNotes/': viteNotesSidebar,
   '/httpNotes/': httpNotesSidebar,

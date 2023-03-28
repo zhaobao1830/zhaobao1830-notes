@@ -33,6 +33,10 @@ export const navbar: NavbarConfig = [
         link: '/jsNotes/01'
       },
       {
+        text: 'typeScript笔记',
+        link: '/typeScriptNotes/01'
+      },
+      {
         text: '小程序笔记',
         link: '/miniProgramNotes/01'
       },
