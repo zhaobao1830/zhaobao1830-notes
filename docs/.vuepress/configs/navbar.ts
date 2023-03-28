@@ -185,16 +185,20 @@ export const navbar: NavbarConfig = [
         link: 'https://nodejs.org/zh-cn/'
       },
       {
-        text: 'Vue2文档',
+        text: 'Vue2官网',
         link: 'https://v2.cn.vuejs.org/'
       },
       {
-        text: 'Vue3文档',
+        text: 'Vue3官网',
         link: 'https://cn.vuejs.org/'
       },
       {
-        text: 'React文档',
+        text: 'React官网',
         link: 'https://react.docschina.org/'
+      },
+      {
+        text: 'uniapp官网',
+        link: 'https://uniapp.dcloud.net.cn/'
       },
       {
         text: 'Vue-cli(vue2脚手架)',
