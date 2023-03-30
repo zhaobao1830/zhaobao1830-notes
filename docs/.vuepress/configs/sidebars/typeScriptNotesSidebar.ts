@@ -4,7 +4,8 @@ export const typeScriptNotesSidebar = [
     children: [
       '/typeScriptNotes/01',
       '/typeScriptNotes/02',
-      '/typeScriptNotes/03'
+      '/typeScriptNotes/03',
+      '/typeScriptNotes/04'
     ]
   }
 ]
