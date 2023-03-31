@@ -229,6 +229,10 @@ export const navbar: NavbarConfig = [
         link: 'https://element-plus.gitee.io/zh-CN/guide/design.html'
       },
       {
+        text: 'antd-vue3(Vue3桌面端组件库)',
+        link: 'https://www.antdv.com/docs/vue/getting-started-cn'
+      },
+      {
         text: 'Vant4(Vue3移动端组件库)',
         link: 'https://vant-contrib.gitee.io/vant/#/zh-CN'
       },
