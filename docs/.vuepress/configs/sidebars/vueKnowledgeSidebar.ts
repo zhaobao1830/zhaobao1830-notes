@@ -5,7 +5,8 @@ export const vueKnowledgeSidebar = [
       '/vueKnowledge/01',
       '/vueKnowledge/02',
       '/vueKnowledge/03',
-      '/vueKnowledge/04'
+      '/vueKnowledge/04',
+      '/vueKnowledge/05'
     ]
   }
 ]
