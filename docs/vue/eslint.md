@@ -93,7 +93,7 @@ module.exports = {
         ignores: []
       }
     ],
-    indent: ['error', 2],
+    indent: 'off',
     camelcase: 0, // 忽略强制驼峰命名
     'no-trailing-spaces': 0, // 忽略语句后面出现的空格
     'no-mixed-spaces-and-tabs': 0,
@@ -103,15 +103,7 @@ module.exports = {
     '@typescript-eslint/promise-function-async': 'off',
     // 关闭名称校验
     'vue/multi-word-component-names': 'off'	
-  },
-	overrides: [
-		{
-			files: ["*.vue"],
-			rules: {
-				indent: "off"
-			}
-		}
-	]
+  }
 }
 ```
 
