@@ -149,6 +149,10 @@ export const navbar: NavbarConfig = [
       {
         text: '若川',
         link: 'https://lxchuan12.gitee.io/'
+      },
+      {
+        text: '波波',
+        link: 'https://gleenley.gitee.io/learing_record/'
       }
     ]
   },
@@ -226,7 +230,7 @@ export const navbar: NavbarConfig = [
       },
       {
         text: 'Element-plus(Vue3桌面端组件库)',
-        link: 'https://element-plus.gitee.io/zh-CN/guide/design.html'
+        link: 'https://element-plus.org/zh-CN/guide/design.html'
       },
       {
         text: 'antd-vue3(Vue3桌面端组件库)',
