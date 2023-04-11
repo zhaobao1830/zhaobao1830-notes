@@ -15,7 +15,15 @@
 
 ### 现在流行模式
 
-```js
+```vue
+<template>
+  <input
+    ref="fileInput"
+    type="file"
+    @change="handleFileChange"
+  />
+  
+</template>
 <script lang="ts">
   import { defineComponent } from 'vue'
   import axios from 'axios'
@@ -46,7 +54,9 @@
   })
 </script>
 ```
-使用axios模拟form表单提交
+使用axios模拟form表单提交，核心还是使用input，绑定change方法，当值改变的时候触发
+
+element-ui的upload源码：[https://github.com/element-plus/element-plus/tree/dev/packages/components/upload](https://github.com/element-plus/element-plus/tree/dev/packages/components/upload)
 
 1、e.target.files是FileList对象 [文档](https://developer.mozilla.org/zh-CN/docs/Web/API/FileList) FileList是一个类数组，不是真的数组
 
