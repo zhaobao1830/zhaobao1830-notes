@@ -4,6 +4,8 @@
 
 ### 传统模式
 
+使用form表单提交，提交的路径是action，enctype设置为multipart/form-data
+
 ```js
     <form method="post" action="http://123.57.138.48/api/upload/" enctype="multipart/form-data" >
       <input type="file"/>
@@ -11,9 +13,9 @@
     </form>
 ```
 
-使用form表单提交，提交的路径是action，enctype设置为multipart/form-data
-
 ### 现在流行模式
+
+使用axios模拟form表单提交，核心还是使用input，绑定change方法，当值改变的时候触发
 
 ```vue
 <template>
@@ -54,9 +56,12 @@
   })
 </script>
 ```
-使用axios模拟form表单提交，核心还是使用input，绑定change方法，当值改变的时候触发
 
 element-ui的upload源码：[https://github.com/element-plus/element-plus/tree/dev/packages/components/upload](https://github.com/element-plus/element-plus/tree/dev/packages/components/upload)
+
+element-ui库中的upload组件，也是通过input上传文件，将文件放到FormData中发送到后端
+
+可以参考的项目[lego-zb](https://github.com/zhaobao1830/lego-zb)中的styled-uploader、uploader组件，这里面实现了基本的上传功能
 
 1、e.target.files是FileList对象 [文档](https://developer.mozilla.org/zh-CN/docs/Web/API/FileList) FileList是一个类数组，不是真的数组
 
