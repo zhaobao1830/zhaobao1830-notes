@@ -43,13 +43,23 @@ module.exports = {
 
 ```
 
+::: tip 温馨提示
+需安装插件 @babel/eslint-parser
+
+安装方式：
+
+$ npm install eslint @babel/core @babel/eslint-parser --save-dev
+
+$ yarn add eslint @babel/core @babel/eslint-parser -D
+:::
+
 ## vite+vue3+ts
 
 .eslintrc.cjs
 
 ```js
 module.exports = {
-	root: true,
+  root: true,
   env: {
     browser: true,
     es2021: true
@@ -70,8 +80,11 @@ module.exports = {
     },
     requireConfigFile: true,
     extraFileExtensions: ['.vue'],
-    tsconfigRootDir: './',
-    project: ['./tsconfig.json']	
+    tsconfigRootDir: __dirname,
+    project: [
+      './tsconfig.json',
+      './vite.config.ts'
+    ]
   },
   plugins: [
     'vue',
@@ -83,7 +96,7 @@ module.exports = {
     'space-before-function-paren': 0, // 忽略空格
     semi: ['error', 'never'], // 无分号
     'vue/script-indent': [ // script区域缩进俩格
-      "error",
+      'error',
       2,
       {
         // script标签缩进设置
@@ -101,9 +114,10 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/promise-function-async': 'off',
     // 关闭名称校验
-    'vue/multi-word-component-names': 'off'	
+    'vue/multi-word-component-names': 'off'
   }
 }
+
 ```
 
 tsconfig.json
@@ -135,7 +149,7 @@ tsconfig.json
     "src/**/*.d.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
-    "src/**/*"
+    "vite.config.ts"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
@@ -155,6 +169,49 @@ npm install --save-dev @typescript-eslint/parser @typescript-eslint/eslint-plugi
 
 官网地址：[https://www.npmjs.com/package/vue-eslint-parser](https://www.npmjs.com/package/vue-eslint-parser)
 
-3、tsconfigRootDir的值为'./'，[文档](https://typescript-eslint.io/linting/typed-linting)里写的是__dirname，但会报错，提示不识别
+3、tsconfigRootDir的值为__dirname，[文档](https://typescript-eslint.io/linting/typed-linting)
 
 4、[extraFileExtensions](https://typescript-eslint.io/linting/troubleshooting) 对vue文件进行扩展
+
+5、ESLint was configured to run on `<tsconfigRootDir>/vite.config.ts` using `parserOptions.project`: `<tsconfigRootDir>/tsconfig.json`
+
+![Image text](../.vuepress/public/vue/eslint/01.png)
+
+解决办法：
+
+.eslintrc.cjs
+
+```js
+parserOptions: {
+  project: [
+    './vite.config.ts'
+  ]
+}
+```
+
+tsconfig.json
+
+```json
+"include": [
+  "vite.config.ts"
+]
+```
+
+相关的插件：
+
+```json
+"devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
+    "@vitejs/plugin-vue": "^4.1.0",
+    "eslint": "^8.37.0",
+    "eslint-config-standard-with-typescript": "^34.0.1",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-vue": "^9.10.0",
+    "vite": "^4.2.0",
+    "vite-plugin-eslint": "^1.8.1",
+    "vue-eslint-parser": "^9.1.1",
+}
+```

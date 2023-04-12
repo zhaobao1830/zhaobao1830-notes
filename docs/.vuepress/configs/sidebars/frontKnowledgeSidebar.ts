@@ -28,12 +28,6 @@ export const frontKnowledgeSidebar = [
     ]
   },
   {
-    text: 'eslint',
-    children: [
-      '/frontKnowledge/eslint/'
-    ]
-  },
-  {
     text: 'node',
     children: [
       '/frontKnowledge/node/'
