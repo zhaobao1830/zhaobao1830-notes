@@ -1,20 +1,31 @@
 # eslint配置
 
-## 基础配置
+## vue-cli+vue2
+
+项目地址：[https://github.com/zhaobao1830/vue-cli-mobile-zb](https://github.com/zhaobao1830/vue-cli-mobile-zb)
+
+.eslintrc.js
 
 ```js
 module.exports = {
   root: true,
   env: {
-    node: true,
+    browser: true,
+    es2021: true,
+    node: true
   },
-  extends: ["plugin:vue/essential", "@vue/standard"],
+  extends: [
+    'plugin:vue/essential',
+    'eslint:recommended'
+  ],
+  parser: 'vue-eslint-parser',
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    "space-before-function-paren": 0, // 忽略空格
-    "vue/script-indent": [ // script区域缩进俩格
-      "error",
+    'space-before-function-paren': 0, // 忽略空格
+    semi: ['error', 'never'], // 无分号
+    'vue/script-indent': [ // script区域缩进俩格
+      'error',
       2,
       {
         // script标签缩进设置
@@ -23,10 +34,63 @@ module.exports = {
         ignores: []
       }
     ],
-    indent: ["error", 2],
-    semi: ["error", "never"], // 无分号
-    'camelcase': 0, // 忽略强制驼峰命名
-    "no-trailing-spaces": 0 // 忽略语句后面出现的空格
+    quotes: ['error', 'single'], // 强制使用单引号
+    indent: 'off',
+    camelcase: 0, // 忽略强制驼峰命名
+    'no-trailing-spaces': 0, // 忽略语句后面出现的空格
+    'no-mixed-spaces-and-tabs': 0,
+    'no-tabs': 'off',
+    'no-use-before-define': 'off',
+    // 关闭名称校验
+    'vue/multi-word-component-names': 'off'
+  }
+}
+
+```
+
+## vite+vue3
+
+项目地址：[https://github.com/zhaobao1830/vite-mobile-zb](https://github.com/zhaobao1830/vite-mobile-zb)
+
+.eslintrc.cjs
+
+```js
+module.exports = {
+  root: true,
+  env: {
+    browser: true,
+    es2021: true,
+    node: true
+  },
+  extends: [
+    'plugin:vue/vue3-essential',
+    'eslint:recommended'
+  ],
+  parser: 'vue-eslint-parser',
+  rules: {
+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'space-before-function-paren': 0, // 忽略空格
+    semi: ['error', 'never'], // 无分号
+    'vue/script-indent': [ // script区域缩进俩格
+      'error',
+      2,
+      {
+        // script标签缩进设置
+        baseIndent: 1,
+        switchCase: 0,
+        ignores: []
+      }
+    ],
+    quotes: ['error', 'single'], // 强制使用单引号
+    indent: 'off',
+    camelcase: 0, // 忽略强制驼峰命名
+    'no-trailing-spaces': 0, // 忽略语句后面出现的空格
+    'no-mixed-spaces-and-tabs': 0,
+    'no-tabs': 'off',
+    'no-use-before-define': 'off',
+    // 关闭名称校验
+    'vue/multi-word-component-names': 'off'
   },
   overrides: [
     {
@@ -35,23 +99,10 @@ module.exports = {
         indent: "off"
       }
     }
-  ],
-  parserOptions: {
-    parser: "@babel/eslint-parser"
-  }
-};
+  ]
+}
 
 ```
-
-::: tip 温馨提示
-需安装插件 @babel/eslint-parser
-
-安装方式：
-
-$ npm install eslint @babel/core @babel/eslint-parser --save-dev
-
-$ yarn add eslint @babel/core @babel/eslint-parser -D
-:::
 
 ## vite+vue3+ts
 
