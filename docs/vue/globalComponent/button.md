@@ -90,10 +90,10 @@ registerGlobComp(app)
 在index.js里调用withInstall方法注册组件后，可以在组件里引用后使用
 :::
 
-```vue
-  import { Button } from '@/components/base/Button'
+组件里直接使用
 
-  <Button></Button>
+```vue
+  <a-button></a-button>
 ```
 
 ### 组件发包到npm
