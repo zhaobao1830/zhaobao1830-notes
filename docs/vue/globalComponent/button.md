@@ -47,8 +47,10 @@ utils.js
 export const withInstall = (component, alias) => {
   const comp = component
   comp.install = (app) => {
-    app.component(comp.name || comp.displayName, component)
+    // 注册全局组件
+    app.component(comp.name, component)
     if (alias) {
+      // 注册全局属性
       app.config.globalProperties[alias] = component
     }
   }
