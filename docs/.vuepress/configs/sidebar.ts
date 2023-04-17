@@ -20,6 +20,7 @@ import { mavenNotesSidebar } from './sidebars/mavenNotesSidebar'
 import { jsKnowledgeSidebar } from './sidebars/jsKnowledgeSidebar'
 import { cssKnowledgeSidebar } from './sidebars/cssKnowledgeSidebar'
 import { vueKnowledgeSidebar } from './sidebars/vueKnowledgeSidebar'
+import { nodeKnowledgeSidebar } from './sidebars/nodeKnowledgeSidebar'
 import { browserKnowledgeSidebar } from './sidebars/browserKnowledgeSidebar'
 import { javaKnowledgeSidebar } from './sidebars/javaKnowledgeSidebar'
 import { dataBaseKnowledgeSidebar } from './sidebars/dataBaseKnowledgeSidebar'
@@ -46,6 +47,7 @@ export const sidebar: SidebarConfig = {
   '/jsKnowledge/': jsKnowledgeSidebar,
   '/cssKnowledge/': cssKnowledgeSidebar,
   '/vueKnowledge/': vueKnowledgeSidebar,
+  '/nodeKnowledge/': nodeKnowledgeSidebar,
   '/browserKnowledge/': browserKnowledgeSidebar,
   '/javaKnowledge/': javaKnowledgeSidebar,
   '/dataBaseKnowledge/': dataBaseKnowledgeSidebar

@@ -22,18 +22,6 @@ export const frontKnowledgeSidebar = [
     ]
   },
   {
-    text: '性能优化',
-    children: [
-      '/frontKnowledge/performance/'
-    ]
-  },
-  {
-    text: 'node',
-    children: [
-      '/frontKnowledge/node/'
-    ]
-  },
-  {
     text: '开源项目',
     children: [
       '/frontKnowledge/openSourceProjects/'

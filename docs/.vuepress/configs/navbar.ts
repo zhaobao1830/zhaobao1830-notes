@@ -90,6 +90,10 @@ export const navbar: NavbarConfig = [
         link: '/vueKnowledge/01'
       },
       {
+        text: 'node知识点',
+        link: '/nodeKnowledge/01'
+      },
+      {
         text: '浏览器知识点',
         link: '/browserKnowledge/01'
       },
