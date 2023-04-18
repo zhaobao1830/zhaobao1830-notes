@@ -4,7 +4,8 @@ export const jsNotesSidebar = [
     children: [
       '/jsNotes/01',
       '/jsNotes/02',
-      '/jsNotes/03'
+      '/jsNotes/03',
+      '/jsNotes/04'
     ]
   }
 ]
