@@ -245,6 +245,14 @@ export const navbar: NavbarConfig = [
         link: 'https://vant-contrib.gitee.io/vant/#/zh-CN'
       },
       {
+        text: 'webpack5',
+        link: 'https://webpack.docschina.org/concepts/'
+      },
+      {
+        text: 'rollup',
+        link: 'https://www.rollupjs.com/'
+      },
+      {
         text: '查询兼容性网站',
         link: 'https://caniuse.com/'
       },
