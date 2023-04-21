@@ -22,6 +22,12 @@ export const frontKnowledgeSidebar = [
     ]
   },
   {
+    text: '前端监控',
+    children: [
+      '/frontKnowledge/monitor/'
+    ]
+  },
+  {
     text: '开源项目',
     children: [
       '/frontKnowledge/openSourceProjects/'
