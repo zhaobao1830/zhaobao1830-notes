@@ -15,7 +15,8 @@ export const javaSidebar = [
   {
     text: 'maven',
     children: [
-      '/java/maven/environmentalIsolation'
+      '/java/maven/01',
+      '/java/maven/02'
     ]
   },
   {
