@@ -49,8 +49,8 @@ export const navbar: NavbarConfig = [
         link: '/httpNotes/01'
       },
       {
-        text: 'webstorm笔记',
-        link: '/webstormNotes/01'
+        text: 'jetBrains笔记',
+        link: '/jetBrainsNotes/01'
       },
       {
         text: 'eslint笔记',

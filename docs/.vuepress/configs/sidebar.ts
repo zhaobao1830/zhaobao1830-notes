@@ -11,7 +11,7 @@ import { typeScriptNotesSidebar } from './sidebars/typeScriptNotesSidebar'
 import { miniProgramNotesSidebar } from './sidebars/miniProgramNotesSidebar'
 import { viteNotesSidebar} from './sidebars/viteNotesSidebar'
 import { httpNotesSidebar } from './sidebars/httpNotesSidebar'
-import { webstormNotesSidebar } from './sidebars/webstormNotesSidebar'
+import { jetBrainsNotesSidebar } from './sidebars/jetBrainsNotesSidebar'
 import { eslintNotesSidebar } from './sidebars/eslintNotesSidebar'
 import { androidNotesSidebar } from './sidebars/androidNotesSidebar'
 import { vuepressNotesSidebar } from './sidebars/vuepressNotesSidebar'
@@ -39,7 +39,7 @@ export const sidebar: SidebarConfig = {
   '/miniProgramNotes/': miniProgramNotesSidebar,
   '/viteNotes/': viteNotesSidebar,
   '/httpNotes/': httpNotesSidebar,
-  '/webstormNotes/': webstormNotesSidebar,
+  '/jetBrainsNotes/': jetBrainsNotesSidebar,
   '/eslintNotes/': eslintNotesSidebar,
   '/androidNotes/': androidNotesSidebar,
   '/vuepressNotes/': vuepressNotesSidebar,
