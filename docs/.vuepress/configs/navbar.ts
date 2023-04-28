@@ -102,6 +102,10 @@ export const navbar: NavbarConfig = [
         link: '/javaKnowledge/01'
       },
       {
+        text: 'mybatis知识点',
+        link: 'mybatisKnowledge/01'
+      },
+      {
         text: '数据库知识点',
         link: '/dataBaseKnowledge/01'
       }

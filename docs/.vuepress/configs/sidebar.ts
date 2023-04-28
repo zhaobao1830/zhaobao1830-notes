@@ -23,6 +23,7 @@ import { vueKnowledgeSidebar } from './sidebars/vueKnowledgeSidebar'
 import { nodeKnowledgeSidebar } from './sidebars/nodeKnowledgeSidebar'
 import { browserKnowledgeSidebar } from './sidebars/browserKnowledgeSidebar'
 import { javaKnowledgeSidebar } from './sidebars/javaKnowledgeSidebar'
+import { mybatisKnowledgeSidebar } from './sidebars/mybatisKnowledgeSidebar'
 import { dataBaseKnowledgeSidebar } from './sidebars/dataBaseKnowledgeSidebar'
 
 export const sidebar: SidebarConfig = {
@@ -50,5 +51,6 @@ export const sidebar: SidebarConfig = {
   '/nodeKnowledge/': nodeKnowledgeSidebar,
   '/browserKnowledge/': browserKnowledgeSidebar,
   '/javaKnowledge/': javaKnowledgeSidebar,
+  '/mybatisKnowledge/': mybatisKnowledgeSidebar,
   '/dataBaseKnowledge/': dataBaseKnowledgeSidebar
 }
