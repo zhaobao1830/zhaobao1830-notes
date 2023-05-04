@@ -103,7 +103,7 @@ export const navbar: NavbarConfig = [
       },
       {
         text: 'mybatis知识点',
-        link: 'mybatisKnowledge/01'
+        link: '/mybatisKnowledge/01'
       },
       {
         text: '数据库知识点',
