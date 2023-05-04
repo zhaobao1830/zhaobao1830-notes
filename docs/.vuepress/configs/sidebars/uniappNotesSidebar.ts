@@ -7,7 +7,8 @@ export const uniappNotesSidebar = [
       '/uniappNotes/03',
       '/uniappNotes/04',
       '/uniappNotes/05',
-      '/uniappNotes/06'
+      '/uniappNotes/06',
+      '/uniappNotes/07'
     ]
   }
 ]
