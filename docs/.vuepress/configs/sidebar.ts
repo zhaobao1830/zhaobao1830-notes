@@ -17,6 +17,7 @@ import { androidNotesSidebar } from './sidebars/androidNotesSidebar'
 import { vuepressNotesSidebar } from './sidebars/vuepressNotesSidebar'
 import { springBootNotesSidebar } from './sidebars/springBootNotesSidebar'
 import { mavenNotesSidebar } from './sidebars/mavenNotesSidebar'
+import { javaNotesSidebar } from './sidebars/javaNotesSidebar'
 import { jsKnowledgeSidebar } from './sidebars/jsKnowledgeSidebar'
 import { cssKnowledgeSidebar } from './sidebars/cssKnowledgeSidebar'
 import { vueKnowledgeSidebar } from './sidebars/vueKnowledgeSidebar'
@@ -43,6 +44,7 @@ export const sidebar: SidebarConfig = {
   '/eslintNotes/': eslintNotesSidebar,
   '/androidNotes/': androidNotesSidebar,
   '/vuepressNotes/': vuepressNotesSidebar,
+  '/javaNotes': javaNotesSidebar,
   '/springBootNotes/': springBootNotesSidebar,
   '/mavenNotes/': mavenNotesSidebar,
   '/jsKnowledge/': jsKnowledgeSidebar,

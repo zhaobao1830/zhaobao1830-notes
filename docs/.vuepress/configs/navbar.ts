@@ -65,6 +65,10 @@ export const navbar: NavbarConfig = [
         link: '/vuepressNotes/01'
       },
       {
+        text: 'java笔记',
+        link: '/javaNotes/01'
+      },
+      {
         text: 'springBoot笔记',
         link: '/springBootNotes/01'
       },
