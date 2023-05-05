@@ -20,6 +20,31 @@ cookie的信息是暴露在外面的，如果把所有的信息都保存在cooki
 
 一般操作：cookie只存储id，详细信息保存在session中
 
+后端要保存信息到session中，需要使用HttpSession，调用session.setAttribute，生成sessionId，设置在
+Set-Cookie响应头中，响应给客户端
+
+```
+@RequestMapping(value = "login.do", method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse<User> login(String username, String password, HttpSession session) {
+        ServerResponse<User> response = iUserService.login(username, password);
+        if (response.isSuccess()) {
+            session.setAttribute(Const.CURRENT_USER, response.getData());
+        }
+        return response;
+    }
+```
+
+![Image text](../../.vuepress/public/fronKnowledge/common/verifyLogin/01.png)
+
+当客户端再次请求的时候，会把保存在cookie中的sessionId携带在Request Header中给到服务器，你只需要在服务器中再次使用代码
+```
+HttpSession session = request.getSession()
+```
+来获取request中的session
+
+![Image text](../../.vuepress/public/fronKnowledge/common/verifyLogin/02.png)
+
 ### 优点
 
 1、原理简单，易于学习
