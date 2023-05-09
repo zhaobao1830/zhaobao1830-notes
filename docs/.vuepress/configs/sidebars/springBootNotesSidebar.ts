@@ -8,7 +8,8 @@ export const springBootNotesSidebar = [
       '/springBootNotes/04',
       '/springBootNotes/05',
       '/springBootNotes/06',
-      '/springBootNotes/07'
+      '/springBootNotes/07',
+      '/springBootNotes/08'
     ]
   }
 ]
