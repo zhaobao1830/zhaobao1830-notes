@@ -37,5 +37,11 @@ export const javaSidebar = [
     children: [
       '/java/tomcat/01'
     ]
+  },
+  {
+    text: 'redis',
+    children: [
+      '/java/redis/01'
+    ]
   }
 ]
