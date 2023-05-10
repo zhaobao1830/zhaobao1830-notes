@@ -31,5 +31,11 @@ export const javaSidebar = [
       '/java/nginx/01',
       '/java/nginx/02'
     ]
+  },
+  {
+    text: 'tomcat',
+    children: [
+      '/java/tomcat/01'
+    ]
   }
 ]
