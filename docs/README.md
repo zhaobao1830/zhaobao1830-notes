@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /home.jpg
+heroImage: /home.webp
 actions:
   - text: 快速上手 →
     link: /frontKnowledge/utils/regexp
