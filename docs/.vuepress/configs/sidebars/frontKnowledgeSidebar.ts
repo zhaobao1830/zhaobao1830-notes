@@ -10,8 +10,7 @@ export const frontKnowledgeSidebar = [
     text: '常用组件',
     children: [
       '/frontKnowledge/common/image',
-      '/frontKnowledge/common/upload',
-      '/frontKnowledge/common/verifyLogin'
+      '/frontKnowledge/common/upload'
     ]
   },
   {
