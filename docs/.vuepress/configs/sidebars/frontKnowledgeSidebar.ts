@@ -31,5 +31,13 @@ export const frontKnowledgeSidebar = [
     children: [
       '/frontKnowledge/openSourceProjects/'
     ]
+  },
+  {
+    text: '其他',
+    children: [
+      '/frontKnowledge/other/01',
+      '/frontKnowledge/other/02',
+      '/frontKnowledge/other/03'
+    ]
   }
 ]
