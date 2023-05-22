@@ -5,7 +5,8 @@ export const miniProgramNotesSidebar = [
       '/miniProgramNotes/01',
       '/miniProgramNotes/02',
       '/miniProgramNotes/03',
-      '/miniProgramNotes/04'
+      '/miniProgramNotes/04',
+      '/miniProgramNotes/05'
     ]
   }
 ]
