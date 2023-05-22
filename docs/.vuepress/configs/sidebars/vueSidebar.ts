@@ -17,12 +17,6 @@ export const vueSidebar = [
     ]
   },
   {
-    text: '基础方法',
-    children: [
-      '/vue/basicMethod/axios'
-    ]
-  },
-  {
     text: '插件',
     children: [
       '/vue/plugin/good-storage',

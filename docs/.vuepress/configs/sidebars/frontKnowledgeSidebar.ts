@@ -14,6 +14,13 @@ export const frontKnowledgeSidebar = [
     ]
   },
   {
+    text: '基础方法',
+    children: [
+      '/frontKnowledge/basicMethod/axios',
+      '/frontKnowledge/basicMethod/promisic'
+    ]
+  },
+  {
     text: 'Git',
     children: [
       '/frontKnowledge/git/',
