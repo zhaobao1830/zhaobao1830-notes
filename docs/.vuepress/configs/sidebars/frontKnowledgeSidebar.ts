@@ -17,7 +17,8 @@ export const frontKnowledgeSidebar = [
     text: '基础方法',
     children: [
       '/frontKnowledge/basicMethod/axios',
-      '/frontKnowledge/basicMethod/promisic'
+      '/frontKnowledge/basicMethod/promisic',
+      '/frontKnowledge/basicMethod/paging'
     ]
   },
   {
