@@ -8,7 +8,8 @@ export const javaKnowledgeSidebar = [
       '/javaKnowledge/04',
       '/javaKnowledge/05',
       '/javaKnowledge/06',
-      '/javaKnowledge/07'
+      '/javaKnowledge/07',
+      '/javaKnowledge/08'
     ]
   }
 ]
