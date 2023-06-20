@@ -8,11 +8,15 @@
 
 后端方法需要的是：pageNum和pageSize
 
-一、将start、count转换为pageNum和pageSize
+## 参数转换
+
+将start、count转换为pageNum和pageSize
+
+项目地址：[https://github.com/zhaobao1830/misszb](https://github.com/zhaobao1830/misszb)
 
 1、定义PageCounter类
 
-```
+```java
 @Setter
 @Builder
 public class PageCounter {
@@ -23,14 +27,20 @@ public class PageCounter {
 }
 ```
 
+::: tip 备注
+类上加了@Builder注解，就可以使用PageCounter.builder().build()这种方式实例化对象
+:::
+
 2、将 start、count转换为pageNum、pageSie
 
-```
+```java
 public class CommonUtil {
 //    将 start、count转换为pageNum、pageSie
     public static PageCounter converToPageParameter(Integer start, Integer count){
-    // 这是从第0页开始
+        // 这是从第0页开始
         int pageNum = start/count;
+        
+        // 使用builder构建PageCounter对象
         PageCounter pageCounter = PageCounter.builder()
                 .pageNum(pageNum)
                 .pageSize(count)
@@ -40,13 +50,22 @@ public class CommonUtil {
 }
 ```
 
-二、分页的实现方法
+::: tip 备注
+PC端分页时候传递的是pageNum（当前页码）和pageSie（每页查询的条数），可以直接使用
+移动端很多时候传递的是start（起始位置）和count（每次查询的条数）就可以使用上面的方法进行转换
+:::
 
-mybatis 里的pager 分页
+::: tip 备注
+JAP里，使用PageRequest.of()生成分页需要的参数，给JPA的查询方法使用，这个方法里传入的参数是pageNum和pageSie
+:::
+
+## 实现
+
+### mybatis
 
 1、pom.xml安装pagehelper 
 
-```
+```xml
 <dependency>
    <groupId>com.github.pagehelper</groupId>
    <artifactId>pagehelper</artifactId>
@@ -56,7 +75,7 @@ mybatis 里的pager 分页
 
 2、例子
 
-```
+```java
 /**
  * @Author: zhaobao1830
  * @Date: 2021/3/17 9:15
@@ -182,11 +201,11 @@ public PagedGridResult setterPagedGrid(Integer pageNum, Integer pageSize, List<?
 }
 ```
 
-jpa里使用PageRequest
+## JAP
 
-简单版：
+**简单版：**
 
-```
+```java
 @Override
     public Page<Spu> getLatestPagingSpu(Integer pageNum, Integer pageSize) {
         Pageable page = PageRequest.of(pageNum, pageSize, Sort.by("createTime").descending());
@@ -196,13 +215,17 @@ jpa里使用PageRequest
 
 PageRequest.of（）将对应的参数传递进去
 
-完整版：
+::: tip 备注
+这种返回的数据结构是插件自带的，不符合前端的需求，所以我们需要对分页返回的信息进行二次封装
+:::
+
+**完整版：**
 
 1、、pom.xml安装dozermapper  用来对java bean进行拷贝
 
 用到的场景：从数据库查询回来的数据，前端不全用的上，需要进行二次封装（Vo），自己一个个属性赋值太浪费时间。这时可以使用dozermapper  
 
-```
+```xml
 <dependency>
       <groupId>com.github.dozermapper</groupId>
       <artifactId>dozer-core</artifactId>
@@ -212,7 +235,7 @@ PageRequest.of（）将对应的参数传递进去
 
 2、封装分页实体类
 
-```
+```java
 //封装分页实体类
 @Getter
 @Setter
@@ -245,7 +268,7 @@ public class Paging<T> {
 
 3、对分页进行再次封装，添加DozerBeanMapper功能
 
-```
+```java
 // 对分页进行再次封装，添加DozerBeanMapper功能
 // 如果不需要进行vo赋值，直接用Paging就行
 // 需要俩个泛型 T是源文件的类型  K是目标文件的类型
@@ -271,7 +294,7 @@ public class PagingDozer<T, K> extends Paging{
 
 4、service
 
-```
+```java
 @Override
     public Page<Spu> getLatestPagingSpu(Integer pageNum, Integer pageSize) {
         Pageable page = PageRequest.of(pageNum, pageSize, Sort.by("createTime").descending());
@@ -283,7 +306,7 @@ public class PagingDozer<T, K> extends Paging{
 
 5、controller
 
-```
+```java
 @RequestMapping(value = "/latest", method = RequestMethod.GET)
     public PagingDozer<Spu, SpuSimplifyVO> getLatestSpuList(@RequestParam(defaultValue = "0") Integer start,
                                                             @RequestParam(defaultValue = "10") Integer count
