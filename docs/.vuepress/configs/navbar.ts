@@ -165,6 +165,10 @@ export const navbar: NavbarConfig = [
       {
         text: '波波',
         link: 'https://gleenley.gitee.io/learing_record/'
+      },
+      {
+        text: 'JS每日一题',
+        link: 'https://vue3js.cn/interview/'
       }
     ]
   },
