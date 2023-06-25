@@ -1,10 +1,10 @@
-# promisic
+# promise封装API
 
-使用promisic函数对小程序的原生API进行封装，搭配async、await将异步API转换为同步
+使用promise函数对小程序的原生API进行封装，搭配async、await将异步API转换为同步
 
 ## 问题
 
-微信小程序的开发中虽然已经支持了ES6语法，但是在微信原生的API中仍然使用的还是ES5的回调函数， 在项目中使用不方便。
+微信小程序的开发中虽然已经支持了ES6语法，但是在微信原生的API中还是ES5的回调函数， 在项目中使用不方便。
 
 ::: tip 备注
 基础库 2.10.2 版本起，[异步 API](https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/api.html#API) 支持 callback & promise 两种调用方式。当接口参数 Object 对象中不包含 success/fail/complete 时将默认返回 promise，否则仍按回调方式执行，无返回值。
@@ -14,7 +14,7 @@
 
 ## 解决
 
-**until.js**
+**util.js**
 
 ```js
 export const promisic = function (func) {
