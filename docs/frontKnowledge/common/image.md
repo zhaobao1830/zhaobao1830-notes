@@ -53,3 +53,27 @@ fileReader.addEventListener('load', () => {
 1、URL.createObjectURL(file)得到本地内存容器的URL地址，同步使用，比较方便快捷，多次使用需要注意手动释放内存的问题，性能优秀
 
 2、FileReader.readAsDataURL(flie)胜在直接转为base64格式，可以直接用于业务，无序二次转换
+
+## 动态计算图片宽和高
+
+有时候我们需要动态的设置图片的宽和高样式
+
+可以这样做，图片加载完成后，会触发load方法，此方法里有个event参数，通过event.detail可以获取图片的宽高属性
+
+```html
+<image bind:load="onImgLoad" style="width:{{w}}rpx;height:{{h}}rpx;" src="{{data.img}}"></image>
+```
+
+```js
+ onImgLoad(event) {
+      const {width, height} = event.detail
+      this.setData({
+        w: 340,
+        h: 340*height/width
+      })
+    },
+```
+
+::: tip 备注
+这是微信小程序里的写法，H5页面获取图片的属性方法类似
+:::
