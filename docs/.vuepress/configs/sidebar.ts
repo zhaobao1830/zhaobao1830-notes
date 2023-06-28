@@ -21,6 +21,7 @@ import { javaNotesSidebar } from './sidebars/javaNotesSidebar'
 import { jsKnowledgeSidebar } from './sidebars/jsKnowledgeSidebar'
 import { cssKnowledgeSidebar } from './sidebars/cssKnowledgeSidebar'
 import { vueKnowledgeSidebar } from './sidebars/vueKnowledgeSidebar'
+import { webpackKnowledgeSidebar } from './sidebars/webpackKnowledgeSidebar'
 import { nodeKnowledgeSidebar } from './sidebars/nodeKnowledgeSidebar'
 import { browserKnowledgeSidebar } from './sidebars/browserKnowledgeSidebar'
 import { javaKnowledgeSidebar } from './sidebars/javaKnowledgeSidebar'
@@ -50,6 +51,7 @@ export const sidebar: SidebarConfig = {
   '/jsKnowledge/': jsKnowledgeSidebar,
   '/cssKnowledge/': cssKnowledgeSidebar,
   '/vueKnowledge/': vueKnowledgeSidebar,
+  '/webpackKnowledge/': webpackKnowledgeSidebar,
   '/nodeKnowledge/': nodeKnowledgeSidebar,
   '/browserKnowledge/': browserKnowledgeSidebar,
   '/javaKnowledge/': javaKnowledgeSidebar,

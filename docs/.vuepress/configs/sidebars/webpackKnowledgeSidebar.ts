@@ -1,0 +1,9 @@
+export const webpackKnowledgeSidebar = [
+  {
+    text: 'webpack知识点',
+    children: [
+      '/webpackKnowledge/01',
+      '/webpackKnowledge/02'
+    ]
+  }
+]
