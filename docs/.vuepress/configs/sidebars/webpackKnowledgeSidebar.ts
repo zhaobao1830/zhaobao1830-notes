@@ -4,7 +4,8 @@ export const webpackKnowledgeSidebar = [
     children: [
       '/webpackKnowledge/01',
       '/webpackKnowledge/02',
-      '/webpackKnowledge/03'
+      '/webpackKnowledge/03',
+      '/webpackKnowledge/04'
     ]
   }
 ]
