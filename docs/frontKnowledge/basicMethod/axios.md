@@ -147,6 +147,8 @@ export default config
 
 ### 知识点
 
+axios源码可以[点击这](https://github.com/zhaobao1830/ts-axios-zb)，源码对应的文档[点击这](https://github.com/zhaobao1830/ts-axios-doc)
+
 1、axios的核心就是利用XMLHttpRequests发起请求
 
 2、可以使用[qs](https://www.npmjs.com/package/qs)对参数进行处理，qs.stringify()是将对象序列化成URL的形式，以&进行拼接；qs.parse()是将URL解析成对象的形式
