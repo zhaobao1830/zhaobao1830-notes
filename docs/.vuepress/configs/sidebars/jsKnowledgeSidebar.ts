@@ -17,7 +17,8 @@ export const jsKnowledgeSidebar = [
       '/jsKnowledge/13',
       '/jsKnowledge/14',
       '/jsKnowledge/15',
-      '/jsKnowledge/16'
+      '/jsKnowledge/16',
+      '/jsKnowledge/17'
     ]
   }
 ]
