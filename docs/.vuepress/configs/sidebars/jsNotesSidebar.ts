@@ -7,7 +7,8 @@ export const jsNotesSidebar = [
       '/jsNotes/03',
       '/jsNotes/04',
       '/jsNotes/05',
-      '/jsNotes/06'
+      '/jsNotes/06',
+      '/jsNotes/07'
     ]
   }
 ]
