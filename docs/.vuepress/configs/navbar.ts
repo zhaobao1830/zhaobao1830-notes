@@ -222,7 +222,7 @@ export const navbar: NavbarConfig = [
       },
       {
         text: 'React官网',
-        link: 'https://react.docschina.org/'
+        link: 'https://zh-hans.react.dev/'
       },
       {
         text: 'uniapp官网',
