@@ -22,7 +22,8 @@ export const javaKnowledgeSidebar = [
       '/javaKnowledge/18',
       '/javaKnowledge/19',
       '/javaKnowledge/20',
-      '/javaKnowledge/21'
+      '/javaKnowledge/21',
+      '/javaKnowledge/22'
     ]
   }
 ]
