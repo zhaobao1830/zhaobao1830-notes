@@ -20,12 +20,6 @@ export const javaSidebar = [
     ]
   },
   {
-    text: 'mybatis',
-    children: [
-      '/java/mybatis/tkmybatis'
-    ]
-  },
-  {
     text: 'nginx',
     children: [
       '/java/nginx/01',
