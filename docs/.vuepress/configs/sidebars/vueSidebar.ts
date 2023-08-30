@@ -7,7 +7,8 @@ export const vueSidebar = [
       '/vue/basicComponent/imageLazy',
       '/vue/basicComponent/scroll',
       '/vue/basicComponent/slide',
-      '/vue/basicComponent/ruler'
+      '/vue/basicComponent/ruler',
+      '/vue/basicComponent/svg'
     ]
   },
   {
