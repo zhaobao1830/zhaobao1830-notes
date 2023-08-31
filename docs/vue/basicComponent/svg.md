@@ -5,7 +5,7 @@ sidebarDepth: 2
 
 # svg组件
 
-在vite里通过vite-plugin-svg-icons动态使用svg图片
+在vite里通过[vite-plugin-svg-icons](https://github.com/vbenjs/vite-plugin-svg-icons)动态使用svg图片
 
 ## 步骤
 
@@ -42,10 +42,10 @@ export default defineConfig({
   plugins: [
     vue(),
     createSvgIconsPlugin({
-      // 指定要缓存的文件夹
+      // 指定要查找的文件夹
       iconDirs: [resolve(process.cwd(), 'src/assets/icons')],
       // 指定symbolId
-      symbolId: 'icon-[name]'
+      symbolId: 'icon-[dir]-[name]'
     })
   ]
 })
@@ -61,7 +61,7 @@ export default defineConfig({
     aria-hidden="true"
     :style="{ width: size + 'px', height: size + 'px' }"
   >
-    <use :href="svgName" />
+    <use :href="svgName" :fill="color"/>
   </svg>
 </template>
 
@@ -69,6 +69,15 @@ export default defineConfig({
   import { computed } from 'vue'
   
   const props = defineProps({
+    prefix: {
+      type: String,
+      default: 'icon'
+    },
+    // 文件夹
+    folder: {
+      type: String,
+      default: ''
+    },
     // svg尺寸
     size: {
       type: String,
@@ -83,6 +92,10 @@ export default defineConfig({
     iconName: {
       type: String,
       required: true
+    },
+    color: {
+      type: String,
+      default: '#333'
     }
   })
   
@@ -90,14 +103,17 @@ export default defineConfig({
     return props.iconClass ? 'svg-icon ' + props.iconClass : 'svg-icon'
   })
   
-  const svgName = computed(() => `#icon-${props.iconName}`)
+  const svgName = computed(() => {
+    if (props.folder) {
+      return `#${props.prefix}-${props.folder}-${props.iconName}`
+    } else {
+      return `#${props.prefix}-${props.iconName}`
+    }
+  })
 </script>
 
-<style scoped>
-  // 自定义每个svg图片的样式
-  .pub_add_class{
-    fill: aqua;
-  }
+<style lang="scss" scoped>
+
 </style>
 
 ```
@@ -110,8 +126,9 @@ export default defineConfig({
     <his-svg-icon
       :icon-class="iconClass"
       :icon-name="iconName"
+      folder="hisIcon"
       size="18"
-      color="#fff"
+      color="red"
     ></his-svg-icon>
   </div>
 </template>
