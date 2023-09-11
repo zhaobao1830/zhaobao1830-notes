@@ -116,6 +116,10 @@ export const navbar: NavbarConfig = [
       {
         text: '数据库知识点',
         link: '/dataBaseKnowledge/01'
+      },
+      {
+        text: '数据可视化知识点',
+        link: '/dataVisualizationKnowledge/01'
       }
     ]
   },

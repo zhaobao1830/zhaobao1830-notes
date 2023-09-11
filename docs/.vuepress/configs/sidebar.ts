@@ -27,6 +27,7 @@ import { browserKnowledgeSidebar } from './sidebars/browserKnowledgeSidebar'
 import { javaKnowledgeSidebar } from './sidebars/javaKnowledgeSidebar'
 import { mybatisKnowledgeSidebar } from './sidebars/mybatisKnowledgeSidebar'
 import { dataBaseKnowledgeSidebar } from './sidebars/dataBaseKnowledgeSidebar'
+import { dataVisualizationKnowledgeSidebar } from './sidebars/dataVisualizationKnowledgeSidebar'
 
 export const sidebar: SidebarConfig = {
   '/java/': javaSidebar,
@@ -56,5 +57,6 @@ export const sidebar: SidebarConfig = {
   '/browserKnowledge/': browserKnowledgeSidebar,
   '/javaKnowledge/': javaKnowledgeSidebar,
   '/mybatisKnowledge/': mybatisKnowledgeSidebar,
-  '/dataBaseKnowledge/': dataBaseKnowledgeSidebar
+  '/dataBaseKnowledge/': dataBaseKnowledgeSidebar,
+  '/dataVisualizationKnowledge/': dataVisualizationKnowledgeSidebar
 }
