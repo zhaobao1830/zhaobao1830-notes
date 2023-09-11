@@ -237,6 +237,10 @@ export const navbar: NavbarConfig = [
         link: 'https://vitejs.cn/'
       },
       {
+        text: 'Vite插件',
+        link: 'https://github.com/vitejs/awesome-vite'
+      },
+      {
         text: 'Pinia(状态管理工具)',
         link: 'https://pinia.vuejs.org/zh/'
       },
