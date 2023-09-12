@@ -233,6 +233,10 @@ export const navbar: NavbarConfig = [
         link: 'https://uniapp.dcloud.net.cn/'
       },
       {
+        text: 'echarts',
+        link: 'https://echarts.apache.org/zh/index.html'
+      },
+      {
         text: 'Vue-cli(vue2脚手架)',
         link: 'https://cli.vuejs.org/zh/'
       },
