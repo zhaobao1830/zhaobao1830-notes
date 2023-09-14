@@ -4,6 +4,7 @@ export const dataVisualizationKnowledgeSidebar = [
     children: [
       '/dataVisualizationKnowledge/01',
       '/dataVisualizationKnowledge/03',
+      '/dataVisualizationKnowledge/04',
       '/dataVisualizationKnowledge/02'
     ]
   }
