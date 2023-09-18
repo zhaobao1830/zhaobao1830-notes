@@ -237,6 +237,14 @@ export const navbar: NavbarConfig = [
         link: 'https://echarts.apache.org/zh/index.html'
       },
       {
+        text: '百度地图',
+        link: 'https://lbsyun.baidu.com/index.php?title=%E9%A6%96%E9%A1%B5'
+      },
+      {
+        text: '高德地图',
+        link: 'https://lbs.amap.com/api'
+      },
+      {
         text: 'Vue-cli(vue2脚手架)',
         link: 'https://cli.vuejs.org/zh/'
       },
