@@ -41,6 +41,10 @@ export const navbar: NavbarConfig = [
         link: '/miniProgramNotes/01'
       },
       {
+        text: '浏览器笔记',
+        link: '/browserNotes/01'
+      },
+      {
         text: 'vite笔记',
         link: '/viteNotes/01'
       },

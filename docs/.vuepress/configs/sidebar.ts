@@ -9,6 +9,7 @@ import { uniappNotesSidebar } from './sidebars/uniappNotesSidebar'
 import { jsNotesSidebar } from './sidebars/jsNotesSidebar'
 import { typeScriptNotesSidebar } from './sidebars/typeScriptNotesSidebar'
 import { miniProgramNotesSidebar } from './sidebars/miniProgramNotesSidebar'
+import { browserNotesSidebar } from './sidebars/browserNotesSidebar'
 import { viteNotesSidebar} from './sidebars/viteNotesSidebar'
 import { httpNotesSidebar } from './sidebars/httpNotesSidebar'
 import { jetBrainsNotesSidebar } from './sidebars/jetBrainsNotesSidebar'
@@ -40,6 +41,7 @@ export const sidebar: SidebarConfig = {
   '/jsNotes/': jsNotesSidebar,
   '/typeScriptNotes/': typeScriptNotesSidebar,
   '/miniProgramNotes/': miniProgramNotesSidebar,
+  '/browserNotes/': browserNotesSidebar,
   '/viteNotes/': viteNotesSidebar,
   '/httpNotes/': httpNotesSidebar,
   '/jetBrainsNotes/': jetBrainsNotesSidebar,
