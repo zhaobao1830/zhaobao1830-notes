@@ -122,4 +122,29 @@ export function convertBase64UrlToBlob(urlData) {
 }
 ```
 
+## element-ui的上传组件
 
+使用element-ui的组件手动上传文件
+
+```html
+<el-upload
+  class="avatar-uploader"
+  :limit="1"
+  accept=".jpg,.jpeg,.png"
+  drag
+  action="#"
+  :file-list="logoList"
+  :show-file-list="false"
+  :auto-upload="false"
+  :on-change="logoUploader"
+>
+  <el-button type="primary">点击上传</el-button>
+</el-upload>
+```
+
+文档地址：[上传组件](https://element-plus.org/zh-CN/component/upload.html)
+
+::: tip 备注
+上面是简单版，auto-upload设置为false（不自动上传文件），
+使用on-change获取上传的文件信息，在这个方法里，将文件信息进程处理后调用接口，传给后端
+:::
