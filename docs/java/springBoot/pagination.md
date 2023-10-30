@@ -52,6 +52,7 @@ public class CommonUtil {
 
 ::: tip 备注
 PC端分页时候传递的是pageNum（当前页码）和pageSie（每页查询的条数），可以直接使用
+
 移动端很多时候传递的是start（起始位置）和count（每次查询的条数）就可以使用上面的方法进行转换
 :::
 
@@ -201,7 +202,110 @@ public PagedGridResult setterPagedGrid(Integer pageNum, Integer pageSize, List<?
 }
 ```
 
-## JAP
+### mybatis-plus
+
+controller
+
+```java
+    @GetMapping("/page")
+    public PageResponseVO<BannerDO> getBanners(@RequestParam(required = false, defaultValue = "1")
+                                               @Min(value = 1) Integer page,
+                                               @RequestParam(required = false, defaultValue = "10")
+                                               @Min(value = 1) @Max(value = 30) Integer count) {
+
+// Page和IPage都是mybatis-plus自带的
+        Page<BannerDO> pager = new Page<>(page, count);
+        IPage<BannerDO> paging = bannerService.getBaseMapper().selectPage(pager, null);
+
+        return new PageResponseVO<>(paging.getTotal(), paging.getRecords(), paging.getCurrent(), paging.getSize());
+    }
+```
+
+BannerService
+
+```java
+public class BannerService extends ServiceImpl<BannerMapper, BannerDO> {
+}
+```
+
+BannerDO 定义每条数据的属性
+
+```java
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableLogic;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.Date;
+import java.util.List;
+
+@Getter
+@Setter
+@TableName("banner")
+public class BannerDO {
+
+    @TableId(value = "id", type = IdType.AUTO)
+    private Integer id;
+
+    private String name;
+
+    private String title;
+
+    private String description;
+
+    private String img;
+
+    @JsonIgnore
+    private Date createTime;
+
+    @JsonIgnore
+    private Date updateTime;
+
+    @JsonIgnore
+    @TableLogic
+    private Date deleteTime;
+}
+
+```
+
+PageResponseVO 定义返回的分页数据
+
+```java
+package io.github.talelin.latticy.vo;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
+
+/**
+ * 分页数据统一 view object
+ *
+ * @author pedro@TaleLin
+ */
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+public class PageResponseVO<T> {
+
+    private long total;
+
+    private List<T> items;
+
+    private long page;
+
+    private long count;
+}
+
+```
+
+### JAP
 
 **简单版：**
 
@@ -221,7 +325,7 @@ PageRequest.of（）将对应的参数传递进去
 
 **完整版：**
 
-1、、pom.xml安装dozermapper  用来对java bean进行拷贝
+1、pom.xml安装dozermapper  用来对java bean进行拷贝
 
 用到的场景：从数据库查询回来的数据，前端不全用的上，需要进行二次封装（Vo），自己一个个属性赋值太浪费时间。这时可以使用dozermapper  
 
