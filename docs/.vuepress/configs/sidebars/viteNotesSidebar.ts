@@ -5,7 +5,8 @@ export const viteNotesSidebar = [
       '/viteNotes/01',
       '/viteNotes/02',
       '/viteNotes/03',
-      '/viteNotes/04'
+      '/viteNotes/04',
+      '/viteNotes/05'
     ]
   }
 ]
