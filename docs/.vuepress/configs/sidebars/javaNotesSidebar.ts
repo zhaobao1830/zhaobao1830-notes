@@ -5,7 +5,9 @@ export const javaNotesSidebar = [
       '/javaNotes/01',
       '/javaNotes/02',
       '/javaNotes/03',
-      '/javaNotes/04'
+      '/javaNotes/04',
+      '/javaNotes/05',
+      '/javaNotes/06'
     ]
   }
 ]
