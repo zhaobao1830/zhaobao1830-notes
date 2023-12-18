@@ -28,7 +28,8 @@ export const vueNotesSidebar = [
       '/vueNotes/24',
       '/vueNotes/25',
       '/vueNotes/26',
-      '/vueNotes/27'
+      '/vueNotes/27',
+      '/vueNotes/28'
     ]
   }
 ]
