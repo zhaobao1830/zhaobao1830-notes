@@ -204,77 +204,77 @@ public PagedGridResult setterPagedGrid(Integer pageNum, Integer pageSize, List<?
 
 ### mybatis-plus
 
-controller
+项目：[https://github.com/zhaobao1830/misscmszb](https://github.com/zhaobao1830/misscmszb)
+
+CommonConfiguration.java
+
+对MybatisPlus进行分页配置，只有加上这个配置，IPage的total才能有值
 
 ```java
-    @GetMapping("/page")
-    public PageResponseVO<BannerDO> getBanners(@RequestParam(required = false, defaultValue = "1")
-                                               @Min(value = 1) Integer page,
-                                               @RequestParam(required = false, defaultValue = "10")
-                                               @Min(value = 1) @Max(value = 30) Integer count) {
-
-// Page和IPage都是mybatis-plus自带的
-        Page<BannerDO> pager = new Page<>(page, count);
-        IPage<BannerDO> paging = bannerService.getBaseMapper().selectPage(pager, null);
-
-        return new PageResponseVO<>(paging.getTotal(), paging.getRecords(), paging.getCurrent(), paging.getSize());
+    /**
+     * 新的分页插件,一缓和二缓遵循mybatis的规则
+     * 只有加上这个，查询后IPage里的total才能有值，不然就是0
+     */
+    @Bean
+    public MybatisPlusInterceptor mybatisPlusInterceptor() {
+        MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();
+        interceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.MYSQL));
+        return interceptor;
     }
 ```
 
-BannerService
+LogController.java
 
 ```java
-public class BannerService extends ServiceImpl<BannerMapper, BannerDO> {
-}
-```
+package com.zb.misscmszb.controller.cms;
 
-BannerDO 定义每条数据的属性
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.zb.misscmszb.core.annotation.GroupRequired;
+import com.zb.misscmszb.core.annotation.PermissionMeta;
+import com.zb.misscmszb.core.annotation.PermissionModule;
+import com.zb.misscmszb.core.util.PageUtil;
+import com.zb.misscmszb.dto.log.QueryLogDTO;
+import com.zb.misscmszb.dto.query.BasePageDTO;
+import com.zb.misscmszb.model.LogDO;
+import com.zb.misscmszb.service.LogService;
+import com.zb.misscmszb.vo.PageResponseVO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-```java
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableLogic;
-import com.baomidou.mybatisplus.annotation.TableName;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Getter;
-import lombok.Setter;
+/**
+ * 日志控制器
+ */
+@RestController
+@RequestMapping("/cms/log")
+@PermissionModule(value = "日志")
+@Validated
+public class LogController {
 
-import java.util.Date;
-import java.util.List;
+    @Autowired
+    private LogService logService;
 
-@Getter
-@Setter
-@TableName("banner")
-public class BannerDO {
-
-    @TableId(value = "id", type = IdType.AUTO)
-    private Integer id;
-
-    private String name;
-
-    private String title;
-
-    private String description;
-
-    private String img;
-
-    @JsonIgnore
-    private Date createTime;
-
-    @JsonIgnore
-    private Date updateTime;
-
-    @JsonIgnore
-    @TableLogic
-    private Date deleteTime;
+    @GetMapping("/search")
+    @GroupRequired
+    @PermissionMeta(value = "搜索日志")
+    public PageResponseVO<LogDO> searchLogs(QueryLogDTO dto) {
+        IPage<LogDO> iPage = logService.searchLogPage(
+                dto.getPage(), dto.getCount(),
+                dto.getName(), dto.getKeyword(),
+                dto.getStart(), dto.getEnd()
+        );
+        return PageUtil.build(iPage);
+    }
 }
 
 ```
 
-PageResponseVO 定义返回的分页数据
+PageResponseVO.java
 
 ```java
-package io.github.talelin.latticy.vo;
+package com.zb.misscmszb.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -284,9 +284,7 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 /**
- * 分页数据统一 view object
- *
- * @author pedro@TaleLin
+ * 分页数据统一视图对象
  */
 @Data
 @AllArgsConstructor
@@ -294,13 +292,48 @@ import java.util.List;
 @Builder
 public class PageResponseVO<T> {
 
-    private long total;
+    private Integer total;
 
     private List<T> items;
 
-    private long page;
+    private Integer page;
 
-    private long count;
+    private Integer count;
+
+}
+
+```
+
+PageUtil.java
+
+```java
+package com.zb.misscmszb.core.util;
+
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.zb.misscmszb.vo.PageResponseVO;
+
+import java.util.List;
+
+/**
+ * 分页工具类
+ */
+public class PageUtil {
+
+    private PageUtil() {
+        throw new IllegalStateException("Utility class");
+    }
+
+    public static <T> PageResponseVO<T> build(IPage<T> iPage) {
+        return new PageResponseVO<>(Math.toIntExact(iPage.getTotal()), iPage.getRecords(),
+                Math.toIntExact(iPage.getCurrent()), Math.toIntExact(iPage.getSize()));
+    }
+
+    public static <K, T> PageResponseVO<K> build(IPage<T> iPage, List<K> records) {
+        return new PageResponseVO<>(Math.toIntExact(iPage.getTotal()), records,
+                Math.toIntExact(iPage.getCurrent()),
+                Math.toIntExact(iPage.getSize()));
+    }
+
 }
 
 ```
