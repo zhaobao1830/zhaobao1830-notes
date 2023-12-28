@@ -189,7 +189,20 @@ export const navbar: NavbarConfig = [
     children: [
       {
         text: 'Java基础项目',
-        link: 'https://github.com/zhaobao1830/spbtzb'
+        children: [
+          {
+            text: '测试项目1',
+            link: 'https://github.com/zhaobao1830/spbtzb'
+          },
+          {
+            text: '测试项目2',
+            link: 'https://github.com/zhaobao1830/misszb'
+          },
+          {
+            text: '模板项目',
+            link: 'https://github.com/zhaobao1830/misscmszb'
+          }
+        ]
       },
       {
         text: 'Vite移动端项目',
