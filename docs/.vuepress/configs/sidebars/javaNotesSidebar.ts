@@ -7,7 +7,8 @@ export const javaNotesSidebar = [
       '/javaNotes/03',
       '/javaNotes/04',
       '/javaNotes/05',
-      '/javaNotes/06'
+      '/javaNotes/06',
+      '/javaNotes/07'
     ]
   }
 ]
