@@ -197,7 +197,17 @@ export const navbar: NavbarConfig = [
       },
       {
         text: 'Vite PC端项目',
-        link: 'https://github.com/zhaobao1830/vite-pc-zb'
+        link: 'https://github.com/zhaobao1830/vite-pc-zb',
+        children: [
+          {
+            text: '测试项目',
+            link: 'https://github.com/zhaobao1830/vite-pc-zb'
+          },
+          {
+            text: '模板项目',
+            link: 'https://github.com/zhaobao1830/cms-vue-zb',
+          }
+        ]
       },
       {
         text: 'VueCli移动端项目',
