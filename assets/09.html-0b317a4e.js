@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-2c0f4435","path":"/vueNotes/09.html","title":"vue中$router.push打开新窗口","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1679392750000},"filePathRelative":"vueNotes/09.md"}');export{e as data};

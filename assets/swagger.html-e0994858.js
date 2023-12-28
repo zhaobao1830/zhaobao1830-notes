@@ -1,0 +1,1 @@
+const a=JSON.parse('{"key":"v-54fc298b","path":"/java/springBoot/swagger.html","title":"swagger2","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1616052403000},"filePathRelative":"java/springBoot/swagger.md"}');export{a as data};

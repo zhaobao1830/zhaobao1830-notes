@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-2ab1d5cd","path":"/springBootNotes/06.html","title":"新建的yml文件不是绿色的叶子","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1679447384000},"filePathRelative":"springBootNotes/06.md"}');export{t as data};

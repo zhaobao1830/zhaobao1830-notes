@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-77c66dd6","path":"/browserKnowledge/03.html","title":"TCP、UDP和HTTP的区别","lang":"zh-CN","frontmatter":{},"headers":[{"level":2,"title":"TCP和UDP的区别","slug":"tcp和udp的区别","link":"#tcp和udp的区别","children":[]}],"git":{"updatedTime":1686626827000},"filePathRelative":"browserKnowledge/03.md"}');export{e as data};

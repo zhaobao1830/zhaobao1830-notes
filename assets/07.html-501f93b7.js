@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-57107f02","path":"/jsNotes/07.html","title":"js里使用单例模式","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1688977525000},"filePathRelative":"jsNotes/07.md"}');export{t as data};

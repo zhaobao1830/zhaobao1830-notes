@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-de859e4c","path":"/vueNotes/26.html","title":"vue3中使用provide/inject替换getCurrentInstance","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1693448521000},"filePathRelative":"vueNotes/26.md"}');export{e as data};

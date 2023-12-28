@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-1c84a319","path":"/vueKnowledge/02.html","title":"为什么会有composition API？","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1679912305000},"filePathRelative":"vueKnowledge/02.md"}');export{e as data};

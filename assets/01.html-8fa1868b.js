@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-4cd36b48","path":"/jsNotes/01.html","title":"splice删除数组元素","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1679409065000},"filePathRelative":"jsNotes/01.md"}');export{t as data};

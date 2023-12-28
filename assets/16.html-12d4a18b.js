@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-5bd6f599","path":"/vueNotes/16.html","title":"Vue props中Object和Array设置默认值","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1679392750000},"filePathRelative":"vueNotes/16.md"}');export{e as data};

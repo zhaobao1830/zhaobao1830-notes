@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-2387091a","path":"/vueNotes/04.html","title":"安卓使用软键盘输入后查询，better-scroll的提示信息会出现在页面上","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1679392750000},"filePathRelative":"vueNotes/04.md"}');export{e as data};

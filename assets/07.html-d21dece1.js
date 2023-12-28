@@ -1,0 +1,10 @@
+import{_ as n,p as s,q as a,a1 as e}from"./framework-b7c41258.js";const t={},o=e(`<h1 id="js里使用单例模式" tabindex="-1"><a class="header-anchor" href="#js里使用单例模式" aria-hidden="true">#</a> js里使用单例模式</h1><div class="language-javascript line-numbers-mode" data-ext="js"><pre class="language-javascript"><code><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">HistoryKeyword</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> HistoryKeyword<span class="token punctuation">.</span>instance <span class="token operator">===</span> <span class="token string">&#39;object&#39;</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">return</span> HistoryKeyword<span class="token punctuation">.</span>instance
+    <span class="token punctuation">}</span>
+    HistoryKeyword<span class="token punctuation">.</span>instance <span class="token operator">=</span> <span class="token keyword">this</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在类里面的constructor里加上这样的代码，使用的时候，不管new多少次，都是操作的同一个对象</p>`,3),c=[o];function p(i,l){return s(),a("div",null,c)}const d=n(t,[["render",p],["__file","07.html.vue"]]);export{d as default};

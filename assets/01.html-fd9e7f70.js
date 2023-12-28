@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-1e687f3d","path":"/vueNotes/01.html","title":"vue-router里实现过渡效果","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1679392750000},"filePathRelative":"vueNotes/01.md"}');export{e as data};

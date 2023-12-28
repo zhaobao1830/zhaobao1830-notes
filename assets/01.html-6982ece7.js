@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-653fa950","path":"/scaffold/01.html","title":"脚手架","lang":"zh-CN","frontmatter":{},"headers":[{"level":2,"title":"简介","slug":"简介","link":"#简介","children":[]},{"level":2,"title":"使用","slug":"使用","link":"#使用","children":[]}],"git":{"updatedTime":1678418235000},"filePathRelative":"scaffold/01.md"}');export{e as data};

@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-4a30146a","path":"/javaNotes/06.html","title":"如何访问springBoot项目上传本地的资源","lang":"zh-CN","frontmatter":{},"headers":[{"level":2,"title":"需求","slug":"需求","link":"#需求","children":[]},{"level":2,"title":"解决办法","slug":"解决办法","link":"#解决办法","children":[]}],"git":{"updatedTime":1701937563000},"filePathRelative":"javaNotes/06.md"}');export{e as data};

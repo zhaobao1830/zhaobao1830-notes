@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-1022995c","path":"/uniappNotes/05.html","title":"使用vscode开发uni-app项目","lang":"zh-CN","frontmatter":{},"headers":[{"level":2,"title":"初始化项目","slug":"初始化项目","link":"#初始化项目","children":[]}],"git":{"updatedTime":1683188266000},"filePathRelative":"uniappNotes/05.md"}');export{e as data};

@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-0c502874","path":"/java/utils/method.html","title":"常用方法","lang":"zh-CN","frontmatter":{"sidebarDepth":2},"headers":[{"level":2,"title":"手机号验证","slug":"手机号验证","link":"#手机号验证","children":[]}],"git":{"updatedTime":1679449834000},"filePathRelative":"java/utils/method.md"}');export{t as data};

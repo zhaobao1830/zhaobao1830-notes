@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-586d445b","path":"/vueNotes/14.html","title":"unplugin-vue-components插件引入组件","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1693559312000},"filePathRelative":"vueNotes/14.md"}');export{e as data};

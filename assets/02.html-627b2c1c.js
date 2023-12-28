@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-4e8843e7","path":"/jsNotes/02.html","title":"使用new map存取删数据","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1679409065000},"filePathRelative":"jsNotes/02.md"}');export{e as data};

@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-4cf78e02","path":"/eslintNotes/02.html","title":"You should add parserOptions.extraFileExtensions to your config","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1680578168000},"filePathRelative":"eslintNotes/02.md"}');export{t as data};
