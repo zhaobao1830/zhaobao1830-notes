@@ -49,7 +49,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           # GitHub 密钥
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # 指定仓库
           REPOSITORY_NAME: zhaobao1830/zhaobao1830-notes
           # GitHub Pages 读取的分支
