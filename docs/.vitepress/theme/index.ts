@@ -2,7 +2,6 @@ import { h, watch } from 'vue'
 import { useData, EnhanceAppContext } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 
-import MNavVisitor from './components/MNavVisitor.vue'
 import MDocFooter from './components/MDocFooter.vue'
 import MNavLinks from './components/MNavLinks.vue'
 
@@ -50,7 +49,6 @@ export default {
        * https://vitepress.dev/guide/extending-default-theme#layout-slots
        * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/Layout.vue
        */
-      'nav-bar-title-after': () => h(MNavVisitor),
       'doc-after': () => h(MDocFooter)
     })
   },
