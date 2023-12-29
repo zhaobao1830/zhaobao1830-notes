@@ -5,7 +5,7 @@ sidebarDepth: 2
 
 ## ruler刻度尺
 
-![Image text](../../.vuepress/public/vue/base/ruler/01.png)
+![Image text](../../public/vue/base/ruler/01.png)
 
 ```vue
 <template>
@@ -413,7 +413,7 @@ export default {
 
 ### 自定义step展示文案
 
-![Image text](../../.vuepress/public/vue/base/ruler/02.png)
+![Image text](../../public/vue/base/ruler/02.png)
 
 ```vue
 <template>
@@ -471,7 +471,7 @@ export default {
 
 ### 自定义step展示位置
 
-![Image text](../../.vuepress/public/vue/base/ruler/03.png)
+![Image text](../../public/vue/base/ruler/03.png)
 
 ```vue
 <template>

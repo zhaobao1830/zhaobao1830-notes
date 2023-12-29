@@ -131,7 +131,7 @@ registerGlobComp(app)
 
 * --dest 打包后的文件夹名称
 
-![Image text](../../.vuepress/public/vue/global/button/01.png)
+![Image text](../../public/vue/global/button/01.png)
 
 4、执行npm run package进行打包
 

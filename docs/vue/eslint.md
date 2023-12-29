@@ -226,7 +226,7 @@ npm install --save-dev @typescript-eslint/parser @typescript-eslint/eslint-plugi
 
 5、ESLint was configured to run on `<tsconfigRootDir>/vite.config.ts` using `parserOptions.project`: `<tsconfigRootDir>/tsconfig.json`
 
-![Image text](../.vuepress/public/vue/eslint/01.png)
+![Image text](../public/vue/eslint/01.png)
 
 解决办法：
 

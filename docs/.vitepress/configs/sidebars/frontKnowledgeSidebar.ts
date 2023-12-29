@@ -47,7 +47,7 @@ export const frontKnowledgeSidebar = [
     items: [
       {
         text: 'Git',
-        link: '/frontKnowledge/git/'
+        link: '/frontKnowledge/git/git'
       },
       {
         text: 'Git 命令清单',
@@ -60,7 +60,7 @@ export const frontKnowledgeSidebar = [
     items: [
       {
         text: '前端监控',
-        link: '/frontKnowledge/monitor/'
+        link: '/frontKnowledge/monitor/README'
       }
     ]
   },
@@ -69,7 +69,7 @@ export const frontKnowledgeSidebar = [
     items: [
       {
         text: '优秀的开源项目',
-        link: '/frontKnowledge/openSourceProjects/'
+        link: '/frontKnowledge/openSourceProjects/README'
       }
     ]
   },

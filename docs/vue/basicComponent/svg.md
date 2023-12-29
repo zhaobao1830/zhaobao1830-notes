@@ -27,7 +27,7 @@ import 'virtual:svg-icons-register'
 
 **第三、新建svg图片文件夹**
 
-![Image text](../../.vuepress/public/vue/base/svg/01.png)
+![Image text](../../public/vue/base/svg/01.png)
 
 **第四、vite.config.js配置**
 
