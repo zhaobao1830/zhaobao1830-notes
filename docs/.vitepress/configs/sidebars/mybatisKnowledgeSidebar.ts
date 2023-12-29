@@ -1,9 +1,15 @@
 export const mybatisKnowledgeSidebar = [
   {
     text: 'mybatis知识点',
-    children: [
-      '/mybatisKnowledge/01',
-      '/mybatisKnowledge/02'
+    items: [
+      {
+        text: 'mybatis三剑客',
+        link: '/mybatisKnowledge/01'
+      },
+      {
+        text: 'mybatis传递多个参数',
+        link: '/mybatisKnowledge/02'
+      },
     ]
   }
 ]

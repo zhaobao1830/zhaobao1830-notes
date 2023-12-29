@@ -4,7 +4,7 @@ export const frontKnowledgeSidebar = [
     items: [
       {
         text: '常用正则',
-        link:  '/frontKnowledge/utils/regexp'
+        link: '/frontKnowledge/utils/regexp'
       },
       {
         text: '常用方法',

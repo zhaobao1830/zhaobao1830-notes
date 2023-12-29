@@ -2,7 +2,10 @@ export const androidNotesSidebar = [
   {
     text: 'android笔记',
     items: [
-      '/androidNotes/01'
+      {
+        text: '移动端真机调试',
+        link: '/androidNotes/01'
+      }
     ]
   }
 ]

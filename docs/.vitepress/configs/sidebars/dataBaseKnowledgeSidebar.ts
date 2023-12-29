@@ -2,7 +2,10 @@ export const dataBaseKnowledgeSidebar = [
   {
     text: '数据库知识点',
     items: [
-      '/dataBaseKnowledge/01'
+      {
+        text: 'mySql和mongodb的区别',
+        link: '/dataBaseKnowledge/01'
+      }
     ]
   }
 ]
