@@ -1,9 +1,4 @@
----
-title: svg                  
-sidebarDepth: 2
----
-
-# svg组件
+# svg
 
 在vite里通过[vite-plugin-svg-icons](https://github.com/vbenjs/vite-plugin-svg-icons)动态使用svg图片
 

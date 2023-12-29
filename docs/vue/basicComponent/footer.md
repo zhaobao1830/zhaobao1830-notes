@@ -1,7 +1,4 @@
----
-title: footer                  
-sidebarDepth: 2
----
+# footer
 
 ## footer底部导航
 

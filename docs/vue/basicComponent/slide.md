@@ -1,7 +1,4 @@
----
-title: slide轮播                  
-sidebarDepth: 2
----
+# slide轮播
 
 ## slide轮播
 

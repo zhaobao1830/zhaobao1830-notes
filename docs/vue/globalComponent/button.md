@@ -1,7 +1,4 @@
----
-title: button                  
-sidebarDepth: 2
----
+# button
 
 ## 全局button组件
 

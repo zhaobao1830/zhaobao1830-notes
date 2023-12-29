@@ -7,7 +7,7 @@ export default defineConfig({
   base: process.env.APP_BASE_PATH || '/',
 
   lang: 'zh-CN',
-  title: '技术博客',
+  title: 'zhaobao1830的博客',
   description: '前后端常用知识、踩坑记录、封装的插件、随手笔记等',
 
   lastUpdated: true,

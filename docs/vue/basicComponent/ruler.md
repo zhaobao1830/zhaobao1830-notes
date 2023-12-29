@@ -1,11 +1,10 @@
----
-title: ruler刻度尺                  
-sidebarDepth: 2
----
+# ruler刻度尺
 
-## ruler刻度尺
+## 示例
 
 ![Image text](../../public/vue/base/ruler/01.png)
+
+## 代码
 
 ```vue
 <template>

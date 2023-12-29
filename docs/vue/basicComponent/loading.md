@@ -1,13 +1,10 @@
----
-title: loading                  
-sidebarDepth: 2
----
+# loading
 
 ## loading组件
 
 加载数据时显示
 
-```vue
+```
 <template>
   <div class="loading">
     <img
@@ -62,16 +59,20 @@ sidebarDepth: 2
     }
   }
 </style>
-
 ```
 
 ### Props
 
 | 参数          | 说明            | 类型            | 可选值                 | 默认值   |
+
 |-------------  |---------------- |---------------- |---------------------- |-------- |
+
 | titleShow    | 是否显示title | boolean    | — | true |
+
 | title        | title值      | string     | — | 正在载入... |
+
 | imgStyle     | 图片样式      | object     | — | {width: 24, height: 24} |
+
 | imgSrc        | 图片路径     | string     | — | require('../public//loading/loading.gif') |
 
 ::: tip  温馨提示
@@ -88,7 +89,7 @@ imgSrc的值必须通过require将图片路径引入，否则无法识别
 
 组件代码：
 
-```vue
+```
 <template>
   <div class="loading">
     <div class="loading-content">
@@ -192,15 +193,17 @@ main.js
 
 ```js
 createApp(App).directive('loading', loadingDirective).mount('#app')
+
 ```
 
 使用：
 
 直接在组件的最外层div上绑定v-loading指令
 
-```vue
-    <div class="recommend" v-loading:[loadingText]="loading"></div>
 ```
+  <div class="recommend" v-loading:[loadingText]="loading"></div>
+```
+
 
 ::: tip 说明
 loading：判断指令显示/隐藏
@@ -208,5 +211,4 @@ loading：判断指令显示/隐藏
 loadingText：自定义title值
 
 指令中使用的API都可以在文档里找到 [文档地址](https://v3.cn.vuejs.org/api/application-api.html#directive)
-
 :::
