@@ -1,1 +1,0 @@
-const t=JSON.parse('{"key":"v-61d5f812","path":"/scaffold/02.html","title":"知识点","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1678418235000},"filePathRelative":"scaffold/02.md"}');export{t as data};

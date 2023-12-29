@@ -1,1 +1,0 @@
-const t=JSON.parse(`{"key":"v-43d751ea","path":"/typeScriptNotes/02.html","title":"typeScript找不到'__dirname'","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1679997609000},"filePathRelative":"typeScriptNotes/02.md"}`);export{t as data};

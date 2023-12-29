@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-05e96a43","path":"/jsKnowledge/03.html","title":"this指向","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1679449834000},"filePathRelative":"jsKnowledge/03.md"}');export{e as data};

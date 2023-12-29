@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-fe23552e","path":"/javaKnowledge/04.html","title":"同步与异步，阻塞与非阻塞","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1684986828000},"filePathRelative":"javaKnowledge/04.md"}');export{e as data};

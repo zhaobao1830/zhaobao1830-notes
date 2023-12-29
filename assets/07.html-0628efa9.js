@@ -1,1 +1,0 @@
-const t=JSON.parse('{"key":"v-701888b0","path":"/miniProgramNotes/07.html","title":"小程序的方法如何获取view上的数据","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1687764008000},"filePathRelative":"miniProgramNotes/07.md"}');export{t as data};

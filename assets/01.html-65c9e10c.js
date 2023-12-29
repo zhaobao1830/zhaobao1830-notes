@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-634485b3","path":"/dataBaseKnowledge/01.html","title":"mySql和mongodb的区别","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1679449834000},"filePathRelative":"dataBaseKnowledge/01.md"}');export{e as data};

@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-0872f290","path":"/frontKnowledge/other/01.html","title":"组件的封装","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1684394826000},"filePathRelative":"frontKnowledge/other/01.md"}');export{e as data};

@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-e1ef4f8a","path":"/vueNotes/25.html","title":"获取本地json数据","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1683252006000},"filePathRelative":"vueNotes/25.md"}');export{e as data};

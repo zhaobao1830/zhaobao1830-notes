@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-23b705ae","path":"/javaKnowledge/26.html","title":"DTO、DO、VO、BO的使用场景","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1699257279000},"filePathRelative":"javaKnowledge/26.md"}');export{e as data};

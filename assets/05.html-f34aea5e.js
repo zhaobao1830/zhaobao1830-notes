@@ -1,1 +1,0 @@
-const t=JSON.parse('{"key":"v-53a6cdc4","path":"/jsNotes/05.html","title":"使用hotkeys-js实现快捷键","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1682476714000},"filePathRelative":"jsNotes/05.md"}');export{t as data};

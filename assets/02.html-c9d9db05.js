@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-7cc408fa","path":"/browserNotes/02.html","title":"使用SpeechSynthesisUtterance实现语音播放功能","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1698132878000},"filePathRelative":"browserNotes/02.md"}');export{e as data};

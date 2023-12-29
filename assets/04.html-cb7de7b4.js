@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-21e7e7ac","path":"/viteNotes/04.html","title":"vite项目配置@","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1679997609000},"filePathRelative":"viteNotes/04.md"}');export{e as data};

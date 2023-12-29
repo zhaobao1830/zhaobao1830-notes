@@ -1,6 +1,0 @@
-import{_ as s,p as n,q as a,a1 as e}from"./framework-b7c41258.js";const t={},o=e(`<h1 id="typescript-eslint-dot-notation" tabindex="-1"><a class="header-anchor" href="#typescript-eslint-dot-notation" aria-hidden="true">#</a> @typescript-eslint/dot-notation</h1><p>在eslint.js中加入代码</p><div class="language-javascript line-numbers-mode" data-ext="js"><pre class="language-javascript"><code><span class="token literal-property property">parserOptions</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token operator">...</span>
-    <span class="token literal-property property">project</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&#39;./tsconfig.json&#39;</span><span class="token punctuation">]</span>
-    <span class="token operator">...</span>
-<span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,3),p=[o];function i(r,c){return n(),a("div",null,p)}const d=s(t,[["render",i],["__file","04.html.vue"]]);export{d as default};

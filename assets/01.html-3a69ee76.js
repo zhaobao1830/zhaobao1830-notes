@@ -1,7 +1,0 @@
-import{_ as e,p as n,q as s,a1 as a}from"./framework-b7c41258.js";const t={},i=a(`<h1 id="ts2307-cannot-find-module-views-homeview-vue-or-its-corresponding-type-declarations" tabindex="-1"><a class="header-anchor" href="#ts2307-cannot-find-module-views-homeview-vue-or-its-corresponding-type-declarations" aria-hidden="true">#</a> TS2307: Cannot find module &#39;@/views/homeView.vue&#39; or its corresponding type declarations.</h1><p>引入vue文件报错</p><p>原因：typeScript不识别以.vue结尾的文件</p><p>解决办法：</p><p>在vite-env.d.ts（vite）或者shims-vue.d.ts（vue-cli）文件中添加如下代码：</p><div class="language-vue line-numbers-mode" data-ext="vue"><pre class="language-vue"><code>declare module &#39;*.vue&#39; {
-  import type { DefineComponent } from &#39;vue&#39;
-  const component: DefineComponent<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>{},</span> <span class="token attr-name">{},</span> <span class="token attr-name">any</span><span class="token punctuation">&gt;</span></span>
-  export default component
-}
-
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,6),o=[i];function c(d,r){return n(),s("div",null,o)}const p=e(t,[["render",c],["__file","01.html.vue"]]);export{p as default};

@@ -1,1 +1,0 @@
-const t=JSON.parse('{"key":"v-2748248f","path":"/springBootNotes/04.html","title":"spring-boot-maven-plugin插件下载失败，是红色的","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1679411000000},"filePathRelative":"springBootNotes/04.md"}');export{t as data};

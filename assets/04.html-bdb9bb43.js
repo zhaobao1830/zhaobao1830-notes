@@ -1,1 +1,0 @@
-const t=JSON.parse('{"key":"v-6af9fed3","path":"/miniProgramNotes/04.html","title":"小程序中保存数据的几种方式","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1684727063000},"filePathRelative":"miniProgramNotes/04.md"}');export{t as data};

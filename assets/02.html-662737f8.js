@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-11e2476a","path":"/nodeKnowledge/02.html","title":"查看和操作源","lang":"zh-CN","frontmatter":{},"headers":[{"level":2,"title":"使用npm","slug":"使用npm","link":"#使用npm","children":[]},{"level":2,"title":"使用nrm","slug":"使用nrm","link":"#使用nrm","children":[]}],"git":{"updatedTime":1694586777000},"filePathRelative":"nodeKnowledge/02.md"}');export{e as data};

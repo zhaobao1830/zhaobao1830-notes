@@ -1,1 +1,0 @@
-const t=JSON.parse('{"key":"v-28fcfd2e","path":"/springBootNotes/05.html","title":"Spring Boot Configuration Annotation Processor not configured","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1679411000000},"filePathRelative":"springBootNotes/05.md"}');export{t as data};

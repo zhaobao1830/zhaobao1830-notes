@@ -1,1 +1,0 @@
-const t=JSON.parse('{"key":"v-51f1f525","path":"/jsNotes/04.html","title":"使用clipboard.js实现拷贝文本","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1681787720000},"filePathRelative":"jsNotes/04.md"}');export{t as data};

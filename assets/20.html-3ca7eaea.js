@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-f2ffc5c0","path":"/vueNotes/20.html","title":"vant、nutui、element组件库form表单的validate方法对比","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1679392750000},"filePathRelative":"vueNotes/20.md"}');export{e as data};

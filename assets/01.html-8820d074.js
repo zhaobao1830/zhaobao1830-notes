@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-7b0f305b","path":"/browserNotes/01.html","title":"window.innerWidth获取可视区域不可靠","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1695797855000},"filePathRelative":"browserNotes/01.md"}');export{e as data};

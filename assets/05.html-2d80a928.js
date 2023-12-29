@@ -1,1 +1,0 @@
-const t=JSON.parse('{"key":"v-0dd29c5c","path":"/cssNotes/05.html","title":"TypeError: this.getOptions is not a function","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1679392750000},"filePathRelative":"cssNotes/05.md"}');export{t as data};

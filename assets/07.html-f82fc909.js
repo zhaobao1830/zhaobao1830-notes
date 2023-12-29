@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-0cbcccbf","path":"/jsKnowledge/07.html","title":"async/await原理","lang":"zh-CN","frontmatter":{},"headers":[{"level":2,"title":"用法","slug":"用法","link":"#用法","children":[]}],"git":{"updatedTime":1679447384000},"filePathRelative":"jsKnowledge/07.md"}');export{e as data};

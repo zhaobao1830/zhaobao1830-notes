@@ -1,1 +1,0 @@
-const t=JSON.parse('{"key":"v-5a221cfa","path":"/vueNotes/15.html","title":"script Setup中使用vant的Toast、Dialog、Notify、ImagePreview组件","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1679392750000},"filePathRelative":"vueNotes/15.md"}');export{t as data};
