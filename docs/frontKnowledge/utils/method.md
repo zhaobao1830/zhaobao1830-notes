@@ -147,7 +147,7 @@ export function transData (a, idStr, pidStr, chindrenStr) {
 
 this.navDataList：
 
-![Image text](../../.vuepress/public/fronKnowledge/utils/method/01.png)
+![Image text](../../public/fronKnowledge/utils/method/01.png)
 
 ```js
 this.navList = transData(JSON.parse(JSON.stringify(this.navDataList)), 'id', 'parentId', 'children')
@@ -164,7 +164,7 @@ this.navList = transData(JSON.parse(JSON.stringify(this.navDataList)), 'id', 'pa
 
 返回结果：
 
-![Image text](../../.vuepress/public/fronKnowledge/utils/method/02.png)
+![Image text](../../public/fronKnowledge/utils/method/02.png)
 
 ## 获取url中的参数
 

@@ -28,37 +28,70 @@ export const frontKnowledgeSidebar = [
   {
     text: '基础方法',
     items: [
-      '/frontKnowledge/basicMethod/axios',
-      '/frontKnowledge/basicMethod/promisic',
-      '/frontKnowledge/basicMethod/paging'
+      {
+        text: 'axios',
+        link: '/frontKnowledge/basicMethod/axios'
+      },
+      {
+        text: '分页',
+        link: '/frontKnowledge/basicMethod/promisic'
+      },
+      {
+        text: 'promise封装API',
+        link: '/frontKnowledge/basicMethod/paging'
+      }
     ]
   },
   {
     text: 'Git',
     items: [
-      '/frontKnowledge/git/',
-      '/frontKnowledge/git/command'
+      {
+        text: 'Git',
+        link: '/frontKnowledge/git/'
+      },
+      {
+        text: 'Git 命令清单',
+        link: '/frontKnowledge/git/command'
+      }
     ]
   },
   {
     text: '前端监控',
     items: [
-      '/frontKnowledge/monitor/'
+      {
+        text: '前端监控',
+        link: '/frontKnowledge/monitor/'
+      }
     ]
   },
   {
     text: '开源项目',
     items: [
-      '/frontKnowledge/openSourceProjects/'
+      {
+        text: '优秀的开源项目',
+        link: '/frontKnowledge/openSourceProjects/'
+      }
     ]
   },
   {
     text: '其他',
     items: [
-      '/frontKnowledge/other/01',
-      '/frontKnowledge/other/02',
-      '/frontKnowledge/other/03',
-      '/frontKnowledge/other/04'
+      {
+        text: '组件的封装',
+        link: '/frontKnowledge/other/01'
+      },
+      {
+        text: '登录验证 cookie、session、token',
+        link: '/frontKnowledge/other/02'
+      },
+      {
+        text: '类和类的对象在前端项目中的使用',
+        link: '/frontKnowledge/other/03'
+      },
+      {
+        text: '自定义图标的使用',
+        link: '/frontKnowledge/other/04'
+      }
     ]
   }
 ]
