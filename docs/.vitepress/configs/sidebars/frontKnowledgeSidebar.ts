@@ -15,8 +15,14 @@ export const frontKnowledgeSidebar = [
   {
     text: '常用组件',
     items: [
-      '/frontKnowledge/common/image',
-      '/frontKnowledge/common/upload'
+      {
+        text: '图片',
+        link: '/frontKnowledge/common/image'
+      },
+      {
+        text: '上传文件',
+        link: '/frontKnowledge/common/upload'
+      }
     ]
   },
   {
