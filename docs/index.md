@@ -36,7 +36,7 @@ features:
     details: java工具方法、springBoot、maven、nginx、tomcat、redis等
     link: /java/utils/method
     linkText: 常用方法
-  - icon: 🧰
+  - icon: 📔
     title: 随手笔记
     details: 记录遇到的问题以及解决方法
     link: /cssNotes/01
@@ -46,4 +46,9 @@ features:
     details: 记录遇到的相关知识点
     link: /jsKnowledge/01
     linkText: js知识点
+  - icon: 🧰
+    title: 锻炼身体
+    details: 记录锻炼身体的功法
+    link: /exercise/01
+    linkText: 健身功法
 ---
