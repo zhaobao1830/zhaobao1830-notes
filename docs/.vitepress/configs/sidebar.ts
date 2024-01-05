@@ -29,6 +29,7 @@ import { mybatisKnowledgeSidebar } from './sidebars/mybatisKnowledgeSidebar'
 import { dataBaseKnowledgeSidebar } from './sidebars/dataBaseKnowledgeSidebar'
 import { dataVisualizationKnowledgeSidebar } from './sidebars/dataVisualizationKnowledgeSidebar'
 import { exerciseSidebar } from './sidebars/exerciseSidebar'
+import { microFrontKnowledgeSidebar } from './sidebars/microFrontKnowledgeSidebar'
 
 export const sidebar = {
   '/java/': javaSidebar,
@@ -61,5 +62,6 @@ export const sidebar = {
   '/mybatisKnowledge/': mybatisKnowledgeSidebar,
   '/dataBaseKnowledge/': dataBaseKnowledgeSidebar,
   '/dataVisualizationKnowledge/': dataVisualizationKnowledgeSidebar,
-  '/exercise/': exerciseSidebar
+  '/exercise/': exerciseSidebar,
+  '/microFrontKnowledge/': microFrontKnowledgeSidebar
 }

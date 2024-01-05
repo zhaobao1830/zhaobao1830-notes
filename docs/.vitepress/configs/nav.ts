@@ -124,6 +124,10 @@ export const nav: DefaultTheme.Config['nav'] = [
       {
         text: '数据可视化知识点',
         link: '/dataVisualizationKnowledge/01'
+      },
+      {
+        text: '微前端知识点',
+        link: '/microFrontKnowledge/01'
       }
     ]
   },
