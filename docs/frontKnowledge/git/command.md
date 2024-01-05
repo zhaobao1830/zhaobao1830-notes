@@ -224,3 +224,17 @@ git stash pop
 ```
 
 [参考地址：阮一峰 -- 常用 Git 命令清单](https://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html)
+
+::: tip 备注
+有时候我们想法已经上传到github的文件给忽略掉，加入了.gitignore文件夹中，但不起作用
+
+这是因为.gitignore只能忽略那些没有被之前没有被上传到github的文件
+
+解决办法是执行下面的方法
+
+```sh
+git rm -r --cached .
+git add .
+git commit -m 'update .gitignore'
+```
+:::
