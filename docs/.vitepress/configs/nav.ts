@@ -210,7 +210,6 @@ export const nav: DefaultTheme.Config['nav'] = [
       },
       {
         text: 'Vite PC端项目',
-        link: 'https://github.com/zhaobao1830/vite-pc-zb',
         items: [
           {
             text: '测试项目',
@@ -306,6 +305,14 @@ export const nav: DefaultTheme.Config['nav'] = [
       {
         text: 'Vant4(Vue3移动端组件库)',
         link: 'https://vant-contrib.gitee.io/vant/#/zh-CN'
+      },
+      {
+        text: 'vxe-table(Vue表格框架)',
+        link: 'https://vxetable.cn/#/table/start/install'
+      },
+      {
+        text: 'qiankun(微前端框架)',
+        link: 'https://qiankun.umijs.org/zh/guide'
       },
       {
         text: 'webpack5',
