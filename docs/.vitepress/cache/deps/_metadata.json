@@ -1,49 +1,27 @@
 {
-  "hash": "a5db1efc",
-  "configHash": "9139c2df",
+  "hash": "b5b4b57d",
+  "configHash": "19c98130",
   "lockfileHash": "2acfea41",
-  "browserHash": "8273d465",
+  "browserHash": "aefefa91",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/.pnpm/vue@3.3.13_typescript@5.3.3/node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "7bd3c96c",
+      "fileHash": "6927c90c",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../../node_modules/.pnpm/@vue+devtools-api@6.5.1/node_modules/@vue/devtools-api/lib/esm/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "5ecbff0e",
-      "needsInterop": false
-    },
-    "vitepress > @vueuse/integrations/useFocusTrap": {
-      "src": "../../../../node_modules/.pnpm/@vueuse+integrations@10.7.1_focus-trap@7.5.4_vue@3.4.0-rc.3/node_modules/@vueuse/integrations/useFocusTrap.mjs",
-      "file": "vitepress___@vueuse_integrations_useFocusTrap.js",
-      "fileHash": "f9be8487",
-      "needsInterop": false
-    },
-    "vitepress > mark.js/src/vanilla.js": {
-      "src": "../../../../node_modules/.pnpm/mark.js@8.11.1/node_modules/mark.js/src/vanilla.js",
-      "file": "vitepress___mark__js_src_vanilla__js.js",
-      "fileHash": "fbd77f26",
-      "needsInterop": false
-    },
-    "vitepress > minisearch": {
-      "src": "../../../../node_modules/.pnpm/minisearch@6.3.0/node_modules/minisearch/dist/es/index.js",
-      "file": "vitepress___minisearch.js",
-      "fileHash": "13668b58",
+      "fileHash": "ad523745",
       "needsInterop": false
     },
     "@mdit-vue/shared": {
       "src": "../../../../node_modules/.pnpm/@mdit-vue+shared@0.12.1/node_modules/@mdit-vue/shared/dist/index.mjs",
       "file": "@mdit-vue_shared.js",
-      "fileHash": "d2d5494b",
+      "fileHash": "c9d9a451",
       "needsInterop": false
     }
   },
-  "chunks": {
-    "chunk-6UBA25PN": {
-      "file": "chunk-6UBA25PN.js"
-    }
-  }
+  "chunks": {}
 }
