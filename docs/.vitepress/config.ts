@@ -1,6 +1,6 @@
 import { defineConfig } from 'vitepress'
 
-import { nav, sidebar } from './configs'
+import { nav, sidebar, algolia } from './configs'
 
 export default defineConfig({
   outDir: '../dist',
@@ -43,11 +43,12 @@ export default defineConfig({
     returnToTopLabel: '返回顶部',
 
     /* Algolia DocSearch 配置 */
-    // algolia,
+     algolia,
 
-    search: {
-      provider: 'local'
-    },
+    // 本地搜索
+    // search: {
+    //   provider: 'local'
+    // },
 
     docFooter: {
       prev: '上一篇',
