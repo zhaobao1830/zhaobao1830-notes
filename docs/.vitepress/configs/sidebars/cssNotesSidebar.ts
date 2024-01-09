@@ -33,6 +33,10 @@ export const cssNotesSidebar = [
       {
         text: 'el-dropdown样式报错',
         link: '/cssNotes/08'
+      },
+      {
+        text: '深度样式选择器',
+        link: '/cssNotes/09'
       }
     ]
   }
