@@ -4,7 +4,7 @@ import { nav, sidebar, algolia } from './configs'
 
 export default defineConfig({
   outDir: '../dist',
-  base: process.env.APP_BASE_PATH || '/',
+  base: process.env.APP_BASE_PATH || '/zhaobao1830-notes',
 
   lang: 'zh-CN',
   title: 'zhaobao1830的博客',
