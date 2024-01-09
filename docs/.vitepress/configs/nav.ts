@@ -295,6 +295,10 @@ export const nav: DefaultTheme.Config['nav'] = [
         link: 'https://v2.vuepress.vuejs.org/zh/'
       },
       {
+        text: 'VitePress(静态网站生成器)',
+        link: 'https://vitepress.dev/'
+      },
+      {
         text: 'Element(vue2桌面端组件库)',
         link: 'https://element.eleme.cn/#/zh-CN/component/installation'
       },
