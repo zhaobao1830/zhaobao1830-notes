@@ -116,6 +116,10 @@ export const vueNotesSidebar = [
       {
         text: 'ESLint: Getting a value from the `props` in root scope of `<script setup>` will cause the value to lose reactivity.(vue/no-setup-props-destructure)',
         link: '/vueNotes/29'
+      },
+      {
+        text: 'ElementPlusError: [ElOnlyChild] no valid child node found',
+        link: '/vueNotes/30'
       }
     ]
   }
