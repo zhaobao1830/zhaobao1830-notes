@@ -43,7 +43,10 @@ export default defineConfig({
     returnToTopLabel: '返回顶部',
 
     /* Algolia DocSearch 配置 */
-     algolia,
+     search: {
+       provider: 'algolia',
+       options: algolia
+     },
 
     // 本地搜索
     // search: {
