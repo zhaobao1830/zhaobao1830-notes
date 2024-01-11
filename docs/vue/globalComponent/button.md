@@ -160,7 +160,7 @@ registerGlobComp(app)
 
 ```
 
-8、执行npm login登录账号（源必须是npm的，如要修改，请[查看博客](https://zhaobao1830.github.io/zhaobao1830-notes/fronKnowledge/node/#%E4%BD%BF%E7%94%A8nrm)）
+8、执行npm login登录账号（源必须是npm的，如要修改，请[查看博客](https://zhaobao1830.github.io/zhaobao1830-notes/nodeKnowledge/02)）
 
 9、执行npm publish发布
 

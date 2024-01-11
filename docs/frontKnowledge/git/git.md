@@ -137,5 +137,5 @@ package.json文件里打包指令一致，默认指令为`docs:build`
 ::: tip 提示
 项目部署以后，打开页面是空白，提示样式找不到，这是`config.js`里的`base`属性配置错误,
 base的值要和路径一致,
-比如我的项目地址是https://zhaobao1830.github.io/zhaobao1830-notes/，那base的值就是/zhaobao1830-notes/
+比如我的项目地址是'https://zhaobao1830.github.io/zhaobao1830-notes/', 那base的值就是'/zhaobao1830-notes/'
 :::
