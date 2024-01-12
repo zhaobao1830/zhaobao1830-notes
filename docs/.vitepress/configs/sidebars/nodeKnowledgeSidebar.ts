@@ -9,6 +9,10 @@ export const nodeKnowledgeSidebar = [
       {
         text: '查看和操作源',
         link: '/nodeKnowledge/02'
+      },
+      {
+        text: 'pnpm add -g pnpm报错解决方案',
+        link: '/nodeKnowledge/03'
       }
     ]
   }
