@@ -114,7 +114,7 @@ export const vueNotesSidebar = [
         link: '/vueNotes/28'
       },
       {
-        text: 'ESLint: Getting a value from the `props` in root scope of `<script setup>` will cause the value to lose reactivity.(vue/no-setup-props-destructure)',
+        text: 'ESLint: Getting a value from the props in root scope of script setup will cause the value to lose reactivity.(vue/no-setup-props-destructure)',
         link: '/vueNotes/29'
       },
       {
