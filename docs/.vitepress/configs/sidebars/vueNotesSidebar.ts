@@ -90,7 +90,7 @@ export const vueNotesSidebar = [
         link: '/vueNotes/22'
       },
       {
-        text: '[vite] Internal server error:  [@vue/compiler-sfc] `defineProps()`in `<script setup>` cannot reference locally declared variables because it will be hoisted outside of the setup() function.',
+        text: '[vite] Internal server error:  [@vue/compiler-sfc] defineProps() in script setup cannot reference locally declared variables because it will be hoisted outside of the setup() function.',
         link: '/vueNotes/23'
       },
       {
