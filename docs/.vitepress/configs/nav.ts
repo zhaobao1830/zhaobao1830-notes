@@ -357,6 +357,10 @@ export const nav: DefaultTheme.Config['nav'] = [
       {
         text: '掘金',
         link: 'https://juejin.cn/'
+      },
+      {
+        text: '麻省理工公开课',
+        link: 'https://ocw.mit.edu/'
       }
     ]
   }
