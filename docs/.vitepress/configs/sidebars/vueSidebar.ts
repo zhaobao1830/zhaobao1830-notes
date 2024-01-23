@@ -29,6 +29,10 @@ export const vueSidebar = [
       {
         text: 'svg',
         link: '/vue/basicComponent/svg'
+      },
+      {
+        text: 'date日期',
+        link: '/vue/basicComponent/date'
       }
     ]
   },
