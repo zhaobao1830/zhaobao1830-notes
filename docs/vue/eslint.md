@@ -30,7 +30,7 @@ module.exports = {
       {
         // script标签缩进设置
         baseIndent: 1,
-        switchCase: 0,
+        switchCase: 1, // 对switch进行设置
         ignores: []
       }
     ],
@@ -78,7 +78,7 @@ module.exports = {
       {
         // script标签缩进设置
         baseIndent: 1,
-        switchCase: 0,
+        switchCase: 1, // 对switch进行设置
         ignores: []
       }
     ],
