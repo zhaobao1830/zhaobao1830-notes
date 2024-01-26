@@ -11,6 +11,10 @@ export const javaKnowledgeSidebar = [
         link: '/javaKnowledge/33'
       },
       {
+        text: '大型网站架构演进历程',
+        link: '/javaKnowledge/34'
+      },
+      {
         text: 'spring、spring boot、spring mvc之间的关系',
         link: '/javaKnowledge/02'
       },
