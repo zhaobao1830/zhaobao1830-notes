@@ -106,7 +106,7 @@ export const vueNotesSidebar = [
         link: '/vueNotes/26'
       },
       {
-        text: 'element-ui的tree组件实现单选',
+        text: 'element-ui tree组件笔记集',
         link: '/vueNotes/27'
       },
       {
