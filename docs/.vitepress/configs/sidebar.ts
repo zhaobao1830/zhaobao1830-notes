@@ -30,6 +30,7 @@ import { dataBaseKnowledgeSidebar } from './sidebars/dataBaseKnowledgeSidebar'
 import { dataVisualizationKnowledgeSidebar } from './sidebars/dataVisualizationKnowledgeSidebar'
 import { exerciseSidebar } from './sidebars/exerciseSidebar'
 import { microFrontKnowledgeSidebar } from './sidebars/microFrontKnowledgeSidebar'
+import { dataBaseNotesSidebar } from './sidebars/dataBaseNotesSidebar'
 
 export const sidebar = {
   '/java/': javaSidebar,
@@ -63,5 +64,6 @@ export const sidebar = {
   '/dataBaseKnowledge/': dataBaseKnowledgeSidebar,
   '/dataVisualizationKnowledge/': dataVisualizationKnowledgeSidebar,
   '/exercise/': exerciseSidebar,
-  '/microFrontKnowledge/': microFrontKnowledgeSidebar
+  '/microFrontKnowledge/': microFrontKnowledgeSidebar,
+  '/dataBaseNotes/': dataBaseNotesSidebar
 }

@@ -79,6 +79,10 @@ export const nav: DefaultTheme.Config['nav'] = [
       {
         text: 'maven笔记',
         link: '/mavenNotes/01'
+      },
+      {
+        text: '数据库笔记',
+        link: '/dataBaseNotes/01'
       }
     ]
   },
