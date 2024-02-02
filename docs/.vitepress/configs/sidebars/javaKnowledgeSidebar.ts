@@ -137,6 +137,10 @@ export const javaKnowledgeSidebar = [
       {
         text: '日志系统',
         link: '/javaKnowledge/32'
+      },
+      {
+        text: 'SpringBoot使用@Transactional注解添加事务',
+        link: '/javaKnowledge/35'
       }
     ]
   }
