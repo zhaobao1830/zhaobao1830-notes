@@ -34,11 +34,11 @@ export const frontKnowledgeSidebar = [
       },
       {
         text: '分页',
-        link: '/frontKnowledge/basicMethod/promisic'
+        link: '/frontKnowledge/basicMethod/paging'
       },
       {
         text: 'promise封装API',
-        link: '/frontKnowledge/basicMethod/paging'
+        link: '/frontKnowledge/basicMethod/promisic'
       }
     ]
   },
