@@ -64,147 +64,151 @@ JAP里，使用PageRequest.of()生成分页需要的参数，给JPA的查询方�
 
 ### mybatis
 
+项目：[foodie-dev/deve](https://github.com/zhaobao1830/foodie-dev)
+
 1、pom.xml安装pagehelper 
 
 ```xml
+<!--pagehelper -->
 <dependency>
-   <groupId>com.github.pagehelper</groupId>
-   <artifactId>pagehelper</artifactId>
-   <version>4.1.0</version>
+    <groupId>com.github.pagehelper</groupId>
+    <artifactId>pagehelper-spring-boot-starter</artifactId>
+    <version>1.4.7</version>
 </dependency>
 ```
 
 2、例子
 
+PagedGridResult.java
+
+封装返回的分页数据
+
 ```java
+package com.zb.utils;
+
+import java.util.List;
+
 /**
- * @Author: zhaobao1830
- * @Date: 2021/3/17 9:15
- * 返回分页数据
+ *
+ * @Description: 用来返回分页Grid的数据格式
  */
 public class PagedGridResult {
-    /**
-     * 当前页数
-     */
-    private Integer pageNum;
-    /**
-     * 每页条数
-     */
-    private Integer pageSize;
-    /**
-     *  总页数
-     */
-    private Integer pages;
-    /**
-     * 总条数
-     */
-    private long total;
-    /**
-     * 每行显示的内容
-     */
-    private List<?> rows;
+	
+	private int page;			// 当前页数
+	private int total;			// 总页数	
+	private long records;		// 总记录数
+	private List<?> rows;		// 每行显示的内容
 
-    public int getPageNum() {
-        return pageNum;
-    }
-
-    public void setPageNum(int pageNum) {
-        this.pageNum = pageNum;
-    }
-
-    public int getPageSize() {
-        return pageSize;
-    }
-
-    public void setPageSize(int pageSize) {
-        this.pageSize = pageSize;
-    }
-
-    public int getPages() {
-        return pages;
-    }
-
-    public void setPages(int pages) {
-        this.pages = pages;
-    }
-
-    public long getTotal() {
-        return total;
-    }
-
-    public void setTotal(long total) {
-        this.total = total;
-    }
-
-    public List<?> getRows() {
-        return rows;
-    }
-
-    public void setRows(List<?> rows) {
-        this.rows = rows;
-    }
+	public int getPage() {
+		return page;
+	}
+	public void setPage(int page) {
+		this.page = page;
+	}
+	public int getTotal() {
+		return total;
+	}
+	public void setTotal(int total) {
+		this.total = total;
+	}
+	public long getRecords() {
+		return records;
+	}
+	public void setRecords(long records) {
+		this.records = records;
+	}
+	public List<?> getRows() {
+		return rows;
+	}
+	public void setRows(List<?> rows) {
+		this.rows = rows;
+	}
 }
 
-serviece
+```
 
-@Override
-public PagedGridResult queryAll(int pageNum, int pageSize) {
-    // 传入pageNum, pageSize参数
-    PageHelper.startPage(pageNum, pageSize);
-    // 获取userList
-    List<User> userList = userMapper.queryAll();
-    // 对userList进行处理，获取对应的volist
-    List<UserVO> userVoList = assembleUserVoList(userList);
-    return setterPagedGrid(pageNum, pageSize, userVoList);
-}
+ItemsController.java
 
-public List<UserVO> assembleUserVoList(List<User> userList) {
-    List<UserVO> userVoList = Lists.newArrayList();
-    for (User user : userList) {
-        UserVO userVO = assembleUserVo(user);
-        userVoList.add(userVO);
+```java
+    @ApiOperation(value = "查询商品评价", notes = "查询商品评价", httpMethod = "GET")
+    @RequestMapping(value = "/comments", method = RequestMethod.GET)
+    public IMOOCJSONResult comments(
+            @ApiParam(name = "itemId", value = "商品id", required = true)
+            @RequestParam String itemId,
+            @ApiParam(name = "level", value = "评价等级", required = false)
+            @RequestParam Integer level,
+            @ApiParam(name = "page", value = "查询下一页的第几页", required = false)
+            @RequestParam Integer page,
+            @ApiParam(name = "pageSize", value = "分页的每一页显示的条数", required = false)
+            @RequestParam Integer pageSize
+    ){
+        if (StringUtils.isBlank(itemId)) {
+            return IMOOCJSONResult.errorMsg(null);
+        }
+
+        if (page == null) {
+            page = 1;
+        }
+
+        if (pageSize == null) {
+            pageSize = COMMON_PAGE_SIZE;
+        }
+
+        PagedGridResult grid = itemService.queryPagedComments(itemId,
+                                                                level,
+                                                                page,
+                                                                pageSize);
+
+        return IMOOCJSONResult.ok(grid);
     }
-    return userVoList;
-}
+```
 
-public UserVO assembleUserVo(User user) {
-    UserVO userVo = new UserVO();
-    userVo.setId(user.getId());
-    userVo.setUsername(user.getUsername());
-    userVo.setRole(user.getRole());
-    userVo.setPhone(user.getPhone());
-    userVo.setEmail(user.getEmail());
-    return userVo;
-}
+ItemServiceImpl.java
 
-/**
- * 封装分页方法
- * @param pageNum 当前页数
- * @param pageSize 每页条数
- * @param list 列表
- * @return {
- *     pageNum: 1
- *     pageSize: 6
- *     pages: 1
- *     rows: [{id: 1, username: "admin"}]
- *     total: 6
- * }
- */
-public PagedGridResult setterPagedGrid(Integer pageNum, Integer pageSize, List<?> list) {
-    PageInfo<?> pageList = new PageInfo<>(list);
-    PagedGridResult grid = new PagedGridResult();
-    grid.setPageNum(pageNum);
-    grid.setPageSize(pageSize);
-    grid.setPages(pageList.getPages());
-    grid.setTotal(pageList.getTotal());
-    grid.setRows(list);
-    return grid;
-}
+```java
+    @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public PagedGridResult queryPagedComments(String itemId,
+                                              Integer level,
+                                              Integer page,
+                                              Integer pageSize) {
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("itemId", itemId);
+        map.put("level", level);
+
+        /*
+          page: 第几页
+          pageSize: 每页显示条数
+         */
+        PageHelper.startPage(page, pageSize);
+
+        List<ItemCommentVO> list = itemsMapperCustom.queryItemComments(map);
+
+        for (ItemCommentVO vo : list) {
+            vo.setNickname(DesensitizationUtil.commonDisplay(vo.getNickname()));
+        }
+
+        return setterPagedGrid(list, page);
+    }
+    
+    // 封装分页方法
+    private PagedGridResult setterPagedGrid(List<?> list, Integer page) {
+        PageInfo<?> pageList = new PageInfo<>(list);
+        PagedGridResult grid = new PagedGridResult();
+        grid.setPage(page);
+        grid.setRows(list);
+        grid.setTotal(pageList.getPages());
+        grid.setRecords(pageList.getTotal());
+        return grid;
+    }
 ```
 
 ### mybatis-plus
 
-项目：[https://github.com/zhaobao1830/misscmszb](https://github.com/zhaobao1830/misscmszb)
+项目：[misscmszb](https://github.com/zhaobao1830/misscmszb)
+
+mybatis-plus内置分页查询，也可以使用pagehelper
 
 CommonConfiguration.java
 
@@ -266,6 +270,40 @@ public class LogController {
                 dto.getStart(), dto.getEnd()
         );
         return PageUtil.build(iPage);
+    }
+}
+
+```
+
+LogServiceImpl.java
+
+```java
+package com.zb.misscmszb.service.impl;
+
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.zb.misscmszb.core.mybatis.LinPage;
+import com.zb.misscmszb.mapper.LogMapper;
+import com.zb.misscmszb.model.LogDO;
+import com.zb.misscmszb.service.LogService;
+import org.springframework.stereotype.Service;
+
+import java.util.Date;
+
+/**
+ * 日志服务实现类
+ */
+@Service
+public class LogServiceImpl extends ServiceImpl<LogMapper, LogDO> implements LogService {
+
+    @Override
+    public IPage<LogDO> searchLogPage(Integer page, Integer count, String name, String keyword, Date start, Date end) {
+        LinPage<LogDO> pager = new LinPage<>(page, count);
+        if (keyword != null) {
+            return this.baseMapper.searchLogsByUsernameAndKeywordAndRange(pager, name, "%" + keyword + "%", start, end);
+        } else {
+            return this.baseMapper.findLogsByUsernameAndRange(pager, name, start, end);
+        }
     }
 }
 
@@ -357,6 +395,8 @@ PageRequest.of（）将对应的参数传递进去
 :::
 
 **完整版：**
+
+项目地址：[https://github.com/zhaobao1830/misszb](https://github.com/zhaobao1830/misszb)
 
 1、pom.xml安装dozermapper  用来对java bean进行拷贝
 
