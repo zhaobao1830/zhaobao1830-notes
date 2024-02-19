@@ -210,7 +210,7 @@ ItemServiceImpl.java
 
 mybatis-plus内置分页查询，也可以使用pagehelper
 
-CommonConfiguration.java
+1、CommonConfiguration.java
 
 对MybatisPlus进行分页配置，只有加上这个配置，IPage的total才能有值
 
@@ -226,8 +226,7 @@ CommonConfiguration.java
         return interceptor;
     }
 ```
-
-LogController.java
+2、LogController.java
 
 ```java
 package com.zb.misscmszb.controller.cms;
@@ -274,8 +273,7 @@ public class LogController {
 }
 
 ```
-
-LogServiceImpl.java
+3、LogServiceImpl.java
 
 ```java
 package com.zb.misscmszb.service.impl;
@@ -309,7 +307,7 @@ public class LogServiceImpl extends ServiceImpl<LogMapper, LogDO> implements Log
 
 ```
 
-PageResponseVO.java
+4、PageResponseVO.java 定义分页返回的数据格式
 
 ```java
 package com.zb.misscmszb.vo;
@@ -342,7 +340,7 @@ public class PageResponseVO<T> {
 
 ```
 
-PageUtil.java
+5、PageUtil.java 定义分页工具类，对mapper查询到的数据进行处理，转换成上面定义的PageResponseVO对象格式
 
 ```java
 package com.zb.misscmszb.core.util;
