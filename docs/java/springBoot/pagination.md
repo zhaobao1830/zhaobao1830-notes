@@ -206,13 +206,13 @@ ItemServiceImpl.java
 
 ### mybatis-plus
 
-项目：[misscmszb](https://github.com/zhaobao1830/misscmszb)
+项目：[foodie-dev](https://github.com/zhaobao1830/foodie-dev)
 
-mybatis-plus内置分页查询，也可以使用pagehelper
+mybatis-plus内置分页查询，也可以使用PageHelper
 
 1、CommonConfiguration.java
 
-对MybatisPlus进行分页配置，只有加上这个配置，IPage的total才能有值
+对MybatisPlus进行分页配置，只有加上这个配置，IPage才能使用
 
 ```java
     /**
@@ -226,152 +226,208 @@ mybatis-plus内置分页查询，也可以使用pagehelper
         return interceptor;
     }
 ```
-2、LogController.java
+
+2、PagedGridResult 定义返回分页Grid的数据格式
 
 ```java
-package com.zb.misscmszb.controller.cms;
-
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.zb.misscmszb.core.annotation.GroupRequired;
-import com.zb.misscmszb.core.annotation.PermissionMeta;
-import com.zb.misscmszb.core.annotation.PermissionModule;
-import com.zb.misscmszb.core.util.PageUtil;
-import com.zb.misscmszb.dto.log.QueryLogDTO;
-import com.zb.misscmszb.dto.query.BasePageDTO;
-import com.zb.misscmszb.model.LogDO;
-import com.zb.misscmszb.service.LogService;
-import com.zb.misscmszb.vo.PageResponseVO;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-/**
- * 日志控制器
- */
-@RestController
-@RequestMapping("/cms/log")
-@PermissionModule(value = "日志")
-@Validated
-public class LogController {
-
-    @Autowired
-    private LogService logService;
-
-    @GetMapping("/search")
-    @GroupRequired
-    @PermissionMeta(value = "搜索日志")
-    public PageResponseVO<LogDO> searchLogs(QueryLogDTO dto) {
-        IPage<LogDO> iPage = logService.searchLogPage(
-                dto.getPage(), dto.getCount(),
-                dto.getName(), dto.getKeyword(),
-                dto.getStart(), dto.getEnd()
-        );
-        return PageUtil.build(iPage);
-    }
-}
-
-```
-3、LogServiceImpl.java
-
-```java
-package com.zb.misscmszb.service.impl;
-
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.zb.misscmszb.core.mybatis.LinPage;
-import com.zb.misscmszb.mapper.LogMapper;
-import com.zb.misscmszb.model.LogDO;
-import com.zb.misscmszb.service.LogService;
-import org.springframework.stereotype.Service;
-
-import java.util.Date;
-
-/**
- * 日志服务实现类
- */
-@Service
-public class LogServiceImpl extends ServiceImpl<LogMapper, LogDO> implements LogService {
-
-    @Override
-    public IPage<LogDO> searchLogPage(Integer page, Integer count, String name, String keyword, Date start, Date end) {
-        LinPage<LogDO> pager = new LinPage<>(page, count);
-        if (keyword != null) {
-            return this.baseMapper.searchLogsByUsernameAndKeywordAndRange(pager, name, "%" + keyword + "%", start, end);
-        } else {
-            return this.baseMapper.findLogsByUsernameAndRange(pager, name, start, end);
-        }
-    }
-}
-
-```
-
-4、PageResponseVO.java 定义分页返回的数据格式
-
-```java
-package com.zb.misscmszb.vo;
-
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+package com.zb.utils;
 
 import java.util.List;
 
 /**
- * 分页数据统一视图对象
+ *
+ * @Description: 用来返回分页Grid的数据格式
  */
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
-public class PageResponseVO<T> {
+public class PagedGridResult<T> {
+	
+	private long current;	// 当前页
+	private long pages;		// 总页数
+	private long total;		// 总记录数
+	private List<?> rows;	// 每页查询的结果集
 
-    private Integer total;
+	public long getCurrent() {
+		return current;
+	}
 
-    private List<T> items;
+	public void setCurrent(long current) {
+		this.current = current;
+	}
 
-    private Integer page;
+	public long getPages() {
+		return pages;
+	}
 
-    private Integer count;
+	public void setPages(long pages) {
+		this.pages = pages;
+	}
 
+	public long getTotal() {
+		return total;
+	}
+
+	public void setTotal(long total) {
+		this.total = total;
+	}
+
+	public List<?> getRows() {
+		return rows;
+	}
+
+	public void setRows(List<?> rows) {
+		this.rows = rows;
+	}
+
+	public PagedGridResult() {
+	}
+
+	public PagedGridResult(long current, long pages, long total, List<?> rows) {
+		this.current = current;
+		this.pages = pages;
+		this.total = total;
+		this.rows = rows;
+	}
 }
 
 ```
 
-5、PageUtil.java 定义分页工具类，对mapper查询到的数据进行处理，转换成上面定义的PageResponseVO对象格式
+3、PageUtil 定义分页工具类
 
 ```java
-package com.zb.misscmszb.core.util;
+package com.zb.utils;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.zb.misscmszb.vo.PageResponseVO;
 
 import java.util.List;
 
 /**
- * 分页工具类
+ * @Author zhaobao1830
+ * @Date 2024-02-19 09:45
+ * @Description: 分页工具类
  */
 public class PageUtil {
-
     private PageUtil() {
         throw new IllegalStateException("Utility class");
     }
 
-    public static <T> PageResponseVO<T> build(IPage<T> iPage) {
-        return new PageResponseVO<>(Math.toIntExact(iPage.getTotal()), iPage.getRecords(),
-                Math.toIntExact(iPage.getCurrent()), Math.toIntExact(iPage.getSize()));
+    public static <T> PagedGridResult<T> build(IPage<T> iPage) {
+        return new PagedGridResult<>(iPage.getCurrent(), iPage.getPages(), iPage.getTotal(), iPage.getRecords());
     }
 
-    public static <K, T> PageResponseVO<K> build(IPage<T> iPage, List<K> records) {
-        return new PageResponseVO<>(Math.toIntExact(iPage.getTotal()), records,
-                Math.toIntExact(iPage.getCurrent()),
-                Math.toIntExact(iPage.getSize()));
+    public static <K, T> PagedGridResult<K> build(IPage<T> iPage, List<K> records) {
+        return new PagedGridResult<>(iPage.getCurrent(), iPage.getPages(), iPage.getTotal(), iPage.getRecords());
     }
-
 }
 
+```
+
+4、ItemsController.java
+
+```java
+@ApiOperation(value = "查询商品评价", notes = "查询商品评价", httpMethod = "GET")
+    @RequestMapping(value = "/comments", method = RequestMethod.GET)
+    public IMOOCJSONResult comments(
+            @ApiParam(name = "itemId", value = "商品id", required = true)
+            @RequestParam String itemId,
+            @ApiParam(name = "level", value = "评价等级")
+            @RequestParam Integer level,
+            @ApiParam(name = "page", value = "查询下一页的第几页", required = true)
+            @RequestParam(defaultValue = "1") Integer page,
+            @ApiParam(name = "pageSize", value = "分页的每一页显示的条数", required = true)
+            @RequestParam(defaultValue = "10") Integer pageSize
+    ){
+        if (StringUtils.isBlank(itemId)) {
+            return IMOOCJSONResult.errorMsg(null);
+        }
+        
+        PagedGridResult<ItemCommentVO> grid = itemService.queryPagedComments(itemId,
+                                                                level,
+                                                                page,
+                                                                pageSize);
+
+        return IMOOCJSONResult.ok(grid);
+    }
+```
+
+::: tip 备注
+分页使用mybatis-plus内置的IPage的时候，page和pageSize参数必须传，不然会报如下错误：
+
+Required request parameter 'page' for method parameter type Integer is present but converted to null
+
+原因是IPage是基于拦截器的，如果参数里没有这俩个参数，或者值是Null，就会报错
+
+后端的解决办法是：设置defaultValue
+:::
+
+::: tip 备注
+如果分页使用的是PageHelper，请求的时候可以不传这俩个参数，
+
+后端的解决办法是：
+
+1、设置defaultValue
+
+2、在方法里可以通过判断为Null，再次赋值
+
+```java
+ if (page == null) {
+     page = 1;
+ }
+```
+:::
+
+5、ItemsServiceImpl
+
+```java
+@Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public PagedGridResult<ItemCommentVO> queryPagedComments(String itemId,
+                                    Integer level,
+                                    Integer page,
+                                    Integer pageSize) {
+
+        // 创建page对象
+        Page<ItemsComments> page1 = new Page<>(page, pageSize);
+        // 查询数据的sql和不分页的一样，只需要传入page对象就行，sql里不用分页的参数
+        IPage<ItemCommentVO> iPage= itemsMapperCustom.queryItemComments(page1, itemId, level);
+        // 对查询出的分页对象里的列表数据进行二次处理
+        List<ItemCommentVO> list = iPage.getRecords();
+        for (ItemCommentVO vo : list) {
+            // 对Nickname字段进行脱敏
+            vo.setNickname(DesensitizationUtil.commonDisplay(vo.getNickname()));
+        }
+        // 对分页数据进行加工处理
+        return PageUtil.build(iPage);
+    }
+```
+
+6、ItemsMapperCustom
+
+```java
+IPage<ItemCommentVO> queryItemComments(Page<ItemsComments> page, String itemId, Integer level);
+```
+
+7、ItemsMapperCustom.xml
+
+```xml
+<select id="queryItemComments" resultType="com.zb.pojo.vo.ItemCommentVO">
+        SELECT
+        ic.comment_level as commentLevel,
+        ic.content as content,
+        ic.sepc_name as specName,
+        ic.created_time as createdTime,
+        u.face as userFace,
+        u.nickname as nickname
+        FROM
+        items_comments ic
+        LEFT JOIN
+        users u
+        ON
+        ic.user_id = u.id
+        WHERE
+        ic.item_id = #{itemId}
+        <if test=" level != null and level != '' ">
+            AND ic.comment_level = #{level}
+        </if>
+    </select>
 ```
 
 ### JAP
@@ -492,3 +548,55 @@ public class PagingDozer<T, K> extends Paging{
         return new PagingDozer<>(page, SpuSimplifyVO.class);
     }
 ```
+
+## PageHelper和 IPage
+
+这俩个都用于分页
+
+### 使用方法
+
+PageHelper：PageHelper.startPage(page, pageSize)，后面是mapper方法
+
+IPage：创建IPage对象，将这个对象传入到mapper方法里
+
+### 原理
+
+#### PageHelper
+
+将传入的页码和条数赋值给了Page对象，保存到了一个本地线程ThreadLocal中，进入Mybatis的拦截器中。
+
+调用方法的时候，在拦截器中获取本地线程中保存的分页的参数。将这些分页参数和原本的sql以及内部定义好的sql进行拼接完成sql的分页处理。
+
+中间会进行判断该sql 的类型是查询还是修改操作。
+
+如果是查询才会进入分页的逻辑并判断封装好的Page对象是否是null，null则不分页，否则分页。
+
+#### IPage
+
+基于拦截器，但是这个拦截的是方法以及方法中的参数，也会判断是否是查询操作。
+
+如果是查询操作，才会进入分页的处理逻辑。 
+
+进入分页逻辑处理后，拦截器会通过反射获取该方法的参数进行判断是否存在IPage对象的实现类。
+
+如果不存在则不进行分页，存在则将该参数赋值给IPage对象。
+
+然后进行拼接sql的处理完成分页操作。
+
+但是使用IPage需要注入一个bean拦截器交给spring进行管理。如下。否则不会进行拦截。
+
+::: tip 备注
+使用IPage需要注入一个bean拦截器交给spring进行管理
+
+代码如下：
+
+```java
+@Bean
+public MybatisPlusInterceptor mybatisPlusInterceptor() {
+    MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();
+    interceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.MYSQL));
+    return interceptor;
+}    
+```
+
+:::
