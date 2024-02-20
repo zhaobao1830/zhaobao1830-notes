@@ -141,6 +141,10 @@ export const javaKnowledgeSidebar = [
       {
         text: 'SpringBoot使用@Transactional注解添加事务',
         link: '/javaKnowledge/35'
+      },
+      {
+        text: 'springBoot使用aop与日志监控service执行时间',
+        link: '/javaKnowledge/36'
       }
     ]
   }
