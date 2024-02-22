@@ -15,7 +15,7 @@ export const javaNotesSidebar = [
         link: '/javaNotes/03'
       },
       {
-        text: 'jar和war对比',
+        text: '打包方式jar和war对比',
         link: '/javaNotes/04'
       },
       {
