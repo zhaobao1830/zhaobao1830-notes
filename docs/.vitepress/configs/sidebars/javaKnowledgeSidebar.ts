@@ -145,6 +145,10 @@ export const javaKnowledgeSidebar = [
       {
         text: 'springBoot使用aop与日志监控service执行时间',
         link: '/javaKnowledge/36'
+      },
+      {
+        text: 'java项目打包部署',
+        link: '/javaKnowledge/37'
       }
     ]
   }
