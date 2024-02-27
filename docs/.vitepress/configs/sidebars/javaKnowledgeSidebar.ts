@@ -11,7 +11,7 @@ export const javaKnowledgeSidebar = [
         link: '/javaKnowledge/33'
       },
       {
-        text: '大型网站架构演进历程',
+        text: '项目架构演进历程',
         link: '/javaKnowledge/34'
       },
       {
