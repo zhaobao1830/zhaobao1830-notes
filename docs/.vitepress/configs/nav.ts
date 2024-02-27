@@ -347,6 +347,10 @@ export const nav: DefaultTheme.Config['nav'] = [
         link: 'http://axios-js.com/zh-cn/docs/'
       },
       {
+        text: 'better-scroll',
+        link: 'https://better-scroll.github.io/docs/zh-CN/'
+      },
+      {
         text: '慕课网',
         link: 'https://www.imooc.com/'
       },
