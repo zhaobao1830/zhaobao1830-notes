@@ -149,6 +149,10 @@ export const javaKnowledgeSidebar = [
       {
         text: 'java项目打包部署',
         link: '/javaKnowledge/37'
+      },
+      {
+        text: 'OSI 网络模型',
+        link: '/javaKnowledge/38'
       }
     ]
   }
