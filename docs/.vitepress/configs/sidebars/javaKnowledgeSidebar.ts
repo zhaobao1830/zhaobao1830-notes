@@ -153,6 +153,10 @@ export const javaKnowledgeSidebar = [
       {
         text: 'OSI 网络模型',
         link: '/javaKnowledge/38'
+      },
+      {
+        text: '四层/七层负载均衡',
+        link: '/javaKnowledge/39'
       }
     ]
   }
