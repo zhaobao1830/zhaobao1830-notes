@@ -15,10 +15,6 @@ export const javaNotesSidebar = [
         link: '/javaNotes/03'
       },
       {
-        text: '打包方式jar和war对比',
-        link: '/javaNotes/04'
-      },
-      {
         text: 'springBoot项目默认不允许跨域',
         link: '/javaNotes/05'
       },
