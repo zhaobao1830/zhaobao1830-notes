@@ -157,6 +157,10 @@ export const javaKnowledgeSidebar = [
       {
         text: '四层/七层负载均衡',
         link: '/javaKnowledge/39'
+      },
+      {
+        text: 'SSO单点登录和OAuth2.0',
+        link: '/javaKnowledge/40'
       }
     ]
   }
