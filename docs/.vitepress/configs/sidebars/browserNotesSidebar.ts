@@ -8,7 +8,7 @@ export const browserNotesSidebar = [
       },
       {
         text: '使用SpeechSynthesisUtterance实现语音播放功能',
-        link: '/browserNotes/01'
+        link: '/browserNotes/02'
       }
     ]
   }
