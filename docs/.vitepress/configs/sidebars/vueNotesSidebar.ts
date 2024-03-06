@@ -120,6 +120,10 @@ export const vueNotesSidebar = [
       {
         text: 'ElementPlusError: [ElOnlyChild] no valid child node found',
         link: '/vueNotes/30'
+      },
+      {
+        text: 'Cannot find module @rollup/rollup-win32-x64-msvc',
+        link: '/vueNotes/31'
       }
     ]
   }
