@@ -316,7 +316,7 @@ export const nav: DefaultTheme.Config['nav'] = [
       },
       {
         text: 'Vant4(Vue3移动端组件库)',
-        link: 'https://vant-contrib.gitee.io/vant/#/zh-CN'
+        link: 'https://vant-ui.github.io/vant/#/zh-CN/home'
       },
       {
         text: 'vxe-table(Vue表格框架)',
