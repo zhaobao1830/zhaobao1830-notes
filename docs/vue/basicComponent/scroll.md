@@ -341,7 +341,6 @@ export default function useScroll(wrapperRef, options, emit) {
 <style scoped lang="scss">
   .scroll-pull-up-down{
     position: relative;
-    height: 100%;
     overflow: hidden;
     .scroll-pull-up-down-content{
       position: relative;
