@@ -65,6 +65,10 @@ export const vueKnowledgeSidebar = [
       {
         text: 'v-show和v-if有什么区别？使用场景分别是什么？',
         link: '/vueKnowledge/16'
+      },
+      {
+        text: 'Vue3 的宏到底是什么东西？不需要 import 直接用？',
+        link: '/vueKnowledge/17'
       }
     ]
   }
