@@ -69,6 +69,10 @@ export const vueKnowledgeSidebar = [
       {
         text: 'Vue3 的宏到底是什么东西？不需要 import 直接用？',
         link: '/vueKnowledge/17'
+      },
+      {
+        text: 'new Vue和createApp对比',
+        link: '/vueKnowledge/18'
       }
     ]
   }
