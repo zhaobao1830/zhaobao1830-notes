@@ -25,6 +25,10 @@ export const jetBrainsNotesSidebar = [
       {
         text: 'statement 或 DELIMITER，得到 \'id\'',
         link: '/jetBrainsNotes/06'
+      },
+      {
+        text: 'vscode点击import引入的路径，跳转到对应文件',
+        link: '/jetBrainsNotes/07'
       }
     ]
   }
