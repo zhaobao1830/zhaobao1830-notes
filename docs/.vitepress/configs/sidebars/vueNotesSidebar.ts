@@ -124,6 +124,10 @@ export const vueNotesSidebar = [
       {
         text: 'Cannot find module @rollup/rollup-win32-x64-msvc',
         link: '/vueNotes/31'
+      },
+      {
+        text: 'nginx将vue项目部署在二级目录下',
+        link: '/vueNotes/32'
       }
     ]
   }
