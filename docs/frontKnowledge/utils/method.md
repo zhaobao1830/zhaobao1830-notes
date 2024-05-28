@@ -168,6 +168,8 @@ this.navList = transData(JSON.parse(JSON.stringify(this.navDataList)), 'id', 'pa
 
 ## 获取url中的参数
 
+### history模式
+
 ```vue
 // 获取url参数 name 要获取的参数名
     getQueryString(name) {
@@ -179,6 +181,39 @@ this.navList = transData(JSON.parse(JSON.stringify(this.navDataList)), 'id', 'pa
         return ''
       }
     }
+```
+
+### hash模式和history模式
+
+在使用vue开发微信公众号项目时，授权登录功能，微信跳转回页面，url会变成这种格式
+
+http://18483629676.gnway.cc/index.html?code=021Crl0w3Kt1R23iu60w3YtNC91Crl0F&state=STATE#/home
+
+如果想获取url中code的值
+
+只能用下面这种方法
+
+```js
+  // 获取url参数 name 要获取的参数名
+  function getQueryString(name) {
+    let paramsObj = {}
+    let url = decodeURIComponent(window.location.search || window.location.hash)
+    let strs
+    if (url.indexOf('?') !== -1) {
+      // hash模式进此判断
+      if (window.location.hash) {
+        strs = url.split('?')[1].toString().split('&')
+        // history模式
+      } else {
+        strs = url.substr(1).split('&')
+      }
+      // 循环遍历并添加到对象中
+      for (let i = 0; i < strs.length; i++) {
+        paramsObj[strs[i].split('=')[0]] = strs[i].split('=')[1]
+      }
+    }
+    return paramsObj[name]
+  }
 ```
 
 ## 日期格式化
