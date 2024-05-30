@@ -134,6 +134,10 @@ export const nav: DefaultTheme.Config['nav'] = [
         link: '/dataVisualizationKnowledge/01'
       },
       {
+        text: '微信知识点',
+        link: '/wechatKnowledge/01'
+      },
+      {
         text: '微前端知识点',
         link: '/microFrontKnowledge/01'
       }
