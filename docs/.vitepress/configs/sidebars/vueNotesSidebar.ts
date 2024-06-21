@@ -128,6 +128,10 @@ export const vueNotesSidebar = [
       {
         text: 'nginx将vue项目部署在二级目录下',
         link: '/vueNotes/32'
+      },
+      {
+        text: '若依项目页面内打开页签',
+        link: '/vueNotes/33'
       }
     ]
   }
