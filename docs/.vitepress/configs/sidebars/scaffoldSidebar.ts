@@ -5,14 +5,9 @@ export const scaffoldSidebar = [
       {
         text: '脚手架',
         link: '/scaffold/01'
-      }
-    ]
-  },
-  {
-    text: '知识点',
-    items: [
+      },
       {
-        text: '知识点',
+        text: 'npm link',
         link: '/scaffold/02'
       }
     ]
