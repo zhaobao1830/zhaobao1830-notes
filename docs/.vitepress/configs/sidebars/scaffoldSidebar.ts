@@ -7,7 +7,7 @@ export const scaffoldSidebar = [
         link: '/scaffold/01'
       },
       {
-        text: 'npm link',
+        text: 'npm link命令',
         link: '/scaffold/02'
       }
     ]
