@@ -9,6 +9,10 @@ export const vuepressNotesSidebar = [
       {
         text: '博客基于Algolia实现全站搜索功能',
         link: '/vuepressNotes/02'
+      },
+      {
+        text: '项目在github上自动部署，执行Install pnpm报错',
+        link: '/vuepressNotes/03'
       }
     ]
   }
