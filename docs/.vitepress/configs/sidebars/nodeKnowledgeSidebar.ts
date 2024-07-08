@@ -11,7 +11,7 @@ export const nodeKnowledgeSidebar = [
         link: '/nodeKnowledge/02'
       },
       {
-        text: 'pnpm add -g pnpm报错解决方案',
+        text: 'pnpm add -g pnpm相关问题',
         link: '/nodeKnowledge/03'
       }
     ]
