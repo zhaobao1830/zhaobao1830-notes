@@ -37,6 +37,10 @@ export const uniappNotesSidebar = [
       {
         text: 'uniapp解屏后进行操作',
         link: '/uniappNotes/09'
+      },
+      {
+        text: 'uniapp倒计时功能',
+        link: '/uniappNotes/10'
       }
     ]
   }
