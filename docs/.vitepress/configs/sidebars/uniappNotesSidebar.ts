@@ -33,6 +33,10 @@ export const uniappNotesSidebar = [
       {
         text: 'uniapp里实现滚动到底部',
         link: '/uniappNotes/08'
+      },
+      {
+        text: 'uniapp解屏后进行操作',
+        link: '/uniappNotes/09'
       }
     ]
   }
