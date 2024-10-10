@@ -136,6 +136,10 @@ export const vueNotesSidebar = [
       {
         text: '对参数使用CryptoJS进行加密，使用axios传递到后端解密报错',
         link: '/vueNotes/34'
+      },
+      {
+        text: '使用crypto-js对接口参数进行加密',
+        link: '/vueNotes/35'
       }
     ]
   }
