@@ -132,6 +132,10 @@ export const vueNotesSidebar = [
       {
         text: '若依项目页面内打开页签',
         link: '/vueNotes/33'
+      },
+      {
+        text: '对参数使用CryptoJS进行加密，使用axios传递到后端解密报错',
+        link: '/vueNotes/34'
       }
     ]
   }
