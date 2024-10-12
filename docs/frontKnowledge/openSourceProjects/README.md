@@ -23,6 +23,11 @@ vue3版本：
 
 [lin-cms](https://doc.cms.talelin.com/) 七月老师开源的前后端分离的 CMS 解决方案
 
+[soybean-admin](https://github.com/soybeanjs/soybean-admin) 一个清新优雅、高颜值且功能强大的后台管理模板，基于最新的前端技术栈，包括 Vue3, Vite5, TypeScript, Pinia, NaiveUI 和 UnoCSS
+
+[RuoYi-Vue-Plus](https://plus-doc.dromara.org/#/)多租户权限管理系统，重写RuoYi-Vue系统
+
 Vue3学习：
 
 [mini-vue](https://github.com/cuixiaorui/mini-vue)实现最简 vue3 模型，用于深入学习 vue3， 让你更轻松的理解 vue3 的核心逻辑
+
