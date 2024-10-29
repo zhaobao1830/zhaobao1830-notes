@@ -41,6 +41,10 @@ export const uniappNotesSidebar = [
       {
         text: 'uniapp倒计时功能',
         link: '/uniappNotes/10'
+      },
+      {
+        text: 'uniapp微信公众号实现pdf预览',
+        link: '/uniappNotes/11'
       }
     ]
   }
