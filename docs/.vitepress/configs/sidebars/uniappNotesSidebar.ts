@@ -45,7 +45,11 @@ export const uniappNotesSidebar = [
       {
         text: 'uniapp微信公众号实现pdf预览',
         link: '/uniappNotes/11'
-      }
+      },
+      {
+        text: 'uniapp使用wx-open-launch-weapp实现跳转小程序',
+        link: '/uniappNotes/12'
+      },
     ]
   }
 ]
