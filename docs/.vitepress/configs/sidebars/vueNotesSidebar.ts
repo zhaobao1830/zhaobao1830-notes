@@ -140,6 +140,10 @@ export const vueNotesSidebar = [
       {
         text: '使用crypto-js对接口参数进行加密',
         link: '/vueNotes/35'
+      },
+      {
+        text: 'Vue3报错 Extraneous non-props attributes (xxx) were passed to component but could not be automatically inherited because component renders fragment or text root nodes',
+        link: '/vueNotes/36'
       }
     ]
   }
