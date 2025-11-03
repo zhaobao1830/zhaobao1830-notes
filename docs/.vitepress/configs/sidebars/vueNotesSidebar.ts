@@ -144,7 +144,11 @@ export const vueNotesSidebar = [
       {
         text: 'Vue3报错 Extraneous non-props attributes (xxx) were passed to component but could not be automatically inherited because component renders fragment or text root nodes',
         link: '/vueNotes/36'
-      }
+      },
+      {
+        text: 'vue3中使用echarts遇到的问题',
+        link: '/vueNotes/37'
+      },
     ]
   }
 ]
