@@ -33,6 +33,7 @@ import { microFrontKnowledgeSidebar } from './sidebars/microFrontKnowledgeSideba
 import { dataBaseNotesSidebar } from './sidebars/dataBaseNotesSidebar'
 import { serverNotesSidebar } from './sidebars/serverNotesSidebar'
 import { wechatKnowledgeSidebar } from './sidebars/wechatKnowledgeSidebar'
+import { projectNotesSidebar } from './sidebars/projectNotesSidebar'
 
 export const sidebar = {
   '/java/': javaSidebar,
@@ -69,5 +70,6 @@ export const sidebar = {
   '/microFrontKnowledge/': microFrontKnowledgeSidebar,
   '/dataBaseNotes/': dataBaseNotesSidebar,
   '/serverNotes/': serverNotesSidebar,
-  '/wechatKnowledge/': wechatKnowledgeSidebar
+  '/wechatKnowledge/': wechatKnowledgeSidebar,
+  '/projectNotes/': projectNotesSidebar
 }

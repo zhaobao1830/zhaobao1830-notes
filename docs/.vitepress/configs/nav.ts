@@ -87,6 +87,10 @@ export const nav: DefaultTheme.Config['nav'] = [
       {
         text: '服务器笔记',
         link: '/serverNotes/01'
+      },
+      {
+        text: '项目笔记',
+        link: '/projectNotes/01'
       }
     ]
   },
