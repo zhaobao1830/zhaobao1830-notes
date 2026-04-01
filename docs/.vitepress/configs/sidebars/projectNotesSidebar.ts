@@ -13,6 +13,10 @@ export const projectNotesSidebar = [
       {
         text: 'charge（收费）项目中的诊断选择功能',
         link: '/projectNotes/03'
+      },
+      {
+        text: 'his组件使用笔记',
+        link: '/projectNotes/04'
       }
     ]
   }
